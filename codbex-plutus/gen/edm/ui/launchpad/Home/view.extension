@@ -1,0 +1,5 @@
+{
+    "module": "codbex-plutus/gen/edm/ui/launchpad/Home/view.js",
+    "extensionPoint": "codbex-plutus-view",
+    "description": "codbex-plutus - Application View"
+}

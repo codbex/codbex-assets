@@ -1,0 +1,5 @@
+{
+    "module": "codbex-plutus/gen/edm/ui/entities/Asset/dialog-filter/view.js",
+    "extensionPoint": "codbex-plutus-dialog-window",
+    "description": "codbex-plutus - Application Dialog Window"
+}
