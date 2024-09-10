@@ -74,11 +74,6 @@
                         "name": "ACQUISITIONS_ACQUISITIONDATE"
                     },
                     {
-                        "type": "INTEGER",
-                        "nullable": true,
-                        "name": "ACQUISITIONS_SUPLIER"
-                    },
-                    {
                         "type": "DECIMAL",
                         "nullable": true,
                         "name": "ACQUISITIONS_COST"
@@ -88,11 +83,16 @@
                         "length": 20,
                         "nullable": true,
                         "name": "ACQUISITIONS_PAYMENTMETHOD"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ACQUISITIONS_SUPPLIER"
                     }
                 ]
             },
             {
-                "name": "MAINTENANCES",
+                "name": "MAINTENANCE",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -132,7 +132,7 @@
                 ]
             },
             {
-                "name": "DEPRECIATIONS",
+                "name": "DEPRECIATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -171,7 +171,7 @@
                 ]
             },
             {
-                "name": "DISPOSALS",
+                "name": "DISPOSAL",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -211,7 +211,7 @@
                 ]
             },
             {
-                "name": "VALUATIONS",
+                "name": "VALUATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -251,7 +251,7 @@
                 ]
             },
             {
-                "name": "LOCATIONS",
+                "name": "LOCATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -270,7 +270,7 @@
                 ]
             },
             {
-                "name": "CATEGORIES",
+                "name": "CATEGORY",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -289,92 +289,73 @@
                 ]
             },
             {
-                "name": "SUPLIERS",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "SUPLIERS_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "SUPLIERS_NAME"
-                    }
-                ]
-            },
-            {
-                "name": "Asset_Locations",
+                "name": "Asset_Location",
                 "type": "foreignKey",
                 "table": "ASSET",
-                "constraintName": "Asset_Locations",
+                "constraintName": "Asset_Location",
                 "columns": "ASSET_LOCATION",
-                "referencedTable": "LOCATIONS",
+                "referencedTable": "LOCATION",
                 "referencedColumns": "LOCATIONS_ID"
             },
             {
-                "name": "Asset_Categories",
+                "name": "Asset_Category",
                 "type": "foreignKey",
                 "table": "ASSET",
-                "constraintName": "Asset_Categories",
+                "constraintName": "Asset_Category",
                 "columns": "ASSET_CATEGORY",
-                "referencedTable": "CATEGORIES",
+                "referencedTable": "CATEGORY",
                 "referencedColumns": "CATEGORIES_ID"
             },
             {
-                "name": "Acquisitions_Asset",
+                "name": "Acquisition_Asset",
                 "type": "foreignKey",
                 "table": "ACQUISITIONS",
-                "constraintName": "Acquisitions_Asset",
+                "constraintName": "Acquisition_Asset",
                 "columns": "ACQUISITIONS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
-                "name": "Acquisitions_Supliers",
+                "name": "Acquisition_Supplier",
                 "type": "foreignKey",
                 "table": "ACQUISITIONS",
-                "constraintName": "Acquisitions_Supliers",
-                "columns": "ACQUISITIONS_SUPLIER",
-                "referencedTable": "SUPLIERS",
-                "referencedColumns": "SUPLIERS_ID"
+                "constraintName": "Acquisition_Supplier",
+                "columns": "ACQUISITIONS_SUPPLIER",
+                "referencedTable": "SUPPLIER",
+                "referencedColumns": "SUPPLIER_ID"
             },
             {
-                "name": "Maintenances_Asset",
+                "name": "Maintenance_Asset",
                 "type": "foreignKey",
-                "table": "MAINTENANCES",
-                "constraintName": "Maintenances_Asset",
+                "table": "MAINTENANCE",
+                "constraintName": "Maintenance_Asset",
                 "columns": "MAINTENANCES_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
-                "name": "Depreciations_Asset",
+                "name": "Depreciation_Asset",
                 "type": "foreignKey",
-                "table": "DEPRECIATIONS",
-                "constraintName": "Depreciations_Asset",
+                "table": "DEPRECIATION",
+                "constraintName": "Depreciation_Asset",
                 "columns": "DEPRECIATIONS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
-                "name": "Disposals_Asset",
+                "name": "Disposal_Asset",
                 "type": "foreignKey",
-                "table": "DISPOSALS",
-                "constraintName": "Disposals_Asset",
+                "table": "DISPOSAL",
+                "constraintName": "Disposal_Asset",
                 "columns": "DISPOSALS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
-                "name": "Valuations_Asset",
+                "name": "Valuation_Asset",
                 "type": "foreignKey",
-                "table": "VALUATIONS",
-                "constraintName": "Valuations_Asset",
+                "table": "VALUATION",
+                "constraintName": "Valuation_Asset",
                 "columns": "VALUATIONS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"

@@ -17,7 +17,6 @@ tags:
   - name: entities
   - name: entities
   - name: entities
-  - name: entities
 paths:
   /codbex-plutus/gen/edm/api/entities/AssetService.ts:
     get:
@@ -427,9 +426,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/AcquisitionsService.ts:
+  /codbex-plutus/gen/edm/api/entities/AcquisitionService.ts:
     get:
-      summary: List Acquisitions
+      summary: List Acquisition
       parameters:
         - in: query
           name: $limit
@@ -457,7 +456,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisitions'
+                    $ref: '#/components/schemas/Acquisition'
         400:
           description: Bad Request Error
           content:
@@ -477,14 +476,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Acquisitions
+      summary: Create Acquisition
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Acquisitions'
+              $ref: '#/components/schemas/Acquisition'
         required: true
       responses:
         201:
@@ -492,7 +491,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Acquisitions'
+                $ref: '#/components/schemas/Acquisition'
         400:
           description: Bad Request Error
           content:
@@ -511,9 +510,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/AcquisitionsService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/AcquisitionService.ts/{id}:
     get:
-      summary: Get Acquisitions by Id
+      summary: Get Acquisition by Id
       parameters:
         - in: path
           name: id
@@ -531,7 +530,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisitions'
+                    $ref: '#/components/schemas/Acquisition'
         404:
           description: Entity Not Found
           content:
@@ -551,7 +550,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Acquisitions by Id
+      summary: Update Acquisition by Id
       parameters:
         - in: path
           name: id
@@ -565,7 +564,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Acquisitions'
+              $ref: '#/components/schemas/Acquisition'
         required: true
       responses:
         200:
@@ -573,7 +572,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Acquisitions'
+                $ref: '#/components/schemas/Acquisition'
         400:
           description: Bad Request Error
           content:
@@ -599,7 +598,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Acquisitions by Id
+      summary: Delete Acquisition by Id
       parameters:
         - in: path
           name: id
@@ -630,9 +629,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/AcquisitionsService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/AcquisitionService.ts/count:
     get:
-      summary: Count the number of Acquisitions
+      summary: Count the number of Acquisition
       tags:
         - entities
       responses:
@@ -656,14 +655,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Acquisitions by AcquisitionsFilterOptions
+      summary: Count the number of Acquisition by AcquisitionFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AcquisitionsFilterOptions'
+              $ref: '#/components/schemas/AcquisitionFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -740,16 +739,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/AcquisitionsService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/AcquisitionService.ts/search:
     post:
-      summary: Search Acquisitions by AcquisitionsFilterOptions
+      summary: Search Acquisition by AcquisitionFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AcquisitionsFilterOptions'
+              $ref: '#/components/schemas/AcquisitionFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -814,7 +813,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisitions'
+                    $ref: '#/components/schemas/Acquisition'
         403:
           description: Forbidden Error
           content:
@@ -827,9 +826,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/MaintenancesService.ts:
+  /codbex-plutus/gen/edm/api/entities/MaintenanceService.ts:
     get:
-      summary: List Maintenances
+      summary: List Maintenance
       parameters:
         - in: query
           name: $limit
@@ -857,7 +856,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Maintenances'
+                    $ref: '#/components/schemas/Maintenance'
         400:
           description: Bad Request Error
           content:
@@ -877,14 +876,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Maintenances
+      summary: Create Maintenance
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Maintenances'
+              $ref: '#/components/schemas/Maintenance'
         required: true
       responses:
         201:
@@ -892,7 +891,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Maintenances'
+                $ref: '#/components/schemas/Maintenance'
         400:
           description: Bad Request Error
           content:
@@ -911,9 +910,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/MaintenancesService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/MaintenanceService.ts/{id}:
     get:
-      summary: Get Maintenances by Id
+      summary: Get Maintenance by Id
       parameters:
         - in: path
           name: id
@@ -931,7 +930,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Maintenances'
+                    $ref: '#/components/schemas/Maintenance'
         404:
           description: Entity Not Found
           content:
@@ -951,7 +950,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Maintenances by Id
+      summary: Update Maintenance by Id
       parameters:
         - in: path
           name: id
@@ -965,7 +964,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Maintenances'
+              $ref: '#/components/schemas/Maintenance'
         required: true
       responses:
         200:
@@ -973,7 +972,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Maintenances'
+                $ref: '#/components/schemas/Maintenance'
         400:
           description: Bad Request Error
           content:
@@ -999,7 +998,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Maintenances by Id
+      summary: Delete Maintenance by Id
       parameters:
         - in: path
           name: id
@@ -1030,9 +1029,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/MaintenancesService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/MaintenanceService.ts/count:
     get:
-      summary: Count the number of Maintenances
+      summary: Count the number of Maintenance
       tags:
         - entities
       responses:
@@ -1056,14 +1055,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Maintenances by MaintenancesFilterOptions
+      summary: Count the number of Maintenance by MaintenanceFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MaintenancesFilterOptions'
+              $ref: '#/components/schemas/MaintenanceFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -1142,16 +1141,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/MaintenancesService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/MaintenanceService.ts/search:
     post:
-      summary: Search Maintenances by MaintenancesFilterOptions
+      summary: Search Maintenance by MaintenanceFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MaintenancesFilterOptions'
+              $ref: '#/components/schemas/MaintenanceFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -1218,7 +1217,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Maintenances'
+                    $ref: '#/components/schemas/Maintenance'
         403:
           description: Forbidden Error
           content:
@@ -1231,9 +1230,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DepreciationsService.ts:
+  /codbex-plutus/gen/edm/api/entities/DepreciationService.ts:
     get:
-      summary: List Depreciations
+      summary: List Depreciation
       parameters:
         - in: query
           name: $limit
@@ -1261,7 +1260,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Depreciations'
+                    $ref: '#/components/schemas/Depreciation'
         400:
           description: Bad Request Error
           content:
@@ -1281,14 +1280,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Depreciations
+      summary: Create Depreciation
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Depreciations'
+              $ref: '#/components/schemas/Depreciation'
         required: true
       responses:
         201:
@@ -1296,7 +1295,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Depreciations'
+                $ref: '#/components/schemas/Depreciation'
         400:
           description: Bad Request Error
           content:
@@ -1315,9 +1314,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DepreciationsService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/DepreciationService.ts/{id}:
     get:
-      summary: Get Depreciations by Id
+      summary: Get Depreciation by Id
       parameters:
         - in: path
           name: id
@@ -1335,7 +1334,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Depreciations'
+                    $ref: '#/components/schemas/Depreciation'
         404:
           description: Entity Not Found
           content:
@@ -1355,7 +1354,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Depreciations by Id
+      summary: Update Depreciation by Id
       parameters:
         - in: path
           name: id
@@ -1369,7 +1368,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Depreciations'
+              $ref: '#/components/schemas/Depreciation'
         required: true
       responses:
         200:
@@ -1377,7 +1376,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Depreciations'
+                $ref: '#/components/schemas/Depreciation'
         400:
           description: Bad Request Error
           content:
@@ -1403,7 +1402,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Depreciations by Id
+      summary: Delete Depreciation by Id
       parameters:
         - in: path
           name: id
@@ -1434,9 +1433,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DepreciationsService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/DepreciationService.ts/count:
     get:
-      summary: Count the number of Depreciations
+      summary: Count the number of Depreciation
       tags:
         - entities
       responses:
@@ -1460,14 +1459,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Depreciations by DepreciationsFilterOptions
+      summary: Count the number of Depreciation by DepreciationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DepreciationsFilterOptions'
+              $ref: '#/components/schemas/DepreciationFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -1544,16 +1543,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DepreciationsService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/DepreciationService.ts/search:
     post:
-      summary: Search Depreciations by DepreciationsFilterOptions
+      summary: Search Depreciation by DepreciationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DepreciationsFilterOptions'
+              $ref: '#/components/schemas/DepreciationFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -1618,7 +1617,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Depreciations'
+                    $ref: '#/components/schemas/Depreciation'
         403:
           description: Forbidden Error
           content:
@@ -1631,9 +1630,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DisposalsService.ts:
+  /codbex-plutus/gen/edm/api/entities/DisposalService.ts:
     get:
-      summary: List Disposals
+      summary: List Disposal
       parameters:
         - in: query
           name: $limit
@@ -1661,7 +1660,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Disposals'
+                    $ref: '#/components/schemas/Disposal'
         400:
           description: Bad Request Error
           content:
@@ -1681,14 +1680,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Disposals
+      summary: Create Disposal
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Disposals'
+              $ref: '#/components/schemas/Disposal'
         required: true
       responses:
         201:
@@ -1696,7 +1695,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Disposals'
+                $ref: '#/components/schemas/Disposal'
         400:
           description: Bad Request Error
           content:
@@ -1715,9 +1714,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DisposalsService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/DisposalService.ts/{id}:
     get:
-      summary: Get Disposals by Id
+      summary: Get Disposal by Id
       parameters:
         - in: path
           name: id
@@ -1735,7 +1734,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Disposals'
+                    $ref: '#/components/schemas/Disposal'
         404:
           description: Entity Not Found
           content:
@@ -1755,7 +1754,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Disposals by Id
+      summary: Update Disposal by Id
       parameters:
         - in: path
           name: id
@@ -1769,7 +1768,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Disposals'
+              $ref: '#/components/schemas/Disposal'
         required: true
       responses:
         200:
@@ -1777,7 +1776,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Disposals'
+                $ref: '#/components/schemas/Disposal'
         400:
           description: Bad Request Error
           content:
@@ -1803,7 +1802,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Disposals by Id
+      summary: Delete Disposal by Id
       parameters:
         - in: path
           name: id
@@ -1834,9 +1833,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DisposalsService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/DisposalService.ts/count:
     get:
-      summary: Count the number of Disposals
+      summary: Count the number of Disposal
       tags:
         - entities
       responses:
@@ -1860,14 +1859,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Disposals by DisposalsFilterOptions
+      summary: Count the number of Disposal by DisposalFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DisposalsFilterOptions'
+              $ref: '#/components/schemas/DisposalFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -1946,16 +1945,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/DisposalsService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/DisposalService.ts/search:
     post:
-      summary: Search Disposals by DisposalsFilterOptions
+      summary: Search Disposal by DisposalFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DisposalsFilterOptions'
+              $ref: '#/components/schemas/DisposalFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -2022,7 +2021,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Disposals'
+                    $ref: '#/components/schemas/Disposal'
         403:
           description: Forbidden Error
           content:
@@ -2035,9 +2034,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/ValuationsService.ts:
+  /codbex-plutus/gen/edm/api/entities/ValuationService.ts:
     get:
-      summary: List Valuations
+      summary: List Valuation
       parameters:
         - in: query
           name: $limit
@@ -2065,7 +2064,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Valuations'
+                    $ref: '#/components/schemas/Valuation'
         400:
           description: Bad Request Error
           content:
@@ -2085,14 +2084,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Valuations
+      summary: Create Valuation
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Valuations'
+              $ref: '#/components/schemas/Valuation'
         required: true
       responses:
         201:
@@ -2100,7 +2099,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Valuations'
+                $ref: '#/components/schemas/Valuation'
         400:
           description: Bad Request Error
           content:
@@ -2119,9 +2118,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/ValuationsService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/ValuationService.ts/{id}:
     get:
-      summary: Get Valuations by Id
+      summary: Get Valuation by Id
       parameters:
         - in: path
           name: id
@@ -2139,7 +2138,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Valuations'
+                    $ref: '#/components/schemas/Valuation'
         404:
           description: Entity Not Found
           content:
@@ -2159,7 +2158,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Valuations by Id
+      summary: Update Valuation by Id
       parameters:
         - in: path
           name: id
@@ -2173,7 +2172,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Valuations'
+              $ref: '#/components/schemas/Valuation'
         required: true
       responses:
         200:
@@ -2181,7 +2180,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Valuations'
+                $ref: '#/components/schemas/Valuation'
         400:
           description: Bad Request Error
           content:
@@ -2207,7 +2206,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Valuations by Id
+      summary: Delete Valuation by Id
       parameters:
         - in: path
           name: id
@@ -2238,9 +2237,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/ValuationsService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/ValuationService.ts/count:
     get:
-      summary: Count the number of Valuations
+      summary: Count the number of Valuation
       tags:
         - entities
       responses:
@@ -2264,14 +2263,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Valuations by ValuationsFilterOptions
+      summary: Count the number of Valuation by ValuationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ValuationsFilterOptions'
+              $ref: '#/components/schemas/ValuationFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -2350,16 +2349,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/ValuationsService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/ValuationService.ts/search:
     post:
-      summary: Search Valuations by ValuationsFilterOptions
+      summary: Search Valuation by ValuationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ValuationsFilterOptions'
+              $ref: '#/components/schemas/ValuationFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -2426,7 +2425,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Valuations'
+                    $ref: '#/components/schemas/Valuation'
         403:
           description: Forbidden Error
           content:
@@ -2439,9 +2438,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/LocationsService.ts:
+  /codbex-plutus/gen/edm/api/entities/LocationService.ts:
     get:
-      summary: List Locations
+      summary: List Location
       parameters:
         - in: query
           name: $limit
@@ -2469,7 +2468,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Locations'
+                    $ref: '#/components/schemas/Location'
         400:
           description: Bad Request Error
           content:
@@ -2489,14 +2488,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Locations
+      summary: Create Location
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Locations'
+              $ref: '#/components/schemas/Location'
         required: true
       responses:
         201:
@@ -2504,7 +2503,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Locations'
+                $ref: '#/components/schemas/Location'
         400:
           description: Bad Request Error
           content:
@@ -2523,9 +2522,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/LocationsService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/LocationService.ts/{id}:
     get:
-      summary: Get Locations by Id
+      summary: Get Location by Id
       parameters:
         - in: path
           name: id
@@ -2543,7 +2542,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Locations'
+                    $ref: '#/components/schemas/Location'
         404:
           description: Entity Not Found
           content:
@@ -2563,7 +2562,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Locations by Id
+      summary: Update Location by Id
       parameters:
         - in: path
           name: id
@@ -2577,7 +2576,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Locations'
+              $ref: '#/components/schemas/Location'
         required: true
       responses:
         200:
@@ -2585,7 +2584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Locations'
+                $ref: '#/components/schemas/Location'
         400:
           description: Bad Request Error
           content:
@@ -2611,7 +2610,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Locations by Id
+      summary: Delete Location by Id
       parameters:
         - in: path
           name: id
@@ -2642,9 +2641,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/LocationsService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/LocationService.ts/count:
     get:
-      summary: Count the number of Locations
+      summary: Count the number of Location
       tags:
         - entities
       responses:
@@ -2668,14 +2667,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Locations by LocationsFilterOptions
+      summary: Count the number of Location by LocationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LocationsFilterOptions'
+              $ref: '#/components/schemas/LocationFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -2752,16 +2751,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/LocationsService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/LocationService.ts/search:
     post:
-      summary: Search Locations by LocationsFilterOptions
+      summary: Search Location by LocationFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LocationsFilterOptions'
+              $ref: '#/components/schemas/LocationFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -2826,7 +2825,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Locations'
+                    $ref: '#/components/schemas/Location'
         403:
           description: Forbidden Error
           content:
@@ -2839,9 +2838,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/CategoriesService.ts:
+  /codbex-plutus/gen/edm/api/entities/CategoryService.ts:
     get:
-      summary: List Categories
+      summary: List Category
       parameters:
         - in: query
           name: $limit
@@ -2869,7 +2868,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Categories'
+                    $ref: '#/components/schemas/Category'
         400:
           description: Bad Request Error
           content:
@@ -2889,14 +2888,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Categories
+      summary: Create Category
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Categories'
+              $ref: '#/components/schemas/Category'
         required: true
       responses:
         201:
@@ -2904,7 +2903,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Categories'
+                $ref: '#/components/schemas/Category'
         400:
           description: Bad Request Error
           content:
@@ -2923,9 +2922,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/CategoriesService.ts/{id}:
+  /codbex-plutus/gen/edm/api/entities/CategoryService.ts/{id}:
     get:
-      summary: Get Categories by Id
+      summary: Get Category by Id
       parameters:
         - in: path
           name: id
@@ -2943,7 +2942,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Categories'
+                    $ref: '#/components/schemas/Category'
         404:
           description: Entity Not Found
           content:
@@ -2963,7 +2962,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Categories by Id
+      summary: Update Category by Id
       parameters:
         - in: path
           name: id
@@ -2977,7 +2976,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Categories'
+              $ref: '#/components/schemas/Category'
         required: true
       responses:
         200:
@@ -2985,7 +2984,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Categories'
+                $ref: '#/components/schemas/Category'
         400:
           description: Bad Request Error
           content:
@@ -3011,7 +3010,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Categories by Id
+      summary: Delete Category by Id
       parameters:
         - in: path
           name: id
@@ -3042,9 +3041,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/CategoriesService.ts/count:
+  /codbex-plutus/gen/edm/api/entities/CategoryService.ts/count:
     get:
-      summary: Count the number of Categories
+      summary: Count the number of Category
       tags:
         - entities
       responses:
@@ -3068,14 +3067,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Categories by CategoriesFilterOptions
+      summary: Count the number of Category by CategoryFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CategoriesFilterOptions'
+              $ref: '#/components/schemas/CategoryFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -3152,16 +3151,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/CategoriesService.ts/search:
+  /codbex-plutus/gen/edm/api/entities/CategoryService.ts/search:
     post:
-      summary: Search Categories by CategoriesFilterOptions
+      summary: Search Category by CategoryFilterOptions
       tags:
         - entities
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CategoriesFilterOptions'
+              $ref: '#/components/schemas/CategoryFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -3226,407 +3225,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Categories'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/SupliersService.ts:
-    get:
-      summary: List Supliers
-      parameters:
-        - in: query
-          name: $limit
-          description: The number of records to be returned _(both `$limit` and `$offset` should be provided)_.
-          required: false
-          allowReserved: true
-          schema:
-            type: integer
-            allowEmptyValue: true
-        - in: query
-          name: $offset
-          description: The number of records to skip _(both `$limit` and `$offset` should be provided)_.
-          required: false
-          allowReserved: true
-          schema:
-            type: integer
-            allowEmptyValue: true
-      tags:
-        - entities
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Supliers'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    post:
-      summary: Create Supliers
-      tags:
-        - entities
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Supliers'
-        required: true
-      responses:
-        201:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Supliers'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/SupliersService.ts/{id}:
-    get:
-      summary: Get Supliers by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - entities
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Supliers'
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    put:
-      summary: Update Supliers by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - entities
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Supliers'
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Supliers'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    delete:
-      summary: Delete Supliers by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - entities
-      responses:
-        204:
-          description: Successful Request
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/SupliersService.ts/count:
-    get:
-      summary: Count the number of Supliers
-      tags:
-        - entities
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: integer
-                example: 100
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    post:
-      summary: Count the number of Supliers by SupliersFilterOptions
-      tags:
-        - entities
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SupliersFilterOptions'
-            examples:
-              countWithMultipleCriteria:
-                summary: Count with multiple criteria
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 33
-                    contains:
-                      Name: "abcd"
-                    greaterThan:
-                      Id: 0
-                    lessThanOrEqual:
-                      Id: 100
-              countWithEquals:
-                summary: Count with Equals
-                value:
-                  $filter:
-                    equals:
-                      Id: 0
-              countWithNotEquals:
-                summary: Count with Not Equals
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 0
-              countWithContains:
-                summary: Count with Contains
-                value:
-                  $filter:
-                    contains:
-                      Name: "abcd"
-              countWithGreaterThan:
-                summary: Count with Greater Than
-                value:
-                  $filter:
-                    greaterThan:
-                      Id: 0
-              countWithGreaterThanOrEqual:
-                summary: Count with Greater Than Or Equal
-                value:
-                  $filter:
-                    greaterThanOrEqual:
-                      Id: 0
-              countWithLessThan:
-                summary: Count with Less Than
-                value:
-                  $filter:
-                    lessThan:
-                      Id: 0
-              countWithLessThanOrEqual:
-                summary: Count with Less Than Or Equal
-                value:
-                  $filter:
-                    lessThanOrEqual:
-                      Id: 0
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: integer
-                example: 100
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-plutus/gen/edm/api/entities/SupliersService.ts/search:
-    post:
-      summary: Search Supliers by SupliersFilterOptions
-      tags:
-        - entities
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SupliersFilterOptions'
-            examples:
-              searchWithMultipleCriteria:
-                summary: Search with multiple criteria
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 33
-                    contains:
-                      Name: "abcd"
-                    greaterThan:
-                      Id: 0
-                    lessThanOrEqual:
-                      Id: 100
-              searchWithEquals:
-                summary: Search with Equals
-                value:
-                  $filter:
-                    equals:
-                      Id: 0
-              searchWithNotEquals:
-                summary: Search with Not Equals
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 0
-              searchWithContains:
-                summary: Search with Contains
-                value:
-                  $filter:
-                    contains:
-                      Name: "abcd"
-              searchWithGreaterThan:
-                summary: Search with Greater Than
-                value:
-                  $filter:
-                    greaterThan:
-                      Id: 0
-              searchWithGreaterThanOrEqual:
-                summary: Search with Greater Than Or Equal
-                value:
-                  $filter:
-                    greaterThanOrEqual:
-                      Id: 0
-              searchWithLessThan:
-                summary: Search with Less Than
-                value:
-                  $filter:
-                    lessThan:
-                      Id: 0
-              searchWithLessThanOrEqual:
-                summary: Search with Less Than Or Equal
-                value:
-                  $filter:
-                    lessThanOrEqual:
-                      Id: 0
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Supliers'
+                    $ref: '#/components/schemas/Category'
         403:
           description: Forbidden Error
           content:
@@ -3966,7 +3565,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Acquisitions:
+    Acquisition:
       type: object
       required:
       properties:
@@ -3977,9 +3576,6 @@ components:
           type: integer
           format: int32
         AcquisitionDate:
-        Suplier:
-          type: integer
-          format: int32
         Cost:
           type: number
           format: double
@@ -3987,7 +3583,10 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    AcquisitionsFilterOptions:
+        Supplier:
+          type: integer
+          format: int32
+    AcquisitionFilterOptions:
       type: object
       properties:
         $filter:
@@ -4014,14 +3613,6 @@ components:
                         format: int32
                 AcquisitionDate:
                   oneOf:
-                Suplier:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
                 Cost:
                   oneOf:
                     - type: number
@@ -4041,6 +3632,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
+                Supplier:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             notEquals:
               type: object
               properties:
@@ -4062,14 +3661,6 @@ components:
                         format: int32
                 AcquisitionDate:
                   oneOf:
-                Suplier:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
                 Cost:
                   oneOf:
                     - type: number
@@ -4089,18 +3680,26 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
+                Supplier:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
                 Id:
                 Asset:
                 AcquisitionDate:
-                Suplier:
                 Cost:
                 PaymentMethod:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Supplier:
             greaterThan:
               type: object
               properties:
@@ -4111,9 +3710,6 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Suplier:
-                  type: integer
-                  format: int32
                 Cost:
                   type: number
                   format: double
@@ -4121,6 +3717,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Supplier:
+                  type: integer
+                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
@@ -4131,9 +3730,6 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Suplier:
-                  type: integer
-                  format: int32
                 Cost:
                   type: number
                   format: double
@@ -4141,6 +3737,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Supplier:
+                  type: integer
+                  format: int32
             lessThan:
               type: object
               properties:
@@ -4151,9 +3750,6 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Suplier:
-                  type: integer
-                  format: int32
                 Cost:
                   type: number
                   format: double
@@ -4161,6 +3757,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Supplier:
+                  type: integer
+                  format: int32
             lessThanOrEqual:
               type: object
               properties:
@@ -4171,9 +3770,6 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Suplier:
-                  type: integer
-                  format: int32
                 Cost:
                   type: number
                   format: double
@@ -4181,14 +3777,17 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Supplier:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "AcquisitionDate", "Suplier", "Cost", "PaymentMethod"]
+          example: ["Id", "Asset", "AcquisitionDate", "Cost", "PaymentMethod", "Supplier"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,AcquisitionDate,Suplier,Cost,PaymentMethod"
+            example: "Id,Asset,AcquisitionDate,Cost,PaymentMethod,Supplier"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -4199,7 +3798,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Maintenances:
+    Maintenance:
       type: object
       required:
       properties:
@@ -4221,7 +3820,7 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    MaintenancesFilterOptions:
+    MaintenanceFilterOptions:
       type: object
       properties:
         $filter:
@@ -4446,7 +4045,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Depreciations:
+    Depreciation:
       type: object
       required:
       properties:
@@ -4467,7 +4066,7 @@ components:
         AccumulatedDepreciation:
           type: number
           format: double
-    DepreciationsFilterOptions:
+    DepreciationFilterOptions:
       type: object
       properties:
         $filter:
@@ -4679,7 +4278,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Disposals:
+    Disposal:
       type: object
       required:
       properties:
@@ -4701,7 +4300,7 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    DisposalsFilterOptions:
+    DisposalFilterOptions:
       type: object
       properties:
         $filter:
@@ -4926,7 +4525,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Valuations:
+    Valuation:
       type: object
       required:
       properties:
@@ -4948,7 +4547,7 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    ValuationsFilterOptions:
+    ValuationFilterOptions:
       type: object
       properties:
         $filter:
@@ -5173,7 +4772,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Locations:
+    Location:
       type: object
       required:
       properties:
@@ -5184,7 +4783,7 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    LocationsFilterOptions:
+    LocationFilterOptions:
       type: object
       properties:
         $filter:
@@ -5300,7 +4899,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Categories:
+    Category:
       type: object
       required:
       properties:
@@ -5311,134 +4910,7 @@ components:
           type: string
           minLength: 0
           maxLength: 20
-    CategoriesFilterOptions:
-      type: object
-      properties:
-        $filter:
-          type: object
-          properties:
-            equals:
-              type: object
-              properties:
-                Id:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Name:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
-            notEquals:
-              type: object
-              properties:
-                Id:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Name:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
-            contains:
-              type: object
-              properties:
-                Id:
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-            greaterThan:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-            greaterThanOrEqual:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-            lessThan:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-            lessThanOrEqual:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-        $select:
-          type: array
-          example: ["Id", "Name"]
-          items:
-            type: string
-        $sort:
-          - type: string
-            example: "Id,Name"
-        $order:
-          type: string
-          enum: ["asc", "desc"]
-          example: "asc"
-        $offset:
-          type: integer
-          example: 0
-        $limit:
-          type: integer
-          example: 10
-    Supliers:
-      type: object
-      required:
-      properties:
-        Id:
-          type: integer
-          format: int32
-        Name:
-          type: string
-          minLength: 0
-          maxLength: 20
-    SupliersFilterOptions:
+    CategoryFilterOptions:
       type: object
       properties:
         $filter:

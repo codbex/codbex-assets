@@ -1,11 +1,11 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-plutus.entities.Asset';
+		messageHubProvider.eventIdPrefix = 'codbex-plutus.entities.Location';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-plutus/gen/edm/api/entities/LocationService.ts";
 	}])
-	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', 'Extensions', function ($scope, $http, messageHub, entityApi, Extensions) {
+	.controller('PageController', ['$scope', 'messageHub', 'entityApi', 'Extensions', function ($scope, messageHub, entityApi, Extensions) {
 
 		$scope.dataPage = 1;
 		$scope.dataCount = 0;
@@ -13,8 +13,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Custom Actions-------------------//
 		Extensions.get('dialogWindow', 'codbex-plutus-custom-action').then(function (response) {
-			$scope.pageActions = response.filter(e => e.perspective === "entities" && e.view === "Asset" && (e.type === "page" || e.type === undefined));
-			$scope.entityActions = response.filter(e => e.perspective === "entities" && e.view === "Asset" && e.type === "entity");
+			$scope.pageActions = response.filter(e => e.perspective === "entities" && e.view === "Location" && (e.type === "page" || e.type === undefined));
+			$scope.entityActions = response.filter(e => e.perspective === "entities" && e.view === "Location" && e.type === "entity");
 		});
 
 		$scope.triggerPageAction = function (action) {
@@ -71,7 +71,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.dataPage = pageNumber;
 			entityApi.count(filter).then(function (response) {
 				if (response.status != 200) {
-					messageHub.showAlertError("Asset", `Unable to count Asset: '${response.message}'`);
+					messageHub.showAlertError("Location", `Unable to count Location: '${response.message}'`);
 					return;
 				}
 				if (response.data) {
@@ -89,16 +89,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 				request.then(function (response) {
 					if (response.status != 200) {
-						messageHub.showAlertError("Asset", `Unable to list/filter Asset: '${response.message}'`);
+						messageHub.showAlertError("Location", `Unable to list/filter Location: '${response.message}'`);
 						return;
 					}
-
-					response.data.forEach(e => {
-						if (e.PurchaseDate) {
-							e.PurchaseDate = new Date(e.PurchaseDate);
-						}
-					});
-
 					$scope.data = response.data;
 				});
 			});
@@ -111,46 +104,38 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		$scope.openDetails = function (entity) {
 			$scope.selectedEntity = entity;
-			messageHub.showDialogWindow("Asset-details", {
+			messageHub.showDialogWindow("Location-details", {
 				action: "select",
 				entity: entity,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 			});
 		};
 
 		$scope.openFilter = function (entity) {
-			messageHub.showDialogWindow("Asset-filter", {
+			messageHub.showDialogWindow("Location-filter", {
 				entity: $scope.filterEntity,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 			});
 		};
 
 		$scope.createEntity = function () {
 			$scope.selectedEntity = null;
-			messageHub.showDialogWindow("Asset-details", {
+			messageHub.showDialogWindow("Location-details", {
 				action: "create",
 				entity: {},
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 			}, null, false);
 		};
 
 		$scope.updateEntity = function (entity) {
-			messageHub.showDialogWindow("Asset-details", {
+			messageHub.showDialogWindow("Location-details", {
 				action: "update",
 				entity: entity,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 			}, null, false);
 		};
 
 		$scope.deleteEntity = function (entity) {
 			let id = entity.Id;
 			messageHub.showDialogAsync(
-				'Delete Asset?',
-				`Are you sure you want to delete Asset? This action cannot be undone.`,
+				'Delete Location?',
+				`Are you sure you want to delete Location? This action cannot be undone.`,
 				[{
 					id: "delete-btn-yes",
 					type: "emphasized",
@@ -165,7 +150,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				if (msg.data === "delete-btn-yes") {
 					entityApi.delete(id).then(function (response) {
 						if (response.status != 204) {
-							messageHub.showAlertError("Asset", `Unable to delete Asset: '${response.message}'`);
+							messageHub.showAlertError("Location", `Unable to delete Location: '${response.message}'`);
 							return;
 						}
 						$scope.loadPage($scope.dataPage, $scope.filter);
@@ -174,46 +159,5 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		};
-
-		//----------------Dropdowns-----------------//
-		$scope.optionsLocation = [];
-		$scope.optionsCategory = [];
-
-
-		$http.get("/services/ts/codbex-plutus/gen/edm/api/entities/LocationService.ts").then(function (response) {
-			$scope.optionsLocation = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
-
-		$http.get("/services/ts/codbex-plutus/gen/edm/api/entities/CategoryService.ts").then(function (response) {
-			$scope.optionsCategory = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
-
-		$scope.optionsLocationValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsLocation.length; i++) {
-				if ($scope.optionsLocation[i].value === optionKey) {
-					return $scope.optionsLocation[i].text;
-				}
-			}
-			return null;
-		};
-		$scope.optionsCategoryValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsCategory.length; i++) {
-				if ($scope.optionsCategory[i].value === optionKey) {
-					return $scope.optionsCategory[i].text;
-				}
-			}
-			return null;
-		};
-		//----------------Dropdowns-----------------//
 
 	}]);
