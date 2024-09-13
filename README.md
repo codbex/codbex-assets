@@ -50,6 +50,6 @@ The Asset Management module in an ERP system typically encompasses several key a
 - **Role-Based Access Control:** Defining user roles and permissions related to asset management tasks.
 - **Security Measures:** Ensuring data protection and security of asset information.
 
-#EDM
+# EDM
 ![image](https://github.com/user-attachments/assets/a9a73c7d-04a8-4061-8c63-42593574b180)
 
