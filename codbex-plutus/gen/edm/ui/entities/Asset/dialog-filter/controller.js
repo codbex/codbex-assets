@@ -71,6 +71,9 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Value !== undefined) {
 				filter.$filter.equals.Value = entity.Value;
 			}
+			if (entity.Product !== undefined) {
+				filter.$filter.equals.Product = entity.Product;
+			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
 				filter: filter

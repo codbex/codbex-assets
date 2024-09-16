@@ -119,9 +119,6 @@ class AcquisitionService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.PaymentMethod?.length > 20) {
-            throw new ValidationError(`The 'PaymentMethod' exceeds the maximum length of [20] characters`);
-        }
         for (const next of validationModules) {
             next.validate(entity);
         }

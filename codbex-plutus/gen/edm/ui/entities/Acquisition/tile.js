@@ -7,8 +7,8 @@ exports.getTile = function () {
     return {
         group: "codbex-plutus",
         name: "Acquisition",
-        caption: "Manage entity Acquisitions",
-        tooltip: "Acquisitions",
+        caption: "Manage entity Acquisition",
+        tooltip: "Acquisition",
         type: "PRIMARY",
         report: "false",
         icon: "/services/web/resources/unicons/file.svg",

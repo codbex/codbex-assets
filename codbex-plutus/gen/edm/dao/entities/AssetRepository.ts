@@ -13,6 +13,7 @@ export interface AssetEntity {
     PurchaseDate?: Date;
     Status?: string;
     Value?: number;
+    Product?: number;
 }
 
 export interface AssetCreateEntity {
@@ -23,6 +24,7 @@ export interface AssetCreateEntity {
     readonly PurchaseDate?: Date;
     readonly Status?: string;
     readonly Value?: number;
+    readonly Product?: number;
 }
 
 export interface AssetUpdateEntity extends AssetCreateEntity {
@@ -40,6 +42,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date | Date[];
             Status?: string | string[];
             Value?: number | number[];
+            Product?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -50,6 +53,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date | Date[];
             Status?: string | string[];
             Value?: number | number[];
+            Product?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -60,6 +64,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             Status?: string;
             Value?: number;
+            Product?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -70,6 +75,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             Status?: string;
             Value?: number;
+            Product?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -80,6 +86,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             Status?: string;
             Value?: number;
+            Product?: number;
         };
         lessThan?: {
             Id?: number;
@@ -90,6 +97,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             Status?: string;
             Value?: number;
+            Product?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -100,6 +108,7 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             Status?: string;
             Value?: number;
+            Product?: number;
         };
     },
     $select?: (keyof AssetEntity)[],
@@ -170,6 +179,11 @@ export class AssetRepository {
                 name: "Value",
                 column: "ASSET_VALUE",
                 type: "DECIMAL",
+            },
+            {
+                name: "Product",
+                column: "ASSET_PRODUCT",
+                type: "INTEGER",
             }
         ]
     };

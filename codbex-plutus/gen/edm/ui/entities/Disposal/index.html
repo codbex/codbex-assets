@@ -33,6 +33,7 @@
 						<th fd-table-header-cell>Method</th>
 						<th fd-table-header-cell>SaleValue</th>
 						<th fd-table-header-cell>Remarks</th>
+						<th fd-table-header-cell>SalesInvoice</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -51,6 +52,9 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Method}}</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.SaleValue}}</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Remarks}}</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
+							{{optionsSalesInvoiceValue(next.SalesInvoice)}}
+						</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>

@@ -9,16 +9,14 @@ export interface AcquisitionEntity {
     Asset?: number;
     AcquisitionDate?: Date;
     Cost?: number;
-    PaymentMethod?: string;
-    Supplier?: number;
+    PurchaseInvoice?: number;
 }
 
 export interface AcquisitionCreateEntity {
     readonly Asset?: number;
     readonly AcquisitionDate?: Date;
     readonly Cost?: number;
-    readonly PaymentMethod?: string;
-    readonly Supplier?: number;
+    readonly PurchaseInvoice?: number;
 }
 
 export interface AcquisitionUpdateEntity extends AcquisitionCreateEntity {
@@ -32,56 +30,49 @@ export interface AcquisitionEntityOptions {
             Asset?: number | number[];
             AcquisitionDate?: Date | Date[];
             Cost?: number | number[];
-            PaymentMethod?: string | string[];
-            Supplier?: number | number[];
+            PurchaseInvoice?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Asset?: number | number[];
             AcquisitionDate?: Date | Date[];
             Cost?: number | number[];
-            PaymentMethod?: string | string[];
-            Supplier?: number | number[];
+            PurchaseInvoice?: number | number[];
         };
         contains?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
             Cost?: number;
-            PaymentMethod?: string;
-            Supplier?: number;
+            PurchaseInvoice?: number;
         };
         greaterThan?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
             Cost?: number;
-            PaymentMethod?: string;
-            Supplier?: number;
+            PurchaseInvoice?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
             Cost?: number;
-            PaymentMethod?: string;
-            Supplier?: number;
+            PurchaseInvoice?: number;
         };
         lessThan?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
             Cost?: number;
-            PaymentMethod?: string;
-            Supplier?: number;
+            PurchaseInvoice?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
             Cost?: number;
-            PaymentMethod?: string;
-            Supplier?: number;
+            PurchaseInvoice?: number;
         };
     },
     $select?: (keyof AcquisitionEntity)[],
@@ -109,7 +100,7 @@ interface AcquisitionUpdateEntityEvent extends AcquisitionEntityEvent {
 export class AcquisitionRepository {
 
     private static readonly DEFINITION = {
-        table: "ACQUISITIONS",
+        table: "ACQUISITION",
         properties: [
             {
                 name: "Id",
@@ -134,13 +125,8 @@ export class AcquisitionRepository {
                 type: "DECIMAL",
             },
             {
-                name: "PaymentMethod",
-                column: "ACQUISITIONS_PAYMENTMETHOD",
-                type: "VARCHAR",
-            },
-            {
-                name: "Supplier",
-                column: "ACQUISITIONS_SUPPLIER",
+                name: "PurchaseInvoice",
+                column: "ACQUISITION_PURCHASEINVOICE",
                 type: "INTEGER",
             }
         ]
@@ -170,7 +156,7 @@ export class AcquisitionRepository {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
-            table: "ACQUISITIONS",
+            table: "ACQUISITION",
             entity: entity,
             key: {
                 name: "Id",
@@ -187,7 +173,7 @@ export class AcquisitionRepository {
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
-            table: "ACQUISITIONS",
+            table: "ACQUISITION",
             entity: entity,
             previousEntity: previousEntity,
             key: {
@@ -218,7 +204,7 @@ export class AcquisitionRepository {
         this.dao.remove(id);
         this.triggerEvent({
             operation: "delete",
-            table: "ACQUISITIONS",
+            table: "ACQUISITION",
             entity: entity,
             key: {
                 name: "Id",
@@ -233,7 +219,7 @@ export class AcquisitionRepository {
     }
 
     public customDataCount(): number {
-        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "ACQUISITIONS"');
+        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "ACQUISITION"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
                 return resultSet[0].COUNT;

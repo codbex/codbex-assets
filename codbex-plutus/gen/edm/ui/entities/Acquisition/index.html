@@ -31,8 +31,7 @@
 						<th fd-table-header-cell>Asset</th>
 						<th fd-table-header-cell>AcquisitionDate</th>
 						<th fd-table-header-cell>Cost</th>
-						<th fd-table-header-cell>PaymentMethod</th>
-						<th fd-table-header-cell>Supplier</th>
+						<th fd-table-header-cell>PurchaseInvoice</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -49,10 +48,7 @@
 							<fd-input type="date" ng-model="next.AcquisitionDate" ng-readonly="true"></fd-input>
 						</td>
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Cost}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.PaymentMethod}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							{{optionsSupplierValue(next.Supplier)}}
-						</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.PurchaseInvoice}}</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>

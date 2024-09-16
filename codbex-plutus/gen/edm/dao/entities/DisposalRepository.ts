@@ -11,6 +11,7 @@ export interface DisposalEntity {
     Method?: string;
     SaleValue?: number;
     Remarks?: string;
+    SalesInvoice?: number;
 }
 
 export interface DisposalCreateEntity {
@@ -19,6 +20,7 @@ export interface DisposalCreateEntity {
     readonly Method?: string;
     readonly SaleValue?: number;
     readonly Remarks?: string;
+    readonly SalesInvoice?: number;
 }
 
 export interface DisposalUpdateEntity extends DisposalCreateEntity {
@@ -34,6 +36,7 @@ export interface DisposalEntityOptions {
             Method?: string | string[];
             SaleValue?: number | number[];
             Remarks?: string | string[];
+            SalesInvoice?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -42,6 +45,7 @@ export interface DisposalEntityOptions {
             Method?: string | string[];
             SaleValue?: number | number[];
             Remarks?: string | string[];
+            SalesInvoice?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -50,6 +54,7 @@ export interface DisposalEntityOptions {
             Method?: string;
             SaleValue?: number;
             Remarks?: string;
+            SalesInvoice?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -58,6 +63,7 @@ export interface DisposalEntityOptions {
             Method?: string;
             SaleValue?: number;
             Remarks?: string;
+            SalesInvoice?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -66,6 +72,7 @@ export interface DisposalEntityOptions {
             Method?: string;
             SaleValue?: number;
             Remarks?: string;
+            SalesInvoice?: number;
         };
         lessThan?: {
             Id?: number;
@@ -74,6 +81,7 @@ export interface DisposalEntityOptions {
             Method?: string;
             SaleValue?: number;
             Remarks?: string;
+            SalesInvoice?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -82,6 +90,7 @@ export interface DisposalEntityOptions {
             Method?: string;
             SaleValue?: number;
             Remarks?: string;
+            SalesInvoice?: number;
         };
     },
     $select?: (keyof DisposalEntity)[],
@@ -142,6 +151,11 @@ export class DisposalRepository {
                 name: "Remarks",
                 column: "DISPOSALS_REMARKS",
                 type: "VARCHAR",
+            },
+            {
+                name: "SalesInvoice",
+                column: "DISPOSAL_SALESINVOICE",
+                type: "INTEGER",
             }
         ]
     };

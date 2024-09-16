@@ -21,6 +21,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsAsset = params.optionsAsset;
+			$scope.optionsSalesInvoice = params.optionsSalesInvoice;
 		}
 
 		$scope.filter = function () {
@@ -63,6 +64,9 @@ angular.module('page', ["ideUI", "ideView"])
 			}
 			if (entity.Remarks) {
 				filter.$filter.contains.Remarks = entity.Remarks;
+			}
+			if (entity.SalesInvoice !== undefined) {
+				filter.$filter.equals.SalesInvoice = entity.SalesInvoice;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

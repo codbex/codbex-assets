@@ -49,11 +49,16 @@
                         "type": "DECIMAL",
                         "nullable": true,
                         "name": "ASSET_VALUE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ASSET_PRODUCT"
                     }
                 ]
             },
             {
-                "name": "ACQUISITIONS",
+                "name": "ACQUISITION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -79,15 +84,9 @@
                         "name": "ACQUISITIONS_COST"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ACQUISITIONS_PAYMENTMETHOD"
-                    },
-                    {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "ACQUISITIONS_SUPPLIER"
+                        "name": "ACQUISITION_PURCHASEINVOICE"
                     }
                 ]
             },
@@ -207,6 +206,11 @@
                         "length": 20,
                         "nullable": true,
                         "name": "DISPOSALS_REMARKS"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "DISPOSAL_SALESINVOICE"
                     }
                 ]
             },
@@ -307,22 +311,31 @@
                 "referencedColumns": "CATEGORIES_ID"
             },
             {
+                "name": "Asset_Product",
+                "type": "foreignKey",
+                "table": "ASSET",
+                "constraintName": "Asset_Product",
+                "columns": "ASSET_PRODUCT",
+                "referencedTable": "PRODUCT",
+                "referencedColumns": "PRODUCT_ID"
+            },
+            {
                 "name": "Acquisition_Asset",
                 "type": "foreignKey",
-                "table": "ACQUISITIONS",
+                "table": "ACQUISITION",
                 "constraintName": "Acquisition_Asset",
                 "columns": "ACQUISITIONS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
-                "name": "Acquisition_Supplier",
+                "name": "Acquisition_PurchaseInvoice",
                 "type": "foreignKey",
-                "table": "ACQUISITIONS",
-                "constraintName": "Acquisition_Supplier",
-                "columns": "ACQUISITIONS_SUPPLIER",
-                "referencedTable": "SUPPLIER",
-                "referencedColumns": "SUPPLIER_ID"
+                "table": "ACQUISITION",
+                "constraintName": "Acquisition_PurchaseInvoice",
+                "columns": "ACQUISITION_PURCHASEINVOICE",
+                "referencedTable": "PURCHASEINVOICE",
+                "referencedColumns": "PURCHASEINVOICE_ID"
             },
             {
                 "name": "Maintenance_Asset",
@@ -350,6 +363,15 @@
                 "columns": "DISPOSALS_ASSET",
                 "referencedTable": "ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Disposal_SalesInvoice",
+                "type": "foreignKey",
+                "table": "DISPOSAL",
+                "constraintName": "Disposal_SalesInvoice",
+                "columns": "DISPOSAL_SALESINVOICE",
+                "referencedTable": "SALESINVOICE",
+                "referencedColumns": "SALESINVOICE_ID"
             },
             {
                 "name": "Valuation_Asset",

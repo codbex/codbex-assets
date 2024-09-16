@@ -115,7 +115,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "select",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
-				optionsSupplier: $scope.optionsSupplier,
 			});
 		};
 
@@ -123,7 +122,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Acquisition-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
-				optionsSupplier: $scope.optionsSupplier,
 			});
 		};
 
@@ -133,7 +131,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "create",
 				entity: {},
 				optionsAsset: $scope.optionsAsset,
-				optionsSupplier: $scope.optionsSupplier,
 			}, null, false);
 		};
 
@@ -142,7 +139,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "update",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
-				optionsSupplier: $scope.optionsSupplier,
 			}, null, false);
 		};
 
@@ -177,7 +173,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
-		$scope.optionsSupplier = [];
 
 
 		$http.get("/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts").then(function (response) {
@@ -189,27 +184,10 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-partners/gen/codbex-partners/api/Suppliers/SupplierService.ts").then(function (response) {
-			$scope.optionsSupplier = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
-
 		$scope.optionsAssetValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsAsset.length; i++) {
 				if ($scope.optionsAsset[i].value === optionKey) {
 					return $scope.optionsAsset[i].text;
-				}
-			}
-			return null;
-		};
-		$scope.optionsSupplierValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsSupplier.length; i++) {
-				if ($scope.optionsSupplier[i].value === optionKey) {
-					return $scope.optionsSupplier[i].text;
 				}
 			}
 			return null;

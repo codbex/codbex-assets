@@ -115,6 +115,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "select",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
+				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
 
@@ -122,6 +123,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Disposal-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
+				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
 
@@ -131,6 +133,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "create",
 				entity: {},
 				optionsAsset: $scope.optionsAsset,
+				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			}, null, false);
 		};
 
@@ -139,6 +142,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "update",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
+				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			}, null, false);
 		};
 
@@ -173,6 +177,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
+		$scope.optionsSalesInvoice = [];
 
 
 		$http.get("/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts").then(function (response) {
@@ -184,10 +189,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
+		$http.get("/services/ts/codbex-invoices/gen/codbex-invoices/api/salesinvoice/SalesInvoiceService.ts").then(function (response) {
+			$scope.optionsSalesInvoice = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
 		$scope.optionsAssetValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsAsset.length; i++) {
 				if ($scope.optionsAsset[i].value === optionKey) {
 					return $scope.optionsAsset[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsSalesInvoiceValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsSalesInvoice.length; i++) {
+				if ($scope.optionsSalesInvoice[i].value === optionKey) {
+					return $scope.optionsSalesInvoice[i].text;
 				}
 			}
 			return null;
