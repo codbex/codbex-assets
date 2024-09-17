@@ -1,0 +1,8 @@
+{
+  "fileName": "codbex-plutus",
+  "genFolderName": "codbex-plutus",
+  "projectName": "codbex-plutus",
+  "workspaceName": "workspace",
+  "filePath": "codbex-plutus.edm",
+  "templateId": "ide-entity/services/transformer-template.js"
+}
