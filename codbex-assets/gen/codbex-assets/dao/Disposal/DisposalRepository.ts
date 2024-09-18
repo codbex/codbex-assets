@@ -122,34 +122,34 @@ export class DisposalRepository {
         properties: [
             {
                 name: "Id",
-                column: "DISPOSALS_ID",
+                column: "DISPOSAL_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Asset",
-                column: "DISPOSALS_ASSET",
+                column: "DISPOSAL_ASSET",
                 type: "INTEGER",
             },
             {
                 name: "DisposalDate",
-                column: "DISPOSALS_DISPOSALDATE",
+                column: "DISPOSAL_DISPOSALDATE",
                 type: "DATE",
             },
             {
                 name: "Method",
-                column: "DISPOSALS_METHOD",
+                column: "DISPOSAL_METHOD",
                 type: "VARCHAR",
             },
             {
                 name: "SaleValue",
-                column: "DISPOSALS_SALEVALUE",
+                column: "DISPOSAL_SALEVALUE",
                 type: "DECIMAL",
             },
             {
                 name: "Remarks",
-                column: "DISPOSALS_REMARKS",
+                column: "DISPOSAL_REMARKS",
                 type: "VARCHAR",
             },
             {
@@ -188,7 +188,7 @@ export class DisposalRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "DISPOSALS_ID",
+                column: "DISPOSAL_ID",
                 value: id
             }
         });
@@ -206,7 +206,7 @@ export class DisposalRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "DISPOSALS_ID",
+                column: "DISPOSAL_ID",
                 value: entity.Id
             }
         });
@@ -236,7 +236,7 @@ export class DisposalRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "DISPOSALS_ID",
+                column: "DISPOSAL_ID",
                 value: id
             }
         });

@@ -66,22 +66,22 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "ACQUISITIONS_ID"
+                        "name": "ACQUISITION_ID"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "ACQUISITIONS_ASSET"
+                        "name": "ACQUISITION_ASSET"
                     },
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "ACQUISITIONS_ACQUISITIONDATE"
+                        "name": "ACQUISITION_ACQUISITIONDATE"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "ACQUISITIONS_COST"
+                        "name": "ACQUISITION_COST"
                     },
                     {
                         "type": "INTEGER",
@@ -99,34 +99,34 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "MAINTENANCES_ID"
+                        "name": "MAINTENANCE_ID"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "MAINTENANCES_ASSET"
+                        "name": "MAINTENANCE_ASSET"
                     },
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "MAINTENANCES_MAINTENANCEDATE"
+                        "name": "MAINTENANCE_MAINTENANCEDATE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 256,
                         "nullable": true,
-                        "name": "MAINTENANCES_DESCRIPTION"
+                        "name": "MAINTENANCE_DESCRIPTION"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "MAINTENANCES_COST"
+                        "name": "MAINTENANCE_COST"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
-                        "name": "MAINTENANCES_STATUS"
+                        "name": "MAINTENANCE_STATUS"
                     }
                 ]
             },
@@ -139,33 +139,33 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "DEPRECIATIONS_ID"
+                        "name": "DEPRECIATION_ID"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "DEPRECIATIONS_ASSET"
+                        "name": "DEPRECIATION_ASSET"
                     },
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "DEPRECIATIONS_DEPRECIATIONDATE"
+                        "name": "DEPRECIATION_DEPRECIATIONDATE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 64,
                         "nullable": true,
-                        "name": "DEPRECIATIONS_METHOD"
+                        "name": "DEPRECIATION_METHOD"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "DEPRECIATIONS_ANNUALDEPRECIATION"
+                        "name": "DEPRECIATION_ANNUALDEPRECIATION"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "DEPRECIATIONS_ACCUMULATEDDEPRECIATION"
+                        "name": "DEPRECIATION_ACCUMULATEDDEPRECIATION"
                     }
                 ]
             },
@@ -178,34 +178,34 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "DISPOSALS_ID"
+                        "name": "DISPOSAL_ID"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "DISPOSALS_ASSET"
+                        "name": "DISPOSAL_ASSET"
                     },
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "DISPOSALS_DISPOSALDATE"
+                        "name": "DISPOSAL_DISPOSALDATE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 64,
                         "nullable": true,
-                        "name": "DISPOSALS_METHOD"
+                        "name": "DISPOSAL_METHOD"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "DISPOSALS_SALEVALUE"
+                        "name": "DISPOSAL_SALEVALUE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 128,
                         "nullable": true,
-                        "name": "DISPOSALS_REMARKS"
+                        "name": "DISPOSAL_REMARKS"
                     },
                     {
                         "type": "INTEGER",
@@ -223,34 +223,34 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "VALUATIONS_ID"
+                        "name": "VALUATION_ID"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "VALUATIONS_ASSET"
+                        "name": "VALUATION_ASSET"
                     },
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "VALUATIONS_VALUATIONDATE"
+                        "name": "VALUATION_VALUATIONDATE"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 64,
                         "nullable": true,
-                        "name": "VALUATIONS_VALUATIONMETHOD"
+                        "name": "VALUATION_VALUATIONMETHOD"
                     },
                     {
                         "type": "DECIMAL",
                         "nullable": true,
-                        "name": "VALUATIONS_VALUEDAT"
+                        "name": "VALUATION_VALUEDAT"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 128,
                         "nullable": true,
-                        "name": "VALUATIONS_REMARKS"
+                        "name": "VALUATION_REMARKS"
                     }
                 ]
             },
@@ -263,13 +263,13 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "LOCATIONS_ID"
+                        "name": "LOCATION_ID"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 64,
                         "nullable": true,
-                        "name": "LOCATIONS_NAME"
+                        "name": "LOCATION_NAME"
                     }
                 ]
             },
@@ -282,13 +282,13 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "CATEGORIES_ID"
+                        "name": "CATEGORY_ID"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 64,
                         "nullable": true,
-                        "name": "CATEGORIES_NAME"
+                        "name": "CATEGORY_NAME"
                     }
                 ]
             },
@@ -299,7 +299,7 @@
                 "constraintName": "Asset_Location",
                 "columns": "ASSET_LOCATION",
                 "referencedTable": "CODBEX_PLUTUS_LOCATION",
-                "referencedColumns": "LOCATIONS_ID"
+                "referencedColumns": "LOCATION_ID"
             },
             {
                 "name": "Asset_Category",
@@ -308,7 +308,7 @@
                 "constraintName": "Asset_Category",
                 "columns": "ASSET_CATEGORY",
                 "referencedTable": "CODBEX_PLUTUS_CATEGORY",
-                "referencedColumns": "CATEGORIES_ID"
+                "referencedColumns": "CATEGORY_ID"
             },
             {
                 "name": "Asset_Product",
@@ -324,7 +324,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_PLUTUS_ACQUISITION",
                 "constraintName": "Acquisition_Asset",
-                "columns": "ACQUISITIONS_ASSET",
+                "columns": "ACQUISITION_ASSET",
                 "referencedTable": "CODBEX_PLUTUS_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
@@ -342,7 +342,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_PLUTUS_MAINTENANCE",
                 "constraintName": "Maintenance_Asset",
-                "columns": "MAINTENANCES_ASSET",
+                "columns": "MAINTENANCE_ASSET",
                 "referencedTable": "CODBEX_PLUTUS_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
@@ -351,7 +351,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_PLUTUS_DEPRECIATION",
                 "constraintName": "Depreciation_Asset",
-                "columns": "DEPRECIATIONS_ASSET",
+                "columns": "DEPRECIATION_ASSET",
                 "referencedTable": "CODBEX_PLUTUS_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
@@ -360,7 +360,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_PLUTUS_DISPOSAL",
                 "constraintName": "Disposal_Asset",
-                "columns": "DISPOSALS_ASSET",
+                "columns": "DISPOSAL_ASSET",
                 "referencedTable": "CODBEX_PLUTUS_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
@@ -378,7 +378,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_PLUTUS_VALUATION",
                 "constraintName": "Valuation_Asset",
-                "columns": "VALUATIONS_ASSET",
+                "columns": "VALUATION_ASSET",
                 "referencedTable": "CODBEX_PLUTUS_ASSET",
                 "referencedColumns": "ASSET_ID"
             }

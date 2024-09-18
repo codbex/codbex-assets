@@ -113,34 +113,34 @@ export class MaintenanceRepository {
         properties: [
             {
                 name: "Id",
-                column: "MAINTENANCES_ID",
+                column: "MAINTENANCE_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Asset",
-                column: "MAINTENANCES_ASSET",
+                column: "MAINTENANCE_ASSET",
                 type: "INTEGER",
             },
             {
                 name: "MaintenanceDate",
-                column: "MAINTENANCES_MAINTENANCEDATE",
+                column: "MAINTENANCE_MAINTENANCEDATE",
                 type: "DATE",
             },
             {
                 name: "Description",
-                column: "MAINTENANCES_DESCRIPTION",
+                column: "MAINTENANCE_DESCRIPTION",
                 type: "VARCHAR",
             },
             {
                 name: "Cost",
-                column: "MAINTENANCES_COST",
+                column: "MAINTENANCE_COST",
                 type: "DECIMAL",
             },
             {
                 name: "Status",
-                column: "MAINTENANCES_STATUS",
+                column: "MAINTENANCE_STATUS",
                 type: "VARCHAR",
             }
         ]
@@ -174,7 +174,7 @@ export class MaintenanceRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "MAINTENANCES_ID",
+                column: "MAINTENANCE_ID",
                 value: id
             }
         });
@@ -192,7 +192,7 @@ export class MaintenanceRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "MAINTENANCES_ID",
+                column: "MAINTENANCE_ID",
                 value: entity.Id
             }
         });
@@ -222,7 +222,7 @@ export class MaintenanceRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "MAINTENANCES_ID",
+                column: "MAINTENANCE_ID",
                 value: id
             }
         });

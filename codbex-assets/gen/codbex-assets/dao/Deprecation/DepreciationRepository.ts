@@ -113,34 +113,34 @@ export class DepreciationRepository {
         properties: [
             {
                 name: "Id",
-                column: "DEPRECIATIONS_ID",
+                column: "DEPRECIATION_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Asset",
-                column: "DEPRECIATIONS_ASSET",
+                column: "DEPRECIATION_ASSET",
                 type: "INTEGER",
             },
             {
                 name: "DepreciationDate",
-                column: "DEPRECIATIONS_DEPRECIATIONDATE",
+                column: "DEPRECIATION_DEPRECIATIONDATE",
                 type: "DATE",
             },
             {
                 name: "Method",
-                column: "DEPRECIATIONS_METHOD",
+                column: "DEPRECIATION_METHOD",
                 type: "VARCHAR",
             },
             {
                 name: "AnnualDepreciation",
-                column: "DEPRECIATIONS_ANNUALDEPRECIATION",
+                column: "DEPRECIATION_ANNUALDEPRECIATION",
                 type: "DECIMAL",
             },
             {
                 name: "AccumulatedDepreciation",
-                column: "DEPRECIATIONS_ACCUMULATEDDEPRECIATION",
+                column: "DEPRECIATION_ACCUMULATEDDEPRECIATION",
                 type: "DECIMAL",
             }
         ]
@@ -174,7 +174,7 @@ export class DepreciationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "DEPRECIATIONS_ID",
+                column: "DEPRECIATION_ID",
                 value: id
             }
         });
@@ -192,7 +192,7 @@ export class DepreciationRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "DEPRECIATIONS_ID",
+                column: "DEPRECIATION_ID",
                 value: entity.Id
             }
         });
@@ -222,7 +222,7 @@ export class DepreciationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "DEPRECIATIONS_ID",
+                column: "DEPRECIATION_ID",
                 value: id
             }
         });

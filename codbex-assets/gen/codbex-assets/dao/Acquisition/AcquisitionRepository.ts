@@ -104,24 +104,24 @@ export class AcquisitionRepository {
         properties: [
             {
                 name: "Id",
-                column: "ACQUISITIONS_ID",
+                column: "ACQUISITION_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Asset",
-                column: "ACQUISITIONS_ASSET",
+                column: "ACQUISITION_ASSET",
                 type: "INTEGER",
             },
             {
                 name: "AcquisitionDate",
-                column: "ACQUISITIONS_ACQUISITIONDATE",
+                column: "ACQUISITION_ACQUISITIONDATE",
                 type: "DATE",
             },
             {
                 name: "Cost",
-                column: "ACQUISITIONS_COST",
+                column: "ACQUISITION_COST",
                 type: "DECIMAL",
             },
             {
@@ -160,7 +160,7 @@ export class AcquisitionRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "ACQUISITIONS_ID",
+                column: "ACQUISITION_ID",
                 value: id
             }
         });
@@ -178,7 +178,7 @@ export class AcquisitionRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "ACQUISITIONS_ID",
+                column: "ACQUISITION_ID",
                 value: entity.Id
             }
         });
@@ -208,7 +208,7 @@ export class AcquisitionRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "ACQUISITIONS_ID",
+                column: "ACQUISITION_ID",
                 value: id
             }
         });

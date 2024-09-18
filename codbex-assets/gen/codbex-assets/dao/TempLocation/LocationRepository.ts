@@ -76,14 +76,14 @@ export class LocationRepository {
         properties: [
             {
                 name: "Id",
-                column: "LOCATIONS_ID",
+                column: "LOCATION_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Name",
-                column: "LOCATIONS_NAME",
+                column: "LOCATION_NAME",
                 type: "VARCHAR",
             }
         ]
@@ -112,7 +112,7 @@ export class LocationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "LOCATIONS_ID",
+                column: "LOCATION_ID",
                 value: id
             }
         });
@@ -129,7 +129,7 @@ export class LocationRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "LOCATIONS_ID",
+                column: "LOCATION_ID",
                 value: entity.Id
             }
         });
@@ -159,7 +159,7 @@ export class LocationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "LOCATIONS_ID",
+                column: "LOCATION_ID",
                 value: id
             }
         });

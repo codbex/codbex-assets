@@ -76,14 +76,14 @@ export class CategoryRepository {
         properties: [
             {
                 name: "Id",
-                column: "CATEGORIES_ID",
+                column: "CATEGORY_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Name",
-                column: "CATEGORIES_NAME",
+                column: "CATEGORY_NAME",
                 type: "VARCHAR",
             }
         ]
@@ -112,7 +112,7 @@ export class CategoryRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "CATEGORIES_ID",
+                column: "CATEGORY_ID",
                 value: id
             }
         });
@@ -129,7 +129,7 @@ export class CategoryRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "CATEGORIES_ID",
+                column: "CATEGORY_ID",
                 value: entity.Id
             }
         });
@@ -159,7 +159,7 @@ export class CategoryRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "CATEGORIES_ID",
+                column: "CATEGORY_ID",
                 value: id
             }
         });

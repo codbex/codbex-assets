@@ -113,34 +113,34 @@ export class ValuationRepository {
         properties: [
             {
                 name: "Id",
-                column: "VALUATIONS_ID",
+                column: "VALUATION_ID",
                 type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Asset",
-                column: "VALUATIONS_ASSET",
+                column: "VALUATION_ASSET",
                 type: "INTEGER",
             },
             {
                 name: "ValuationDate",
-                column: "VALUATIONS_VALUATIONDATE",
+                column: "VALUATION_VALUATIONDATE",
                 type: "DATE",
             },
             {
                 name: "ValuationMethod",
-                column: "VALUATIONS_VALUATIONMETHOD",
+                column: "VALUATION_VALUATIONMETHOD",
                 type: "VARCHAR",
             },
             {
                 name: "ValuedAt",
-                column: "VALUATIONS_VALUEDAT",
+                column: "VALUATION_VALUEDAT",
                 type: "DECIMAL",
             },
             {
                 name: "Remarks",
-                column: "VALUATIONS_REMARKS",
+                column: "VALUATION_REMARKS",
                 type: "VARCHAR",
             }
         ]
@@ -174,7 +174,7 @@ export class ValuationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "VALUATIONS_ID",
+                column: "VALUATION_ID",
                 value: id
             }
         });
@@ -192,7 +192,7 @@ export class ValuationRepository {
             previousEntity: previousEntity,
             key: {
                 name: "Id",
-                column: "VALUATIONS_ID",
+                column: "VALUATION_ID",
                 value: entity.Id
             }
         });
@@ -222,7 +222,7 @@ export class ValuationRepository {
             entity: entity,
             key: {
                 name: "Id",
-                column: "VALUATIONS_ID",
+                column: "VALUATION_ID",
                 value: id
             }
         });

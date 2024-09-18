@@ -3,14 +3,14 @@
   "brand": "Codbex",
   "brandUrl": "codbex.com",
   "title": "Codbex Assets",
-  "description": "Codbex Assets managing application",
-  "fileName": "codbex-assets",
-  "genFolderName": "codbex-assets",
-  "dataSource": "DefaultDB",
+  "description": "Codbex assets management application",
   "projectName": "codbex-assets",
   "workspaceName": "workspace",
   "filePath": "codbex-assets.model",
   "templateId": "template-application-angular/template/template.js",
+  "fileName": "codbex-assets",
+  "genFolderName": "codbex-assets",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Asset": {
       "views": [
@@ -384,7 +384,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "ACQUISITIONS_ID",
+          "dataName": "ACQUISITION_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -404,7 +404,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "ACQUISITIONS_ASSET",
+          "dataName": "ACQUISITION_ASSET",
           "dataNullable": true,
           "dataType": "INTEGER",
           "name": "Asset",
@@ -431,7 +431,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "ACQUISITIONS_ACQUISITIONDATE",
+          "dataName": "ACQUISITION_ACQUISITIONDATE",
           "dataNullable": true,
           "dataType": "DATE",
           "name": "AcquisitionDate",
@@ -453,7 +453,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "ACQUISITIONS_COST",
+          "dataName": "ACQUISITION_COST",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "Cost",
@@ -540,7 +540,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "MAINTENANCES_ID",
+          "dataName": "MAINTENANCE_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -560,7 +560,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "MAINTENANCES_ASSET",
+          "dataName": "MAINTENANCE_ASSET",
           "dataNullable": true,
           "dataType": "INTEGER",
           "name": "Asset",
@@ -587,7 +587,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "MAINTENANCES_MAINTENANCEDATE",
+          "dataName": "MAINTENANCE_MAINTENANCEDATE",
           "dataNullable": true,
           "dataType": "DATE",
           "name": "MaintenanceDate",
@@ -610,7 +610,7 @@
         },
         {
           "dataLength": "256",
-          "dataName": "MAINTENANCES_DESCRIPTION",
+          "dataName": "MAINTENANCE_DESCRIPTION",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Description",
@@ -633,7 +633,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "MAINTENANCES_COST",
+          "dataName": "MAINTENANCE_COST",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "Cost",
@@ -655,7 +655,7 @@
         },
         {
           "dataLength": "20",
-          "dataName": "MAINTENANCES_STATUS",
+          "dataName": "MAINTENANCE_STATUS",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Status",
@@ -711,7 +711,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "DEPRECIATIONS_ID",
+          "dataName": "DEPRECIATION_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -731,7 +731,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DEPRECIATIONS_ASSET",
+          "dataName": "DEPRECIATION_ASSET",
           "dataNullable": true,
           "dataType": "INTEGER",
           "name": "Asset",
@@ -758,7 +758,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DEPRECIATIONS_DEPRECIATIONDATE",
+          "dataName": "DEPRECIATION_DEPRECIATIONDATE",
           "dataNullable": true,
           "dataType": "DATE",
           "name": "DepreciationDate",
@@ -781,7 +781,7 @@
         },
         {
           "dataLength": "64",
-          "dataName": "DEPRECIATIONS_METHOD",
+          "dataName": "DEPRECIATION_METHOD",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Method",
@@ -804,7 +804,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DEPRECIATIONS_ANNUALDEPRECIATION",
+          "dataName": "DEPRECIATION_ANNUALDEPRECIATION",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "AnnualDepreciation",
@@ -825,7 +825,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DEPRECIATIONS_ACCUMULATEDDEPRECIATION",
+          "dataName": "DEPRECIATION_ACCUMULATEDDEPRECIATION",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "AccumulatedDepreciation",
@@ -879,7 +879,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "DISPOSALS_ID",
+          "dataName": "DISPOSAL_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -899,7 +899,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DISPOSALS_ASSET",
+          "dataName": "DISPOSAL_ASSET",
           "dataNullable": true,
           "dataType": "INTEGER",
           "name": "Asset",
@@ -926,7 +926,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DISPOSALS_DISPOSALDATE",
+          "dataName": "DISPOSAL_DISPOSALDATE",
           "dataNullable": true,
           "dataType": "DATE",
           "name": "DisposalDate",
@@ -949,7 +949,7 @@
         },
         {
           "dataLength": "64",
-          "dataName": "DISPOSALS_METHOD",
+          "dataName": "DISPOSAL_METHOD",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Method",
@@ -972,7 +972,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DISPOSALS_SALEVALUE",
+          "dataName": "DISPOSAL_SALEVALUE",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "SaleValue",
@@ -994,7 +994,7 @@
         },
         {
           "dataLength": "128",
-          "dataName": "DISPOSALS_REMARKS",
+          "dataName": "DISPOSAL_REMARKS",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Remarks",
@@ -1083,7 +1083,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "VALUATIONS_ID",
+          "dataName": "VALUATION_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -1103,7 +1103,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "VALUATIONS_ASSET",
+          "dataName": "VALUATION_ASSET",
           "dataNullable": true,
           "dataType": "INTEGER",
           "name": "Asset",
@@ -1130,7 +1130,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "VALUATIONS_VALUATIONDATE",
+          "dataName": "VALUATION_VALUATIONDATE",
           "dataNullable": true,
           "dataType": "DATE",
           "name": "ValuationDate",
@@ -1153,7 +1153,7 @@
         },
         {
           "dataLength": "64",
-          "dataName": "VALUATIONS_VALUATIONMETHOD",
+          "dataName": "VALUATION_VALUATIONMETHOD",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "ValuationMethod",
@@ -1176,7 +1176,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "VALUATIONS_VALUEDAT",
+          "dataName": "VALUATION_VALUEDAT",
           "dataNullable": true,
           "dataType": "DECIMAL",
           "name": "ValuedAt",
@@ -1198,7 +1198,7 @@
         },
         {
           "dataLength": "128",
-          "dataName": "VALUATIONS_REMARKS",
+          "dataName": "VALUATION_REMARKS",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Remarks",
@@ -1254,7 +1254,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "LOCATIONS_ID",
+          "dataName": "LOCATION_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -1275,7 +1275,7 @@
         },
         {
           "dataLength": "64",
-          "dataName": "LOCATIONS_NAME",
+          "dataName": "LOCATION_NAME",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Name",
@@ -1329,7 +1329,7 @@
       "properties": [
         {
           "dataAutoIncrement": true,
-          "dataName": "CATEGORIES_ID",
+          "dataName": "CATEGORY_ID",
           "dataNullable": true,
           "dataPrimaryKey": true,
           "dataType": "INTEGER",
@@ -1350,7 +1350,7 @@
         },
         {
           "dataLength": "64",
-          "dataName": "CATEGORIES_NAME",
+          "dataName": "CATEGORY_NAME",
           "dataNullable": true,
           "dataType": "VARCHAR",
           "name": "Name",
@@ -2831,7 +2831,7 @@
           "dataType": "INTEGER",
           "name": "Category",
           "relationshipEntityPerspectiveLabel": "Entities",
-          "relationshipEntityPerspectiveName": "Categories",
+          "relationshipEntityPerspectiveName": "CATEGORY",
           "relationshipName": "Product_ProductCategory",
           "widgetDropDownKey": "Id",
           "widgetDropDownValue": "Name",
@@ -2846,7 +2846,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Category",
-          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/codbex-assets/api/Categories/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/codbex-assets/api/CATEGORY/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""

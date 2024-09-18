@@ -146,7 +146,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "ACQUISITIONS_ID",
+                        "dataName": "ACQUISITION_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -157,7 +157,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataName": "ACQUISITIONS_ASSET",
+                        "dataName": "ACQUISITION_ASSET",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "Asset",
@@ -173,7 +173,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "ACQUISITIONS_ACQUISITIONDATE",
+                        "dataName": "ACQUISITION_ACQUISITIONDATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "name": "AcquisitionDate",
@@ -184,7 +184,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "ACQUISITIONS_COST",
+                        "dataName": "ACQUISITION_COST",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -237,7 +237,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "MAINTENANCES_ID",
+                        "dataName": "MAINTENANCE_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -248,7 +248,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataName": "MAINTENANCES_ASSET",
+                        "dataName": "MAINTENANCE_ASSET",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "Asset",
@@ -264,7 +264,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "MAINTENANCES_MAINTENANCEDATE",
+                        "dataName": "MAINTENANCE_MAINTENANCEDATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "name": "MaintenanceDate",
@@ -275,7 +275,7 @@
                     },
                     {
                         "dataLength": "256",
-                        "dataName": "MAINTENANCES_DESCRIPTION",
+                        "dataName": "MAINTENANCE_DESCRIPTION",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Description",
@@ -286,7 +286,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "MAINTENANCES_COST",
+                        "dataName": "MAINTENANCE_COST",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -299,7 +299,7 @@
                     },
                     {
                         "dataLength": "20",
-                        "dataName": "MAINTENANCES_STATUS",
+                        "dataName": "MAINTENANCE_STATUS",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Status",
@@ -334,7 +334,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "DEPRECIATIONS_ID",
+                        "dataName": "DEPRECIATION_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -345,7 +345,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataName": "DEPRECIATIONS_ASSET",
+                        "dataName": "DEPRECIATION_ASSET",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "Asset",
@@ -361,7 +361,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "DEPRECIATIONS_DEPRECIATIONDATE",
+                        "dataName": "DEPRECIATION_DEPRECIATIONDATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "name": "DepreciationDate",
@@ -372,7 +372,7 @@
                     },
                     {
                         "dataLength": "64",
-                        "dataName": "DEPRECIATIONS_METHOD",
+                        "dataName": "DEPRECIATION_METHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Method",
@@ -383,7 +383,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "DEPRECIATIONS_ANNUALDEPRECIATION",
+                        "dataName": "DEPRECIATION_ANNUALDEPRECIATION",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -396,7 +396,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "DEPRECIATIONS_ACCUMULATEDDEPRECIATION",
+                        "dataName": "DEPRECIATION_ACCUMULATEDDEPRECIATION",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -433,7 +433,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "DISPOSALS_ID",
+                        "dataName": "DISPOSAL_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -444,7 +444,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataName": "DISPOSALS_ASSET",
+                        "dataName": "DISPOSAL_ASSET",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "Asset",
@@ -460,7 +460,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "DISPOSALS_DISPOSALDATE",
+                        "dataName": "DISPOSAL_DISPOSALDATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "name": "DisposalDate",
@@ -471,7 +471,7 @@
                     },
                     {
                         "dataLength": "64",
-                        "dataName": "DISPOSALS_METHOD",
+                        "dataName": "DISPOSAL_METHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Method",
@@ -482,7 +482,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "DISPOSALS_SALEVALUE",
+                        "dataName": "DISPOSAL_SALEVALUE",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -495,7 +495,7 @@
                     },
                     {
                         "dataLength": "128",
-                        "dataName": "DISPOSALS_REMARKS",
+                        "dataName": "DISPOSAL_REMARKS",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Remarks",
@@ -546,7 +546,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "VALUATIONS_ID",
+                        "dataName": "VALUATION_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -557,7 +557,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataName": "VALUATIONS_ASSET",
+                        "dataName": "VALUATION_ASSET",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "Asset",
@@ -573,7 +573,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "VALUATIONS_VALUATIONDATE",
+                        "dataName": "VALUATION_VALUATIONDATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "name": "ValuationDate",
@@ -584,7 +584,7 @@
                     },
                     {
                         "dataLength": "64",
-                        "dataName": "VALUATIONS_VALUATIONMETHOD",
+                        "dataName": "VALUATION_VALUATIONMETHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "ValuationMethod",
@@ -595,7 +595,7 @@
                     },
                     {
                         "dataLength": "NaN",
-                        "dataName": "VALUATIONS_VALUEDAT",
+                        "dataName": "VALUATION_VALUEDAT",
                         "dataNullable": "true",
                         "dataPrecision": "NaN",
                         "dataScale": "NaN",
@@ -608,7 +608,7 @@
                     },
                     {
                         "dataLength": "128",
-                        "dataName": "VALUATIONS_REMARKS",
+                        "dataName": "VALUATION_REMARKS",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Remarks",
@@ -643,7 +643,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "LOCATIONS_ID",
+                        "dataName": "LOCATION_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -655,7 +655,7 @@
                     },
                     {
                         "dataLength": "64",
-                        "dataName": "LOCATIONS_NAME",
+                        "dataName": "LOCATION_NAME",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Name",
@@ -690,7 +690,7 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "CATEGORIES_ID",
+                        "dataName": "CATEGORY_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
                         "dataType": "INTEGER",
@@ -702,7 +702,7 @@
                     },
                     {
                         "dataLength": "64",
-                        "dataName": "CATEGORIES_NAME",
+                        "dataName": "CATEGORY_NAME",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Name",
@@ -1539,7 +1539,7 @@
                         "dataType": "INTEGER",
                         "name": "Category",
                         "relationshipEntityPerspectiveLabel": "Entities",
-                        "relationshipEntityPerspectiveName": "Categories",
+                        "relationshipEntityPerspectiveName": "CATEGORY",
                         "relationshipName": "Product_ProductCategory",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name",
