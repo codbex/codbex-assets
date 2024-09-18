@@ -1,6 +1,13 @@
 {
     "guid": "assets",
-    "dependencies": [],
+    "dependencies": [
+        {
+            "guid": "codbex-plutus-data-sample",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-plutus-data-sample",
+            "branch": "main"
+        }
+    ],
     "actions": [
         {
             "name": "Build TypeScript",
