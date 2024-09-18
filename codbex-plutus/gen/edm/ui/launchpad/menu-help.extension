@@ -1,5 +1,0 @@
-{
-    "module": "codbex-plutus/gen/edm/ui/launchpad/menu-help.js",
-    "extensionPoint": "codbex-plutus-menu",
-    "description": "codbex-plutus - Application Menu"
-}
