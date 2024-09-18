@@ -1,13 +1,13 @@
 {
   "brand": "Codbex",
   "brandUrl": "https://codbex.com",
-  "title": "Plutus",
+  "title": "assets",
   "description": "Asset Management Software",
   "fileName": "edm",
   "genFolderName": "edm",
   "dataSource": "DefaultDB",
   "tablePrefix": "",
-  "projectName": "codbex-plutus",
+  "projectName": "codbex-assets",
   "workspaceName": "workspace",
   "filePath": "edm.model",
   "templateId": "template-application-angular/template/template.js",
@@ -130,7 +130,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Location",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/LocationService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/LocationService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -157,7 +157,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Category",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/CategoryService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/CategoryService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -359,7 +359,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Asset",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/AssetService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -513,7 +513,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Asset",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/AssetService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -684,7 +684,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Asset",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/AssetService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -852,7 +852,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Asset",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/AssetService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1056,7 +1056,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Asset",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/entities/AssetService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/entities/AssetService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1402,7 +1402,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Customer",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Customers/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Customers/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1496,7 +1496,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Currency",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Currencies/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Currencies/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1694,7 +1694,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "PaymentMethod",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Methods/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Methods/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1720,7 +1720,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "SentMethod",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Methods/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Methods/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1746,7 +1746,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "SalesInvoiceStatus",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/settings/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/settings/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1772,7 +1772,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Operator",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Employees/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Employees/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1822,7 +1822,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Company",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Companies/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Companies/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -1922,7 +1922,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Store",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Stores/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Stores/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2097,7 +2097,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Supplier",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Suppliers/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Suppliers/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2147,7 +2147,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Currency",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Currencies/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Currencies/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2345,7 +2345,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "PaymentMethod",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Methods/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Methods/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2371,7 +2371,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "SentMethod",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Methods/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Methods/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2397,7 +2397,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "PurchaseInvoiceStatus",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/settings/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/settings/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2423,7 +2423,7 @@
           "dataUnique": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Operator",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Employees/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Employees/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2473,7 +2473,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Company",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Companies/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Companies/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2573,7 +2573,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Store",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Stores/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Stores/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2752,7 +2752,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Type",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Settings/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Settings/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2778,7 +2778,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Category",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Categories/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Categories/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -2805,7 +2805,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "BaseUnit",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/UnitsOfMeasures/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/UnitsOfMeasures/undefinedService.ts",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -2833,7 +2833,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Company",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Companies/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Companies/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -3003,7 +3003,7 @@
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
           "widgetLabel": "Manufacturer",
-          "widgetDropdownUrl": "/services/ts/codbex-plutus/gen/edm/api/Manufacturers/undefinedService.ts",
+          "widgetDropdownUrl": "/services/ts/codbex-assets/gen/edm/api/Manufacturers/undefinedService.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
