@@ -17,15 +17,14 @@
                     },
                     {
                         "calculatedPropertyExpressionCreate": "new NumberGeneratorService().generate(31)",
-                        "dataLength": "20",
+                        "dataLength": "128",
                         "dataName": "ASSET_NAME",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
-                        "isCalculatedProperty": "true",
                         "name": "Name",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "128",
+                        "widgetSize": "fd-col-md--2 fd-col--3",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -41,7 +40,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Asset_Location",
                         "relationshipEntityName": "Location",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "TempLocation",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -57,7 +56,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Asset_Category",
                         "relationshipEntityName": "Category",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "TempCategory",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -128,17 +127,16 @@
                 "dataQuery": "",
                 "generateReport": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
-                "importsCode": "aW1wb3J0IHsgTnVtYmVyR2VuZXJhdG9yU2VydmljZSB9IGZyb20gIi9jb2RiZXgtbnVtYmVyLWdlbmVyYXRvci9zZXJ2aWNlL2dlbmVyYXRvciI7",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
                 "menuKey": "asset",
                 "menuLabel": "Asset",
                 "name": "Asset",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/server.svg",
+                "perspectiveLabel": "Asset",
+                "perspectiveName": "Asset",
+                "perspectiveOrder": "1",
                 "perspectiveRole": "",
                 "title": "Asset",
                 "tooltip": "Asset",
@@ -171,7 +169,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Acquisition_Asset",
                         "relationshipEntityName": "Asset",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Asset",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -226,10 +224,10 @@
                 "menuLabel": "Acquisition",
                 "name": "Acquisition",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/plus.svg",
+                "perspectiveLabel": "Acquisition",
+                "perspectiveName": "Acquisition",
+                "perspectiveOrder": "2",
                 "perspectiveRole": "",
                 "title": "Acquisition",
                 "tooltip": "Acquisition",
@@ -262,7 +260,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Maintenance_Asset",
                         "relationshipEntityName": "Asset",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Asset",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -276,14 +274,14 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "256",
                         "dataName": "MAINTENANCES_DESCRIPTION",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Description",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "256",
+                        "widgetSize": "fd-col-md--6 fd-col--9",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -323,10 +321,10 @@
                 "menuLabel": "Maintenance",
                 "name": "Maintenance",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/jackhammer.svg",
+                "perspectiveLabel": "Maintenance",
+                "perspectiveName": "Maintenance",
+                "perspectiveOrder": "3",
                 "perspectiveRole": "",
                 "title": "Maintenance",
                 "tooltip": "Maintenance",
@@ -359,7 +357,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Depreciation_Asset",
                         "relationshipEntityName": "Asset",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Asset",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -373,14 +371,14 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "64",
                         "dataName": "DEPRECIATIONS_METHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Method",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "64",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -422,10 +420,10 @@
                 "menuLabel": "Depreciation",
                 "name": "Depreciation",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/image-broken.svg",
+                "perspectiveLabel": "Deprecation",
+                "perspectiveName": "Deprecation",
+                "perspectiveOrder": "4",
                 "perspectiveRole": "",
                 "title": "Depreciation",
                 "tooltip": "Depreciation",
@@ -458,7 +456,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Disposal_Asset",
                         "relationshipEntityName": "Asset",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Asset",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -472,14 +470,14 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "64",
                         "dataName": "DISPOSALS_METHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Method",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "64",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -496,14 +494,14 @@
                         "widgetType": "NUMBER"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "128",
                         "dataName": "DISPOSALS_REMARKS",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Remarks",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "128",
+                        "widgetSize": "fd-col-md--6 fd-col--9",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -535,10 +533,10 @@
                 "menuLabel": "Disposal",
                 "name": "Disposal",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/times.svg",
+                "perspectiveLabel": "Disposal",
+                "perspectiveName": "Disposal",
+                "perspectiveOrder": "5",
                 "perspectiveRole": "",
                 "title": "Disposal",
                 "tooltip": "Disposal",
@@ -571,7 +569,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Valuation_Asset",
                         "relationshipEntityName": "Asset",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "Asset",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -585,14 +583,14 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "64",
                         "dataName": "VALUATIONS_VALUATIONMETHOD",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "ValuationMethod",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "64",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     },
                     {
@@ -609,14 +607,14 @@
                         "widgetType": "NUMBER"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "128",
                         "dataName": "VALUATIONS_REMARKS",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Remarks",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "128",
+                        "widgetSize": "fd-col-md--6 fd-col--9",
                         "widgetType": "TEXTBOX"
                     }
                 ],
@@ -632,10 +630,10 @@
                 "menuLabel": "Valuation",
                 "name": "Valuation",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/dollar-alt.svg",
+                "perspectiveLabel": "Valuation",
+                "perspectiveName": "Valuation",
+                "perspectiveOrder": "6",
                 "perspectiveRole": "",
                 "title": "Valuation",
                 "tooltip": "Valuation",
@@ -656,14 +654,14 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "64",
                         "dataName": "LOCATIONS_NAME",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Name",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "64",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     }
                 ],
@@ -679,10 +677,10 @@
                 "menuLabel": "Location",
                 "name": "Location",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/location-pin-alt.svg",
+                "perspectiveLabel": "Location",
+                "perspectiveName": "TempLocation",
+                "perspectiveOrder": "7",
                 "perspectiveRole": "",
                 "title": "Location",
                 "tooltip": "Location",
@@ -703,14 +701,14 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataLength": "20",
+                        "dataLength": "64",
                         "dataName": "CATEGORIES_NAME",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
                         "name": "Name",
                         "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
+                        "widgetLength": "64",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     }
                 ],
@@ -726,10 +724,10 @@
                 "menuLabel": "Category",
                 "name": "Category",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/medkit.svg",
+                "perspectiveLabel": "Category",
+                "perspectiveName": "TempCategory",
+                "perspectiveOrder": "8",
                 "perspectiveRole": "",
                 "title": "Category",
                 "tooltip": "Category",
@@ -1750,7 +1748,64 @@
                 "type": "PROJECTION"
             }
         ],
-        "perspectives": [],
+        "perspectives": [
+            {
+                "name": "Disposal",
+                "label": "Disposal",
+                "icon": "/services/web/resources/unicons/times.svg",
+                "order": "5",
+                "role": {}
+            },
+            {
+                "name": "Asset",
+                "label": "Asset",
+                "icon": "/services/web/resources/unicons/server.svg",
+                "order": "1",
+                "role": {}
+            },
+            {
+                "name": "Maintenance",
+                "label": "Maintenance",
+                "icon": "/services/web/resources/unicons/jackhammer.svg",
+                "order": "3",
+                "role": {}
+            },
+            {
+                "name": "Acquisition",
+                "label": "Acquisition",
+                "icon": "/services/web/resources/unicons/plus.svg",
+                "order": "2",
+                "role": {}
+            },
+            {
+                "name": "Deprecation",
+                "label": "Deprecation",
+                "icon": "/services/web/resources/unicons/image-broken.svg",
+                "order": "4",
+                "role": {}
+            },
+            {
+                "name": "Valuation",
+                "label": "Valuation",
+                "icon": "/services/web/resources/unicons/dollar-alt.svg",
+                "order": "6",
+                "role": {}
+            },
+            {
+                "name": "TempLocation",
+                "label": "Location",
+                "icon": "/services/web/resources/unicons/location-pin-alt.svg",
+                "order": "7",
+                "role": {}
+            },
+            {
+                "name": "TempCategory",
+                "label": "Category",
+                "icon": "/services/web/resources/unicons/medkit.svg",
+                "order": "8",
+                "role": {}
+            }
+        ],
         "navigations": []
     }
 }
