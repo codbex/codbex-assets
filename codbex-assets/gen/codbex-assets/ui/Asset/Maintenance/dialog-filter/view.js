@@ -4,16 +4,14 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Asset",
-    label: "Asset",
-    factory: "frame",
-    region: "left",
-    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/index.html",
+    id: "Maintenance-filter",
+    label: "Maintenance Filter",
+    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/Maintenance/dialog-filter/index.html",
     perspectiveName: "Asset",
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getView = function () {
+    exports.getDialogWindow = function () {
         return viewData;
     }
 }

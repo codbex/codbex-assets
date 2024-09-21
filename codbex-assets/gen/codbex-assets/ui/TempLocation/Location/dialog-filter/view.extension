@@ -1,5 +1,0 @@
-{
-    "module": "codbex-assets/gen/codbex-assets/ui/TempLocation/Location/dialog-filter/view.js",
-    "extensionPoint": "codbex-assets-dialog-window",
-    "description": "codbex-assets - Application Dialog Window"
-}

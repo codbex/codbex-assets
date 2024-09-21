@@ -6,6 +6,18 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-plutus-data-sample",
             "branch": "main"
+        },
+        {
+            "guid": "codbex-products",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-products",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-invoices",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-invoices",
+            "branch": "main"
         }
     ],
     "actions": [

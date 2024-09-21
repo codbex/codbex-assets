@@ -11,12 +11,12 @@ servers:
 tags:
   - name: Asset
   - name: Acquisition
-  - name: Maintenance
-  - name: Deprecation
-  - name: Disposal
+  - name: Asset
+  - name: Asset
+  - name: Asset
   - name: Valuation
-  - name: TempLocation
-  - name: TempCategory
+  - name: Asset
+  - name: Asset
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -810,7 +810,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Maintenance/MaintenanceService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceService.ts:
     get:
       summary: List Maintenance
       parameters:
@@ -831,7 +831,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Maintenance
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -862,7 +862,7 @@ paths:
     post:
       summary: Create Maintenance
       tags:
-        - Maintenance
+        - Asset
       requestBody:
         content:
           application/json:
@@ -894,7 +894,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Maintenance/MaintenanceService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceService.ts/{id}:
     get:
       summary: Get Maintenance by Id
       parameters:
@@ -905,7 +905,7 @@ paths:
           schema:
             type: string
       tags:
-        - Maintenance
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -943,7 +943,7 @@ paths:
           schema:
             type: string
       tags:
-        - Maintenance
+        - Asset
       requestBody:
         content:
           application/json:
@@ -991,7 +991,7 @@ paths:
           schema:
             type: string
       tags:
-        - Maintenance
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -1013,11 +1013,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Maintenance/MaintenanceService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceService.ts/count:
     get:
       summary: Count the number of Maintenance
       tags:
-        - Maintenance
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1041,7 +1041,7 @@ paths:
     post:
       summary: Count the number of Maintenance by MaintenanceFilterOptions
       tags:
-        - Maintenance
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1125,11 +1125,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Maintenance/MaintenanceService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceService.ts/search:
     post:
       summary: Search Maintenance by MaintenanceFilterOptions
       tags:
-        - Maintenance
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1214,7 +1214,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Deprecation/DepreciationService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/DepreciationService.ts:
     get:
       summary: List Depreciation
       parameters:
@@ -1235,7 +1235,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Deprecation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1266,7 +1266,7 @@ paths:
     post:
       summary: Create Depreciation
       tags:
-        - Deprecation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1298,7 +1298,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Deprecation/DepreciationService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/DepreciationService.ts/{id}:
     get:
       summary: Get Depreciation by Id
       parameters:
@@ -1309,7 +1309,7 @@ paths:
           schema:
             type: string
       tags:
-        - Deprecation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1347,7 +1347,7 @@ paths:
           schema:
             type: string
       tags:
-        - Deprecation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1395,7 +1395,7 @@ paths:
           schema:
             type: string
       tags:
-        - Deprecation
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -1417,11 +1417,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Deprecation/DepreciationService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/DepreciationService.ts/count:
     get:
       summary: Count the number of Depreciation
       tags:
-        - Deprecation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1445,7 +1445,7 @@ paths:
     post:
       summary: Count the number of Depreciation by DepreciationFilterOptions
       tags:
-        - Deprecation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1527,11 +1527,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Deprecation/DepreciationService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/DepreciationService.ts/search:
     post:
       summary: Search Depreciation by DepreciationFilterOptions
       tags:
-        - Deprecation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1614,7 +1614,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts:
     get:
       summary: List Disposal
       parameters:
@@ -1635,7 +1635,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Disposal
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1666,7 +1666,7 @@ paths:
     post:
       summary: Create Disposal
       tags:
-        - Disposal
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1698,7 +1698,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/{id}:
     get:
       summary: Get Disposal by Id
       parameters:
@@ -1709,7 +1709,7 @@ paths:
           schema:
             type: string
       tags:
-        - Disposal
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1747,7 +1747,7 @@ paths:
           schema:
             type: string
       tags:
-        - Disposal
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1795,7 +1795,7 @@ paths:
           schema:
             type: string
       tags:
-        - Disposal
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -1817,11 +1817,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/count:
     get:
       summary: Count the number of Disposal
       tags:
-        - Disposal
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -1845,7 +1845,7 @@ paths:
     post:
       summary: Count the number of Disposal by DisposalFilterOptions
       tags:
-        - Disposal
+        - Asset
       requestBody:
         content:
           application/json:
@@ -1929,11 +1929,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/search:
     post:
       summary: Search Disposal by DisposalFilterOptions
       tags:
-        - Disposal
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2422,7 +2422,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempLocation/LocationService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts:
     get:
       summary: List Location
       parameters:
@@ -2443,7 +2443,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - TempLocation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2474,7 +2474,7 @@ paths:
     post:
       summary: Create Location
       tags:
-        - TempLocation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2506,7 +2506,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempLocation/LocationService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/{id}:
     get:
       summary: Get Location by Id
       parameters:
@@ -2517,7 +2517,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempLocation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2555,7 +2555,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempLocation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2603,7 +2603,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempLocation
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -2625,11 +2625,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempLocation/LocationService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/count:
     get:
       summary: Count the number of Location
       tags:
-        - TempLocation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2653,7 +2653,7 @@ paths:
     post:
       summary: Count the number of Location by LocationFilterOptions
       tags:
-        - TempLocation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2735,11 +2735,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempLocation/LocationService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/search:
     post:
       summary: Search Location by LocationFilterOptions
       tags:
-        - TempLocation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2822,7 +2822,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempCategory/CategoryService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts:
     get:
       summary: List Category
       parameters:
@@ -2843,7 +2843,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - TempCategory
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2874,7 +2874,7 @@ paths:
     post:
       summary: Create Category
       tags:
-        - TempCategory
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2906,7 +2906,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempCategory/CategoryService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/{id}:
     get:
       summary: Get Category by Id
       parameters:
@@ -2917,7 +2917,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempCategory
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2955,7 +2955,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempCategory
+        - Asset
       requestBody:
         content:
           application/json:
@@ -3003,7 +3003,7 @@ paths:
           schema:
             type: string
       tags:
-        - TempCategory
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -3025,11 +3025,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempCategory/CategoryService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/count:
     get:
       summary: Count the number of Category
       tags:
-        - TempCategory
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -3053,7 +3053,7 @@ paths:
     post:
       summary: Count the number of Category by CategoryFilterOptions
       tags:
-        - TempCategory
+        - Asset
       requestBody:
         content:
           application/json:
@@ -3135,11 +3135,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/TempCategory/CategoryService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/search:
     post:
       summary: Search Category by CategoryFilterOptions
       tags:
-        - TempCategory
+        - Asset
       requestBody:
         content:
           application/json:

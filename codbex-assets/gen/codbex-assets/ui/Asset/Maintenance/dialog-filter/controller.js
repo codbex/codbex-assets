@@ -1,6 +1,6 @@
 angular.module('page', ["ideUI", "ideView"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-assets.Asset.Asset';
+		messageHubProvider.eventIdPrefix = 'codbex-assets.Asset.Maintenance';
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', function ($scope, messageHub, ViewParameters) {
 
@@ -11,18 +11,16 @@ angular.module('page', ["ideUI", "ideView"])
 
 		let params = ViewParameters.get();
 		if (Object.keys(params).length) {
-			if (params?.entity?.PurchaseDateFrom) {
-				params.entity.PurchaseDateFrom = new Date(params.entity.PurchaseDateFrom);
+			if (params?.entity?.MaintenanceDateFrom) {
+				params.entity.MaintenanceDateFrom = new Date(params.entity.MaintenanceDateFrom);
 			}
-			if (params?.entity?.PurchaseDateTo) {
-				params.entity.PurchaseDateTo = new Date(params.entity.PurchaseDateTo);
+			if (params?.entity?.MaintenanceDateTo) {
+				params.entity.MaintenanceDateTo = new Date(params.entity.MaintenanceDateTo);
 			}
 			$scope.entity = params.entity ?? {};
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsLocation = params.optionsLocation;
-			$scope.optionsCategory = params.optionsCategory;
-			$scope.optionsProduct = params.optionsProduct;
+			$scope.optionsAsset = params.optionsAsset;
 		}
 
 		$scope.filter = function () {
@@ -48,38 +46,28 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Id !== undefined) {
 				filter.$filter.equals.Id = entity.Id;
 			}
-			if (entity.Name) {
-				filter.$filter.contains.Name = entity.Name;
+			if (entity.Asset !== undefined) {
+				filter.$filter.equals.Asset = entity.Asset;
 			}
-			if (entity.Location !== undefined) {
-				filter.$filter.equals.Location = entity.Location;
+			if (entity.MaintenanceDateFrom) {
+				filter.$filter.greaterThanOrEqual.MaintenanceDate = entity.MaintenanceDateFrom;
 			}
-			if (entity.Category !== undefined) {
-				filter.$filter.equals.Category = entity.Category;
+			if (entity.MaintenanceDateTo) {
+				filter.$filter.lessThanOrEqual.MaintenanceDate = entity.MaintenanceDateTo;
 			}
-			if (entity.SerialNumber) {
-				filter.$filter.contains.SerialNumber = entity.SerialNumber;
+			if (entity.Description) {
+				filter.$filter.contains.Description = entity.Description;
 			}
-			if (entity.PurchaseDateFrom) {
-				filter.$filter.greaterThanOrEqual.PurchaseDate = entity.PurchaseDateFrom;
-			}
-			if (entity.PurchaseDateTo) {
-				filter.$filter.lessThanOrEqual.PurchaseDate = entity.PurchaseDateTo;
+			if (entity.Cost !== undefined) {
+				filter.$filter.equals.Cost = entity.Cost;
 			}
 			if (entity.Status) {
 				filter.$filter.contains.Status = entity.Status;
-			}
-			if (entity.Value !== undefined) {
-				filter.$filter.equals.Value = entity.Value;
-			}
-			if (entity.Product !== undefined) {
-				filter.$filter.equals.Product = entity.Product;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
 				filter: filter
 			});
-			messageHub.postMessage("clearDetails");
 			$scope.cancel();
 		};
 
@@ -89,7 +77,7 @@ angular.module('page', ["ideUI", "ideView"])
 		};
 
 		$scope.cancel = function () {
-			messageHub.closeDialogWindow("Asset-filter");
+			messageHub.closeDialogWindow("Maintenance-filter");
 		};
 
 		$scope.clearErrorMessage = function () {
