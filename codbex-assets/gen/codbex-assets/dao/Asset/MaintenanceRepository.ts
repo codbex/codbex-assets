@@ -109,7 +109,7 @@ interface MaintenanceUpdateEntityEvent extends MaintenanceEntityEvent {
 export class MaintenanceRepository {
 
     private static readonly DEFINITION = {
-        table: "CODBEX_PLUTUS_MAINTENANCE",
+        table: "CODBEX_MAINTENANCE",
         properties: [
             {
                 name: "Id",
@@ -170,7 +170,7 @@ export class MaintenanceRepository {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
-            table: "CODBEX_PLUTUS_MAINTENANCE",
+            table: "CODBEX_MAINTENANCE",
             entity: entity,
             key: {
                 name: "Id",
@@ -187,7 +187,7 @@ export class MaintenanceRepository {
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
-            table: "CODBEX_PLUTUS_MAINTENANCE",
+            table: "CODBEX_MAINTENANCE",
             entity: entity,
             previousEntity: previousEntity,
             key: {
@@ -218,7 +218,7 @@ export class MaintenanceRepository {
         this.dao.remove(id);
         this.triggerEvent({
             operation: "delete",
-            table: "CODBEX_PLUTUS_MAINTENANCE",
+            table: "CODBEX_MAINTENANCE",
             entity: entity,
             key: {
                 name: "Id",
@@ -233,7 +233,7 @@ export class MaintenanceRepository {
     }
 
     public customDataCount(): number {
-        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_PLUTUS_MAINTENANCE"');
+        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_MAINTENANCE"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
                 return resultSet[0].COUNT;

@@ -2,7 +2,7 @@
     "schema": {
         "structures": [
             {
-                "name": "CODBEX_PLUTUS_ASSET",
+                "name": "CODBEX_ASSET",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -58,7 +58,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_ACQUISITION",
+                "name": "CODBEX_ACQUISITION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -91,7 +91,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_MAINTENANCE",
+                "name": "CODBEX_MAINTENANCE",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -131,7 +131,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_DEPRECIATION",
+                "name": "CODBEX_DEPRECIATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -170,7 +170,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_DISPOSAL",
+                "name": "CODBEX_DISPOSAL",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -215,7 +215,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_VALUATION",
+                "name": "CODBEX_VALUATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -255,7 +255,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_LOCATION",
+                "name": "CODBEX_LOCATION",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -274,7 +274,7 @@
                 ]
             },
             {
-                "name": "CODBEX_PLUTUS_CATEGORY",
+                "name": "CODBEX_CATEGORY",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -295,91 +295,91 @@
             {
                 "name": "Asset_Location",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_ASSET",
+                "table": "CODBEX_ASSET",
                 "constraintName": "Asset_Location",
                 "columns": "ASSET_LOCATION",
-                "referencedTable": "CODBEX_PLUTUS_LOCATION",
+                "referencedTable": "CODBEX_LOCATION",
                 "referencedColumns": "LOCATION_ID"
             },
             {
                 "name": "Asset_Category",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_ASSET",
+                "table": "CODBEX_ASSET",
                 "constraintName": "Asset_Category",
                 "columns": "ASSET_CATEGORY",
-                "referencedTable": "CODBEX_PLUTUS_CATEGORY",
+                "referencedTable": "CODBEX_CATEGORY",
                 "referencedColumns": "CATEGORY_ID"
             },
             {
                 "name": "Asset_Product",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_ASSET",
+                "table": "CODBEX_ASSET",
                 "constraintName": "Asset_Product",
                 "columns": "ASSET_PRODUCT",
-                "referencedTable": "CODBEX_PLUTUS_PRODUCT",
+                "referencedTable": "CODBEX_PRODUCT",
                 "referencedColumns": "PRODUCT_ID"
             },
             {
                 "name": "Acquisition_Asset",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_ACQUISITION",
+                "table": "CODBEX_ACQUISITION",
                 "constraintName": "Acquisition_Asset",
                 "columns": "ACQUISITION_ASSET",
-                "referencedTable": "CODBEX_PLUTUS_ASSET",
+                "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
                 "name": "Acquisition_PurchaseInvoice",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_ACQUISITION",
+                "table": "CODBEX_ACQUISITION",
                 "constraintName": "Acquisition_PurchaseInvoice",
                 "columns": "ACQUISITION_PURCHASEINVOICE",
-                "referencedTable": "CODBEX_PLUTUS_PURCHASEINVOICE",
+                "referencedTable": "CODBEX_PURCHASEINVOICE",
                 "referencedColumns": "PURCHASEINVOICE_ID"
             },
             {
                 "name": "Maintenance_Asset",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_MAINTENANCE",
+                "table": "CODBEX_MAINTENANCE",
                 "constraintName": "Maintenance_Asset",
                 "columns": "MAINTENANCE_ASSET",
-                "referencedTable": "CODBEX_PLUTUS_ASSET",
+                "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
                 "name": "Depreciation_Asset",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_DEPRECIATION",
+                "table": "CODBEX_DEPRECIATION",
                 "constraintName": "Depreciation_Asset",
                 "columns": "DEPRECIATION_ASSET",
-                "referencedTable": "CODBEX_PLUTUS_ASSET",
+                "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
                 "name": "Disposal_Asset",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_DISPOSAL",
+                "table": "CODBEX_DISPOSAL",
                 "constraintName": "Disposal_Asset",
                 "columns": "DISPOSAL_ASSET",
-                "referencedTable": "CODBEX_PLUTUS_ASSET",
+                "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
             },
             {
                 "name": "Disposal_SalesInvoice",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_DISPOSAL",
+                "table": "CODBEX_DISPOSAL",
                 "constraintName": "Disposal_SalesInvoice",
                 "columns": "DISPOSAL_SALESINVOICE",
-                "referencedTable": "CODBEX_PLUTUS_SALESINVOICE",
+                "referencedTable": "CODBEX_SALESINVOICE",
                 "referencedColumns": "SALESINVOICE_ID"
             },
             {
                 "name": "Valuation_Asset",
                 "type": "foreignKey",
-                "table": "CODBEX_PLUTUS_VALUATION",
+                "table": "CODBEX_VALUATION",
                 "constraintName": "Valuation_Asset",
                 "columns": "VALUATION_ASSET",
-                "referencedTable": "CODBEX_PLUTUS_ASSET",
+                "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
             }
         ]

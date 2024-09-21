@@ -7,7 +7,7 @@ const perspectiveData = {
 	id: 'Valuation',
 	name: 'Valuation',
 	link: '/services/web/codbex-assets/gen/codbex-assets/ui/Valuation/index.html',
-	order: 3,
+	order: 5,
 	icon: '/services/web/resources/unicons/dollar-alt.svg',
 };
 

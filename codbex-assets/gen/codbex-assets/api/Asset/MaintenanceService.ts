@@ -19,13 +19,13 @@ class MaintenanceService {
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
 
-            let ${masterEntityId} = parseInt(ctx.queryParameters.${masterEntityId});
-            ${masterEntityId} = isNaN(${masterEntityId}) ? ctx.queryParameters.${masterEntityId} : ${masterEntityId};
+            let Asset = parseInt(ctx.queryParameters.Asset);
+            Asset = isNaN(Asset) ? ctx.queryParameters.Asset : Asset;
 
-            if (${masterEntityId} !== undefined) {
+            if (Asset !== undefined) {
                 options.$filter = {
                     equals: {
-                        ${masterEntityId}: ${masterEntityId}
+                        Asset: Asset
                     }
                 };
             }

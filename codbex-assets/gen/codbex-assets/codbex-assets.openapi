@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Codbex Assets - OpenAPI 3.0
   version: 1.0.0
-  description: Codbex assets management application
+  description: Codbex Assets managing application
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io
@@ -15,8 +15,8 @@ tags:
   - name: Asset
   - name: Asset
   - name: Valuation
-  - name: Asset
-  - name: Asset
+  - name: Location
+  - name: Category
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -2422,7 +2422,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts:
+  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts:
     get:
       summary: List Location
       parameters:
@@ -2443,7 +2443,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Asset
+        - Location
       responses:
         200:
           description: Successful Request
@@ -2474,7 +2474,7 @@ paths:
     post:
       summary: Create Location
       tags:
-        - Asset
+        - Location
       requestBody:
         content:
           application/json:
@@ -2506,7 +2506,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/{id}:
     get:
       summary: Get Location by Id
       parameters:
@@ -2517,7 +2517,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Location
       responses:
         200:
           description: Successful Request
@@ -2555,7 +2555,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Location
       requestBody:
         content:
           application/json:
@@ -2603,7 +2603,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Location
       responses:
         204:
           description: Successful Request
@@ -2625,11 +2625,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/count:
     get:
       summary: Count the number of Location
       tags:
-        - Asset
+        - Location
       responses:
         200:
           description: Successful Request
@@ -2653,7 +2653,7 @@ paths:
     post:
       summary: Count the number of Location by LocationFilterOptions
       tags:
-        - Asset
+        - Location
       requestBody:
         content:
           application/json:
@@ -2735,11 +2735,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/search:
     post:
       summary: Search Location by LocationFilterOptions
       tags:
-        - Asset
+        - Location
       requestBody:
         content:
           application/json:
@@ -2822,7 +2822,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts:
+  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts:
     get:
       summary: List Category
       parameters:
@@ -2843,7 +2843,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Asset
+        - Category
       responses:
         200:
           description: Successful Request
@@ -2874,7 +2874,7 @@ paths:
     post:
       summary: Create Category
       tags:
-        - Asset
+        - Category
       requestBody:
         content:
           application/json:
@@ -2906,7 +2906,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/{id}:
     get:
       summary: Get Category by Id
       parameters:
@@ -2917,7 +2917,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Category
       responses:
         200:
           description: Successful Request
@@ -2955,7 +2955,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Category
       requestBody:
         content:
           application/json:
@@ -3003,7 +3003,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Category
       responses:
         204:
           description: Successful Request
@@ -3025,11 +3025,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/count:
     get:
       summary: Count the number of Category
       tags:
-        - Asset
+        - Category
       responses:
         200:
           description: Successful Request
@@ -3053,7 +3053,7 @@ paths:
     post:
       summary: Count the number of Category by CategoryFilterOptions
       tags:
-        - Asset
+        - Category
       requestBody:
         content:
           application/json:
@@ -3135,11 +3135,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/search:
     post:
       summary: Search Category by CategoryFilterOptions
       tags:
-        - Asset
+        - Category
       requestBody:
         content:
           application/json:

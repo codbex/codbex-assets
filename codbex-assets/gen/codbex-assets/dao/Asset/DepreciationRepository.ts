@@ -109,7 +109,7 @@ interface DepreciationUpdateEntityEvent extends DepreciationEntityEvent {
 export class DepreciationRepository {
 
     private static readonly DEFINITION = {
-        table: "CODBEX_PLUTUS_DEPRECIATION",
+        table: "CODBEX_DEPRECIATION",
         properties: [
             {
                 name: "Id",
@@ -170,7 +170,7 @@ export class DepreciationRepository {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
-            table: "CODBEX_PLUTUS_DEPRECIATION",
+            table: "CODBEX_DEPRECIATION",
             entity: entity,
             key: {
                 name: "Id",
@@ -187,7 +187,7 @@ export class DepreciationRepository {
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
-            table: "CODBEX_PLUTUS_DEPRECIATION",
+            table: "CODBEX_DEPRECIATION",
             entity: entity,
             previousEntity: previousEntity,
             key: {
@@ -218,7 +218,7 @@ export class DepreciationRepository {
         this.dao.remove(id);
         this.triggerEvent({
             operation: "delete",
-            table: "CODBEX_PLUTUS_DEPRECIATION",
+            table: "CODBEX_DEPRECIATION",
             entity: entity,
             key: {
                 name: "Id",
@@ -233,7 +233,7 @@ export class DepreciationRepository {
     }
 
     public customDataCount(): number {
-        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_PLUTUS_DEPRECIATION"');
+        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_DEPRECIATION"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
                 return resultSet[0].COUNT;

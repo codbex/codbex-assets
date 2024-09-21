@@ -192,7 +192,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.optionsProduct = [];
 
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/LocationService.ts").then(function (response) {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Location/LocationService.ts").then(function (response) {
 			$scope.optionsLocation = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -201,7 +201,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/CategoryService.ts").then(function (response) {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts").then(function (response) {
 			$scope.optionsCategory = response.data.map(e => {
 				return {
 					value: e.Id,
