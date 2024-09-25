@@ -125,9 +125,6 @@ class AssetService {
         if (entity.SerialNumber?.length > 20) {
             throw new ValidationError(`The 'SerialNumber' exceeds the maximum length of [20] characters`);
         }
-        if (entity.Status?.length > 20) {
-            throw new ValidationError(`The 'Status' exceeds the maximum length of [20] characters`);
-        }
         for (const next of validationModules) {
             next.validate(entity);
         }

@@ -21,12 +21,7 @@
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "ASSET_LOCATION"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "nullable": true,
-                        "name": "ASSET_CATEGORY"
+                        "name": "ASSET_COMPANY"
                     },
                     {
                         "type": "VARCHAR",
@@ -40,20 +35,35 @@
                         "name": "ASSET_PURCHASEDATE"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "ASSET_STATUS"
-                    },
-                    {
                         "type": "DECIMAL",
                         "nullable": true,
                         "name": "ASSET_VALUE"
                     },
                     {
+                        "type": "DECIMAL",
+                        "length": 18,
+                        "precision": "16",
+                        "scale": "2",
+                        "nullable": true,
+                        "name": "ASSET_ACCUMULATEDVALUE"
+                    },
+                    {
                         "type": "INTEGER",
                         "nullable": true,
                         "name": "ASSET_PRODUCT"
+                    },
+                    {
+                        "type": "DECIMAL",
+                        "length": 18,
+                        "precision": "16",
+                        "scale": "2",
+                        "nullable": true,
+                        "name": "ASSET_MAINTENENCECOST"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ASSET_PURCHASEINVOICE"
                     }
                 ]
             },
@@ -82,11 +92,6 @@
                         "type": "DECIMAL",
                         "nullable": true,
                         "name": "ACQUISITION_COST"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "nullable": true,
-                        "name": "ACQUISITION_PURCHASEINVOICE"
                     }
                 ]
             },
@@ -123,8 +128,7 @@
                         "name": "MAINTENANCE_COST"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 20,
+                        "type": "INTEGER",
                         "nullable": true,
                         "name": "MAINTENANCE_STATUS"
                     }
@@ -251,11 +255,16 @@
                         "length": 128,
                         "nullable": true,
                         "name": "VALUATION_REMARKS"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "VALUATION_SUPPLIER"
                     }
                 ]
             },
             {
-                "name": "CODBEX_LOCATION",
+                "name": "CODBEX_STATUS",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -263,52 +272,24 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "LOCATION_ID"
+                        "name": "STATUS_ID"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 64,
+                        "length": 20,
                         "nullable": true,
-                        "name": "LOCATION_NAME"
+                        "name": "STATUS_NAME"
                     }
                 ]
             },
             {
-                "name": "CODBEX_CATEGORY",
-                "type": "TABLE",
-                "columns": [
-                    {
-                        "type": "INTEGER",
-                        "primaryKey": true,
-                        "identity": true,
-                        "nullable": true,
-                        "name": "CATEGORY_ID"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 64,
-                        "nullable": true,
-                        "name": "CATEGORY_NAME"
-                    }
-                ]
-            },
-            {
-                "name": "Asset_Location",
+                "name": "Asset_Company",
                 "type": "foreignKey",
                 "table": "CODBEX_ASSET",
-                "constraintName": "Asset_Location",
-                "columns": "ASSET_LOCATION",
-                "referencedTable": "CODBEX_LOCATION",
-                "referencedColumns": "LOCATION_ID"
-            },
-            {
-                "name": "Asset_Category",
-                "type": "foreignKey",
-                "table": "CODBEX_ASSET",
-                "constraintName": "Asset_Category",
-                "columns": "ASSET_CATEGORY",
-                "referencedTable": "CODBEX_CATEGORY",
-                "referencedColumns": "CATEGORY_ID"
+                "constraintName": "Asset_Company",
+                "columns": "ASSET_COMPANY",
+                "referencedTable": "CODBEX_COMPANY",
+                "referencedColumns": "COMPANY_ID"
             },
             {
                 "name": "Asset_Product",
@@ -320,22 +301,22 @@
                 "referencedColumns": "PRODUCT_ID"
             },
             {
-                "name": "Acquisition_Asset",
+                "name": "Asset_PurchaseInvoice",
+                "type": "foreignKey",
+                "table": "CODBEX_ASSET",
+                "constraintName": "Asset_PurchaseInvoice",
+                "columns": "ASSET_PURCHASEINVOICE",
+                "referencedTable": "CODBEX_PURCHASEINVOICE",
+                "referencedColumns": "PURCHASEINVOICE_ID"
+            },
+            {
+                "name": "AcquisitionRequest_Asset",
                 "type": "foreignKey",
                 "table": "CODBEX_ACQUISITION",
-                "constraintName": "Acquisition_Asset",
+                "constraintName": "AcquisitionRequest_Asset",
                 "columns": "ACQUISITION_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
-            },
-            {
-                "name": "Acquisition_PurchaseInvoice",
-                "type": "foreignKey",
-                "table": "CODBEX_ACQUISITION",
-                "constraintName": "Acquisition_PurchaseInvoice",
-                "columns": "ACQUISITION_PURCHASEINVOICE",
-                "referencedTable": "CODBEX_PURCHASEINVOICE",
-                "referencedColumns": "PURCHASEINVOICE_ID"
             },
             {
                 "name": "Maintenance_Asset",
@@ -345,6 +326,15 @@
                 "columns": "MAINTENANCE_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Maintenance_MaintenanceStatus",
+                "type": "foreignKey",
+                "table": "CODBEX_MAINTENANCE",
+                "constraintName": "Maintenance_MaintenanceStatus",
+                "columns": "MAINTENANCE_STATUS",
+                "referencedTable": "CODBEX_STATUS",
+                "referencedColumns": "STATUS_ID"
             },
             {
                 "name": "Depreciation_Asset",
@@ -381,6 +371,15 @@
                 "columns": "VALUATION_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Valuation_Supplier",
+                "type": "foreignKey",
+                "table": "CODBEX_VALUATION",
+                "constraintName": "Valuation_Supplier",
+                "columns": "VALUATION_SUPPLIER",
+                "referencedTable": "CODBEX_SUPPLIER",
+                "referencedColumns": "SUPPLIER_ID"
             }
         ]
     },

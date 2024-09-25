@@ -50,11 +50,14 @@
 						<fd-list-content
 							item-title="{{next.Name}}">
 							<fd-list-byline dg-align="left">
+								{{next.Company}} |
 								{{next.SerialNumber}} |
 								{{next.PurchaseDate | date: "dd/MMM/yyyy"}} |
-								{{next.Status}} |
-								{{next.Value}} |
-								{{optionsProductValue(next.Product)}}
+								{{next.AquiredValue}} |
+								{{next.AccumulatedValue}} |
+								{{optionsProductValue(next.Product)}} |
+								{{next.MaintenenceCost}} |
+								{{optionsPurchaseInvoiceValue(next.PurchaseInvoice)}}
 							</fd-list-byline>
 						</fd-list-content>
 					</fd-list-link>

@@ -40,9 +40,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("clearDetails", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = {};
-				$scope.optionsLocation = [];
-				$scope.optionsCategory = [];
 				$scope.optionsProduct = [];
+				$scope.optionsPurchaseInvoice = [];
 				$scope.action = 'select';
 			});
 		});
@@ -53,9 +52,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 					msg.data.entity.PurchaseDate = new Date(msg.data.entity.PurchaseDate);
 				}
 				$scope.entity = msg.data.entity;
-				$scope.optionsLocation = msg.data.optionsLocation;
-				$scope.optionsCategory = msg.data.optionsCategory;
 				$scope.optionsProduct = msg.data.optionsProduct;
+				$scope.optionsPurchaseInvoice = msg.data.optionsPurchaseInvoice;
 				$scope.action = 'select';
 			});
 		});
@@ -63,9 +61,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("createEntity", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = {};
-				$scope.optionsLocation = msg.data.optionsLocation;
-				$scope.optionsCategory = msg.data.optionsCategory;
 				$scope.optionsProduct = msg.data.optionsProduct;
+				$scope.optionsPurchaseInvoice = msg.data.optionsPurchaseInvoice;
 				$scope.action = 'create';
 			});
 		});
@@ -76,9 +73,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 					msg.data.entity.PurchaseDate = new Date(msg.data.entity.PurchaseDate);
 				}
 				$scope.entity = msg.data.entity;
-				$scope.optionsLocation = msg.data.optionsLocation;
-				$scope.optionsCategory = msg.data.optionsCategory;
 				$scope.optionsProduct = msg.data.optionsProduct;
+				$scope.optionsPurchaseInvoice = msg.data.optionsPurchaseInvoice;
 				$scope.action = 'update';
 			});
 		});

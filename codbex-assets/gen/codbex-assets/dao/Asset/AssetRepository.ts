@@ -7,24 +7,26 @@ import { EntityUtils } from "../utils/EntityUtils";
 export interface AssetEntity {
     readonly Id: number;
     Name?: string;
-    Location?: number;
-    Category?: number;
+    Company?: number;
     SerialNumber?: string;
     PurchaseDate?: Date;
-    Status?: string;
-    Value?: number;
+    AquiredValue?: number;
+    AccumulatedValue?: number;
     Product?: number;
+    MaintenenceCost?: number;
+    PurchaseInvoice?: number;
 }
 
 export interface AssetCreateEntity {
     readonly Name?: string;
-    readonly Location?: number;
-    readonly Category?: number;
+    readonly Company?: number;
     readonly SerialNumber?: string;
     readonly PurchaseDate?: Date;
-    readonly Status?: string;
-    readonly Value?: number;
+    readonly AquiredValue?: number;
+    readonly AccumulatedValue?: number;
     readonly Product?: number;
+    readonly MaintenenceCost?: number;
+    readonly PurchaseInvoice?: number;
 }
 
 export interface AssetUpdateEntity extends AssetCreateEntity {
@@ -36,79 +38,86 @@ export interface AssetEntityOptions {
         equals?: {
             Id?: number | number[];
             Name?: string | string[];
-            Location?: number | number[];
-            Category?: number | number[];
+            Company?: number | number[];
             SerialNumber?: string | string[];
             PurchaseDate?: Date | Date[];
-            Status?: string | string[];
-            Value?: number | number[];
+            AquiredValue?: number | number[];
+            AccumulatedValue?: number | number[];
             Product?: number | number[];
+            MaintenenceCost?: number | number[];
+            PurchaseInvoice?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Name?: string | string[];
-            Location?: number | number[];
-            Category?: number | number[];
+            Company?: number | number[];
             SerialNumber?: string | string[];
             PurchaseDate?: Date | Date[];
-            Status?: string | string[];
-            Value?: number | number[];
+            AquiredValue?: number | number[];
+            AccumulatedValue?: number | number[];
             Product?: number | number[];
+            MaintenenceCost?: number | number[];
+            PurchaseInvoice?: number | number[];
         };
         contains?: {
             Id?: number;
             Name?: string;
-            Location?: number;
-            Category?: number;
+            Company?: number;
             SerialNumber?: string;
             PurchaseDate?: Date;
-            Status?: string;
-            Value?: number;
+            AquiredValue?: number;
+            AccumulatedValue?: number;
             Product?: number;
+            MaintenenceCost?: number;
+            PurchaseInvoice?: number;
         };
         greaterThan?: {
             Id?: number;
             Name?: string;
-            Location?: number;
-            Category?: number;
+            Company?: number;
             SerialNumber?: string;
             PurchaseDate?: Date;
-            Status?: string;
-            Value?: number;
+            AquiredValue?: number;
+            AccumulatedValue?: number;
             Product?: number;
+            MaintenenceCost?: number;
+            PurchaseInvoice?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Name?: string;
-            Location?: number;
-            Category?: number;
+            Company?: number;
             SerialNumber?: string;
             PurchaseDate?: Date;
-            Status?: string;
-            Value?: number;
+            AquiredValue?: number;
+            AccumulatedValue?: number;
             Product?: number;
+            MaintenenceCost?: number;
+            PurchaseInvoice?: number;
         };
         lessThan?: {
             Id?: number;
             Name?: string;
-            Location?: number;
-            Category?: number;
+            Company?: number;
             SerialNumber?: string;
             PurchaseDate?: Date;
-            Status?: string;
-            Value?: number;
+            AquiredValue?: number;
+            AccumulatedValue?: number;
             Product?: number;
+            MaintenenceCost?: number;
+            PurchaseInvoice?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Name?: string;
-            Location?: number;
-            Category?: number;
+            Company?: number;
             SerialNumber?: string;
             PurchaseDate?: Date;
-            Status?: string;
-            Value?: number;
+            AquiredValue?: number;
+            AccumulatedValue?: number;
             Product?: number;
+            MaintenenceCost?: number;
+            PurchaseInvoice?: number;
         };
     },
     $select?: (keyof AssetEntity)[],
@@ -151,13 +160,8 @@ export class AssetRepository {
                 type: "VARCHAR",
             },
             {
-                name: "Location",
-                column: "ASSET_LOCATION",
-                type: "INTEGER",
-            },
-            {
-                name: "Category",
-                column: "ASSET_CATEGORY",
+                name: "Company",
+                column: "ASSET_COMPANY",
                 type: "INTEGER",
             },
             {
@@ -171,18 +175,28 @@ export class AssetRepository {
                 type: "DATE",
             },
             {
-                name: "Status",
-                column: "ASSET_STATUS",
-                type: "VARCHAR",
+                name: "AquiredValue",
+                column: "ASSET_VALUE",
+                type: "DECIMAL",
             },
             {
-                name: "Value",
-                column: "ASSET_VALUE",
+                name: "AccumulatedValue",
+                column: "ASSET_ACCUMULATEDVALUE",
                 type: "DECIMAL",
             },
             {
                 name: "Product",
                 column: "ASSET_PRODUCT",
+                type: "INTEGER",
+            },
+            {
+                name: "MaintenenceCost",
+                column: "ASSET_MAINTENENCECOST",
+                type: "DECIMAL",
+            },
+            {
+                name: "PurchaseInvoice",
+                column: "ASSET_PURCHASEINVOICE",
                 type: "INTEGER",
             }
         ]

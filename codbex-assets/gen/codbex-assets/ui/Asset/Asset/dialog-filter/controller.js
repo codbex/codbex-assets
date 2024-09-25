@@ -20,9 +20,8 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.entity = params.entity ?? {};
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
-			$scope.optionsLocation = params.optionsLocation;
-			$scope.optionsCategory = params.optionsCategory;
 			$scope.optionsProduct = params.optionsProduct;
+			$scope.optionsPurchaseInvoice = params.optionsPurchaseInvoice;
 		}
 
 		$scope.filter = function () {
@@ -51,11 +50,8 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;
 			}
-			if (entity.Location !== undefined) {
-				filter.$filter.equals.Location = entity.Location;
-			}
-			if (entity.Category !== undefined) {
-				filter.$filter.equals.Category = entity.Category;
+			if (entity.Company !== undefined) {
+				filter.$filter.equals.Company = entity.Company;
 			}
 			if (entity.SerialNumber) {
 				filter.$filter.contains.SerialNumber = entity.SerialNumber;
@@ -66,14 +62,20 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.PurchaseDateTo) {
 				filter.$filter.lessThanOrEqual.PurchaseDate = entity.PurchaseDateTo;
 			}
-			if (entity.Status) {
-				filter.$filter.contains.Status = entity.Status;
+			if (entity.AquiredValue !== undefined) {
+				filter.$filter.equals.AquiredValue = entity.AquiredValue;
 			}
-			if (entity.Value !== undefined) {
-				filter.$filter.equals.Value = entity.Value;
+			if (entity.AccumulatedValue !== undefined) {
+				filter.$filter.equals.AccumulatedValue = entity.AccumulatedValue;
 			}
 			if (entity.Product !== undefined) {
 				filter.$filter.equals.Product = entity.Product;
+			}
+			if (entity.MaintenenceCost !== undefined) {
+				filter.$filter.equals.MaintenenceCost = entity.MaintenenceCost;
+			}
+			if (entity.PurchaseInvoice !== undefined) {
+				filter.$filter.equals.PurchaseInvoice = entity.PurchaseInvoice;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

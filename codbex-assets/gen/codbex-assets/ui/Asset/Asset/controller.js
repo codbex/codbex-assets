@@ -119,9 +119,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("entitySelected", {
 				entity: entity,
 				selectedMainEntityId: entity.Id,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 				optionsProduct: $scope.optionsProduct,
+				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
 
@@ -131,9 +130,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 			messageHub.postMessage("createEntity", {
 				entity: {},
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 				optionsProduct: $scope.optionsProduct,
+				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
 
@@ -141,9 +139,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.action = "update";
 			messageHub.postMessage("updateEntity", {
 				entity: $scope.selectedEntity,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 				optionsProduct: $scope.optionsProduct,
+				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
 
@@ -180,35 +177,15 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("Asset-filter", {
 				entity: $scope.filterEntity,
-				optionsLocation: $scope.optionsLocation,
-				optionsCategory: $scope.optionsCategory,
 				optionsProduct: $scope.optionsProduct,
+				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
 
 		//----------------Dropdowns-----------------//
-		$scope.optionsLocation = [];
-		$scope.optionsCategory = [];
 		$scope.optionsProduct = [];
+		$scope.optionsPurchaseInvoice = [];
 
-
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Location/LocationService.ts").then(function (response) {
-			$scope.optionsLocation = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
-
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts").then(function (response) {
-			$scope.optionsCategory = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
 
 		$http.get("/services/ts/codbex-products/gen/codbex-products/api/Products/ProductService.ts").then(function (response) {
 			$scope.optionsProduct = response.data.map(e => {
@@ -219,26 +196,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$scope.optionsLocationValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsLocation.length; i++) {
-				if ($scope.optionsLocation[i].value === optionKey) {
-					return $scope.optionsLocation[i].text;
+		$http.get("/services/ts/codbex-invoices/gen/codbex-invoices/api/purchaseinvoice/PurchaseInvoiceService.ts").then(function (response) {
+			$scope.optionsPurchaseInvoice = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
 				}
-			}
-			return null;
-		};
-		$scope.optionsCategoryValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsCategory.length; i++) {
-				if ($scope.optionsCategory[i].value === optionKey) {
-					return $scope.optionsCategory[i].text;
-				}
-			}
-			return null;
-		};
+			});
+		});
+
 		$scope.optionsProductValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsProduct.length; i++) {
 				if ($scope.optionsProduct[i].value === optionKey) {
 					return $scope.optionsProduct[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsPurchaseInvoiceValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsPurchaseInvoice.length; i++) {
+				if ($scope.optionsPurchaseInvoice[i].value === optionKey) {
+					return $scope.optionsPurchaseInvoice[i].text;
 				}
 			}
 			return null;

@@ -19,13 +19,13 @@ class MaintenanceService {
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
 
-            let Asset = parseInt(ctx.queryParameters.Asset);
-            Asset = isNaN(Asset) ? ctx.queryParameters.Asset : Asset;
+            let MaintenanceStatus = parseInt(ctx.queryParameters.MaintenanceStatus);
+            MaintenanceStatus = isNaN(MaintenanceStatus) ? ctx.queryParameters.MaintenanceStatus : MaintenanceStatus;
 
-            if (Asset !== undefined) {
+            if (MaintenanceStatus !== undefined) {
                 options.$filter = {
                     equals: {
-                        Asset: Asset
+                        MaintenanceStatus: MaintenanceStatus
                     }
                 };
             }
@@ -132,9 +132,6 @@ class MaintenanceService {
     private validateEntity(entity: any): void {
         if (entity.Description?.length > 256) {
             throw new ValidationError(`The 'Description' exceeds the maximum length of [256] characters`);
-        }
-        if (entity.Status?.length > 20) {
-            throw new ValidationError(`The 'Status' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

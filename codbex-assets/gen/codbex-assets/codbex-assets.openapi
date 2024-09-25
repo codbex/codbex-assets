@@ -10,13 +10,12 @@ servers:
   - url: /services/ts
 tags:
   - name: Asset
-  - name: Acquisition
+  - name: AcquisitionRequest
   - name: Asset
   - name: Asset
   - name: Asset
-  - name: Valuation
-  - name: Location
-  - name: Category
+  - name: Asset
+  - name: Asset
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -265,7 +264,6 @@ paths:
                     contains:
                       Name: "abcd"
                       SerialNumber: "abcd"
-                      Status: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -289,7 +287,6 @@ paths:
                     contains:
                       Name: "abcd"
                       SerialNumber: "abcd"
-                      Status: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
                 value:
@@ -355,7 +352,6 @@ paths:
                     contains:
                       Name: "abcd"
                       SerialNumber: "abcd"
-                      Status: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -379,7 +375,6 @@ paths:
                     contains:
                       Name: "abcd"
                       SerialNumber: "abcd"
-                      Status: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
                 value:
@@ -426,9 +421,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Acquisition/AcquisitionService.ts:
+  /codbex-assets/gen/codbex-assets/api/AcquisitionRequest/AcquisitionRequestService.ts:
     get:
-      summary: List Acquisition
+      summary: List AcquisitionRequest
       parameters:
         - in: query
           name: $limit
@@ -447,7 +442,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Acquisition
+        - AcquisitionRequest
       responses:
         200:
           description: Successful Request
@@ -456,7 +451,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisition'
+                    $ref: '#/components/schemas/AcquisitionRequest'
         400:
           description: Bad Request Error
           content:
@@ -476,14 +471,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Acquisition
+      summary: Create AcquisitionRequest
       tags:
-        - Acquisition
+        - AcquisitionRequest
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Acquisition'
+              $ref: '#/components/schemas/AcquisitionRequest'
         required: true
       responses:
         201:
@@ -491,7 +486,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Acquisition'
+                $ref: '#/components/schemas/AcquisitionRequest'
         400:
           description: Bad Request Error
           content:
@@ -510,9 +505,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Acquisition/AcquisitionService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/AcquisitionRequest/AcquisitionRequestService.ts/{id}:
     get:
-      summary: Get Acquisition by Id
+      summary: Get AcquisitionRequest by Id
       parameters:
         - in: path
           name: id
@@ -521,7 +516,7 @@ paths:
           schema:
             type: string
       tags:
-        - Acquisition
+        - AcquisitionRequest
       responses:
         200:
           description: Successful Request
@@ -530,7 +525,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisition'
+                    $ref: '#/components/schemas/AcquisitionRequest'
         404:
           description: Entity Not Found
           content:
@@ -550,7 +545,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Acquisition by Id
+      summary: Update AcquisitionRequest by Id
       parameters:
         - in: path
           name: id
@@ -559,12 +554,12 @@ paths:
           schema:
             type: string
       tags:
-        - Acquisition
+        - AcquisitionRequest
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Acquisition'
+              $ref: '#/components/schemas/AcquisitionRequest'
         required: true
       responses:
         200:
@@ -572,7 +567,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Acquisition'
+                $ref: '#/components/schemas/AcquisitionRequest'
         400:
           description: Bad Request Error
           content:
@@ -598,7 +593,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Acquisition by Id
+      summary: Delete AcquisitionRequest by Id
       parameters:
         - in: path
           name: id
@@ -607,7 +602,7 @@ paths:
           schema:
             type: string
       tags:
-        - Acquisition
+        - AcquisitionRequest
       responses:
         204:
           description: Successful Request
@@ -629,11 +624,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Acquisition/AcquisitionService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/AcquisitionRequest/AcquisitionRequestService.ts/count:
     get:
-      summary: Count the number of Acquisition
+      summary: Count the number of AcquisitionRequest
       tags:
-        - Acquisition
+        - AcquisitionRequest
       responses:
         200:
           description: Successful Request
@@ -655,14 +650,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Acquisition by AcquisitionFilterOptions
+      summary: Count the number of AcquisitionRequest by AcquisitionRequestFilterOptions
       tags:
-        - Acquisition
+        - AcquisitionRequest
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AcquisitionFilterOptions'
+              $ref: '#/components/schemas/AcquisitionRequestFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -731,16 +726,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Acquisition/AcquisitionService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/AcquisitionRequest/AcquisitionRequestService.ts/search:
     post:
-      summary: Search Acquisition by AcquisitionFilterOptions
+      summary: Search AcquisitionRequest by AcquisitionRequestFilterOptions
       tags:
-        - Acquisition
+        - AcquisitionRequest
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AcquisitionFilterOptions'
+              $ref: '#/components/schemas/AcquisitionRequestFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -797,7 +792,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Acquisition'
+                    $ref: '#/components/schemas/AcquisitionRequest'
         403:
           description: Forbidden Error
           content:
@@ -1056,7 +1051,6 @@ paths:
                       Id: 33
                     contains:
                       Description: "abcd"
-                      Status: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -1079,7 +1073,6 @@ paths:
                   $filter:
                     contains:
                       Description: "abcd"
-                      Status: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
                 value:
@@ -1144,7 +1137,6 @@ paths:
                       Id: 33
                     contains:
                       Description: "abcd"
-                      Status: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -1167,7 +1159,6 @@ paths:
                   $filter:
                     contains:
                       Description: "abcd"
-                      Status: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
                 value:
@@ -2018,7 +2009,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Valuation/ValuationService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/ValuationService.ts:
     get:
       summary: List Valuation
       parameters:
@@ -2039,7 +2030,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Valuation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2070,7 +2061,7 @@ paths:
     post:
       summary: Create Valuation
       tags:
-        - Valuation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2102,7 +2093,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Valuation/ValuationService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/ValuationService.ts/{id}:
     get:
       summary: Get Valuation by Id
       parameters:
@@ -2113,7 +2104,7 @@ paths:
           schema:
             type: string
       tags:
-        - Valuation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2151,7 +2142,7 @@ paths:
           schema:
             type: string
       tags:
-        - Valuation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2199,7 +2190,7 @@ paths:
           schema:
             type: string
       tags:
-        - Valuation
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -2221,11 +2212,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Valuation/ValuationService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/ValuationService.ts/count:
     get:
       summary: Count the number of Valuation
       tags:
-        - Valuation
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2249,7 +2240,7 @@ paths:
     post:
       summary: Count the number of Valuation by ValuationFilterOptions
       tags:
-        - Valuation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2333,11 +2324,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Valuation/ValuationService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/ValuationService.ts/search:
     post:
       summary: Search Valuation by ValuationFilterOptions
       tags:
-        - Valuation
+        - Asset
       requestBody:
         content:
           application/json:
@@ -2422,9 +2413,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts:
     get:
-      summary: List Location
+      summary: List MaintenanceStatus
       parameters:
         - in: query
           name: $limit
@@ -2443,7 +2434,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Location
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2452,7 +2443,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Location'
+                    $ref: '#/components/schemas/MaintenanceStatus'
         400:
           description: Bad Request Error
           content:
@@ -2472,14 +2463,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Create Location
+      summary: Create MaintenanceStatus
       tags:
-        - Location
+        - Asset
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Location'
+              $ref: '#/components/schemas/MaintenanceStatus'
         required: true
       responses:
         201:
@@ -2487,7 +2478,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Location'
+                $ref: '#/components/schemas/MaintenanceStatus'
         400:
           description: Bad Request Error
           content:
@@ -2506,9 +2497,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/{id}:
     get:
-      summary: Get Location by Id
+      summary: Get MaintenanceStatus by Id
       parameters:
         - in: path
           name: id
@@ -2517,7 +2508,7 @@ paths:
           schema:
             type: string
       tags:
-        - Location
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2526,7 +2517,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Location'
+                    $ref: '#/components/schemas/MaintenanceStatus'
         404:
           description: Entity Not Found
           content:
@@ -2546,7 +2537,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     put:
-      summary: Update Location by Id
+      summary: Update MaintenanceStatus by Id
       parameters:
         - in: path
           name: id
@@ -2555,12 +2546,12 @@ paths:
           schema:
             type: string
       tags:
-        - Location
+        - Asset
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Location'
+              $ref: '#/components/schemas/MaintenanceStatus'
         required: true
       responses:
         200:
@@ -2568,7 +2559,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Location'
+                $ref: '#/components/schemas/MaintenanceStatus'
         400:
           description: Bad Request Error
           content:
@@ -2594,7 +2585,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     delete:
-      summary: Delete Location by Id
+      summary: Delete MaintenanceStatus by Id
       parameters:
         - in: path
           name: id
@@ -2603,7 +2594,7 @@ paths:
           schema:
             type: string
       tags:
-        - Location
+        - Asset
       responses:
         204:
           description: Successful Request
@@ -2625,11 +2616,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/count:
     get:
-      summary: Count the number of Location
+      summary: Count the number of MaintenanceStatus
       tags:
-        - Location
+        - Asset
       responses:
         200:
           description: Successful Request
@@ -2651,14 +2642,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: Count the number of Location by LocationFilterOptions
+      summary: Count the number of MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - Location
+        - Asset
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LocationFilterOptions'
+              $ref: '#/components/schemas/MaintenanceStatusFilterOptions'
             examples:
               countWithMultipleCriteria:
                 summary: Count with multiple criteria
@@ -2735,16 +2726,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Location/LocationService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/search:
     post:
-      summary: Search Location by LocationFilterOptions
+      summary: Search MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - Location
+        - Asset
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LocationFilterOptions'
+              $ref: '#/components/schemas/MaintenanceStatusFilterOptions'
             examples:
               searchWithMultipleCriteria:
                 summary: Search with multiple criteria
@@ -2809,407 +2800,7 @@ paths:
               schema:
                 type: array
                 items:
-                    $ref: '#/components/schemas/Location'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts:
-    get:
-      summary: List Category
-      parameters:
-        - in: query
-          name: $limit
-          description: The number of records to be returned _(both `$limit` and `$offset` should be provided)_.
-          required: false
-          allowReserved: true
-          schema:
-            type: integer
-            allowEmptyValue: true
-        - in: query
-          name: $offset
-          description: The number of records to skip _(both `$limit` and `$offset` should be provided)_.
-          required: false
-          allowReserved: true
-          schema:
-            type: integer
-            allowEmptyValue: true
-      tags:
-        - Category
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Category'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    post:
-      summary: Create Category
-      tags:
-        - Category
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Category'
-        required: true
-      responses:
-        201:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Category'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/{id}:
-    get:
-      summary: Get Category by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - Category
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Category'
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    put:
-      summary: Update Category by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - Category
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Category'
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Category'
-        400:
-          description: Bad Request Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    delete:
-      summary: Delete Category by Id
-      parameters:
-        - in: path
-          name: id
-          description: The Id of the entity.
-          required: true
-          schema:
-            type: string
-      tags:
-        - Category
-      responses:
-        204:
-          description: Successful Request
-        404:
-          description: Entity Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/count:
-    get:
-      summary: Count the number of Category
-      tags:
-        - Category
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: integer
-                example: 100
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    post:
-      summary: Count the number of Category by CategoryFilterOptions
-      tags:
-        - Category
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CategoryFilterOptions'
-            examples:
-              countWithMultipleCriteria:
-                summary: Count with multiple criteria
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 33
-                    contains:
-                      Name: "abcd"
-                    greaterThan:
-                      Id: 0
-                    lessThanOrEqual:
-                      Id: 100
-              countWithEquals:
-                summary: Count with Equals
-                value:
-                  $filter:
-                    equals:
-                      Id: 0
-              countWithNotEquals:
-                summary: Count with Not Equals
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 0
-              countWithContains:
-                summary: Count with Contains
-                value:
-                  $filter:
-                    contains:
-                      Name: "abcd"
-              countWithGreaterThan:
-                summary: Count with Greater Than
-                value:
-                  $filter:
-                    greaterThan:
-                      Id: 0
-              countWithGreaterThanOrEqual:
-                summary: Count with Greater Than Or Equal
-                value:
-                  $filter:
-                    greaterThanOrEqual:
-                      Id: 0
-              countWithLessThan:
-                summary: Count with Less Than
-                value:
-                  $filter:
-                    lessThan:
-                      Id: 0
-              countWithLessThanOrEqual:
-                summary: Count with Less Than Or Equal
-                value:
-                  $filter:
-                    lessThanOrEqual:
-                      Id: 0
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: integer
-                example: 100
-        403:
-          description: Forbidden Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        500:
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Category/CategoryService.ts/search:
-    post:
-      summary: Search Category by CategoryFilterOptions
-      tags:
-        - Category
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CategoryFilterOptions'
-            examples:
-              searchWithMultipleCriteria:
-                summary: Search with multiple criteria
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 33
-                    contains:
-                      Name: "abcd"
-                    greaterThan:
-                      Id: 0
-                    lessThanOrEqual:
-                      Id: 100
-              searchWithEquals:
-                summary: Search with Equals
-                value:
-                  $filter:
-                    equals:
-                      Id: 0
-              searchWithNotEquals:
-                summary: Search with Not Equals
-                value:
-                  $filter:
-                    notEquals:
-                      Id: 0
-              searchWithContains:
-                summary: Search with Contains
-                value:
-                  $filter:
-                    contains:
-                      Name: "abcd"
-              searchWithGreaterThan:
-                summary: Search with Greater Than
-                value:
-                  $filter:
-                    greaterThan:
-                      Id: 0
-              searchWithGreaterThanOrEqual:
-                summary: Search with Greater Than Or Equal
-                value:
-                  $filter:
-                    greaterThanOrEqual:
-                      Id: 0
-              searchWithLessThan:
-                summary: Search with Less Than
-                value:
-                  $filter:
-                    lessThan:
-                      Id: 0
-              searchWithLessThanOrEqual:
-                summary: Search with Less Than Or Equal
-                value:
-                  $filter:
-                    lessThanOrEqual:
-                      Id: 0
-        required: true
-      responses:
-        200:
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                    $ref: '#/components/schemas/Category'
+                    $ref: '#/components/schemas/MaintenanceStatus'
         403:
           description: Forbidden Error
           content:
@@ -3235,10 +2826,7 @@ components:
           type: string
           minLength: 0
           maxLength: 128
-        Location:
-          type: integer
-          format: int32
-        Category:
+        Company:
           type: integer
           format: int32
         SerialNumber:
@@ -3246,14 +2834,19 @@ components:
           minLength: 0
           maxLength: 20
         PurchaseDate:
-        Status:
-          type: string
-          minLength: 0
-          maxLength: 20
-        Value:
+        AquiredValue:
+          type: number
+          format: double
+        AccumulatedValue:
           type: number
           format: double
         Product:
+          type: integer
+          format: int32
+        MaintenenceCost:
+          type: number
+          format: double
+        PurchaseInvoice:
           type: integer
           format: int32
     AssetFilterOptions:
@@ -3284,15 +2877,7 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 128
-                Location:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Category:
+                Company:
                   oneOf:
                     - type: integer
                       format: int32
@@ -3313,18 +2898,15 @@ components:
                         maxLength: 20
                 PurchaseDate:
                   oneOf:
-                Status:
+                AquiredValue:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
+                    - type: number
+                      format: double
                     - type: array
                       items:
-                        type: string
+                        type: number
                         format: double
-                        minLength: 0
-                        maxLength: 20
-                Value:
+                AccumulatedValue:
                   oneOf:
                     - type: number
                       format: double
@@ -3333,6 +2915,22 @@ components:
                         type: number
                         format: double
                 Product:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                MaintenenceCost:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
+                PurchaseInvoice:
                   oneOf:
                     - type: integer
                       format: int32
@@ -3362,15 +2960,7 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 128
-                Location:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Category:
+                Company:
                   oneOf:
                     - type: integer
                       format: int32
@@ -3391,18 +2981,15 @@ components:
                         maxLength: 20
                 PurchaseDate:
                   oneOf:
-                Status:
+                AquiredValue:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
+                    - type: number
+                      format: double
                     - type: array
                       items:
-                        type: string
+                        type: number
                         format: double
-                        minLength: 0
-                        maxLength: 20
-                Value:
+                AccumulatedValue:
                   oneOf:
                     - type: number
                       format: double
@@ -3418,6 +3005,22 @@ components:
                       items:
                         type: integer
                         format: int32
+                MaintenenceCost:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
+                PurchaseInvoice:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
@@ -3426,19 +3029,17 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
-                Location:
-                Category:
+                Company:
                 SerialNumber:
                   type: string
                   minLength: 0
                   maxLength: 20
                 PurchaseDate:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-                Value:
+                AquiredValue:
+                AccumulatedValue:
                 Product:
+                MaintenenceCost:
+                PurchaseInvoice:
             greaterThan:
               type: object
               properties:
@@ -3449,10 +3050,7 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
-                Location:
-                  type: integer
-                  format: int32
-                Category:
+                Company:
                   type: integer
                   format: int32
                 SerialNumber:
@@ -3460,14 +3058,19 @@ components:
                   minLength: 0
                   maxLength: 20
                 PurchaseDate:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-                Value:
+                AquiredValue:
+                  type: number
+                  format: double
+                AccumulatedValue:
                   type: number
                   format: double
                 Product:
+                  type: integer
+                  format: int32
+                MaintenenceCost:
+                  type: number
+                  format: double
+                PurchaseInvoice:
                   type: integer
                   format: int32
             greaterThanOrEqual:
@@ -3480,10 +3083,7 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
-                Location:
-                  type: integer
-                  format: int32
-                Category:
+                Company:
                   type: integer
                   format: int32
                 SerialNumber:
@@ -3491,14 +3091,19 @@ components:
                   minLength: 0
                   maxLength: 20
                 PurchaseDate:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-                Value:
+                AquiredValue:
+                  type: number
+                  format: double
+                AccumulatedValue:
                   type: number
                   format: double
                 Product:
+                  type: integer
+                  format: int32
+                MaintenenceCost:
+                  type: number
+                  format: double
+                PurchaseInvoice:
                   type: integer
                   format: int32
             lessThan:
@@ -3511,10 +3116,7 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
-                Location:
-                  type: integer
-                  format: int32
-                Category:
+                Company:
                   type: integer
                   format: int32
                 SerialNumber:
@@ -3522,14 +3124,19 @@ components:
                   minLength: 0
                   maxLength: 20
                 PurchaseDate:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-                Value:
+                AquiredValue:
+                  type: number
+                  format: double
+                AccumulatedValue:
                   type: number
                   format: double
                 Product:
+                  type: integer
+                  format: int32
+                MaintenenceCost:
+                  type: number
+                  format: double
+                PurchaseInvoice:
                   type: integer
                   format: int32
             lessThanOrEqual:
@@ -3542,10 +3149,7 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
-                Location:
-                  type: integer
-                  format: int32
-                Category:
+                Company:
                   type: integer
                   format: int32
                 SerialNumber:
@@ -3553,24 +3157,29 @@ components:
                   minLength: 0
                   maxLength: 20
                 PurchaseDate:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
-                Value:
+                AquiredValue:
+                  type: number
+                  format: double
+                AccumulatedValue:
                   type: number
                   format: double
                 Product:
                   type: integer
                   format: int32
+                MaintenenceCost:
+                  type: number
+                  format: double
+                PurchaseInvoice:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Name", "Location", "Category", "SerialNumber", "PurchaseDate", "Status", "Value", "Product"]
+          example: ["Id", "Name", "Company", "SerialNumber", "PurchaseDate", "AquiredValue", "AccumulatedValue", "Product", "MaintenenceCost", "PurchaseInvoice"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,Location,Category,SerialNumber,PurchaseDate,Status,Value,Product"
+            example: "Id,Name,Company,SerialNumber,PurchaseDate,AquiredValue,AccumulatedValue,Product,MaintenenceCost,PurchaseInvoice"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -3581,7 +3190,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Acquisition:
+    AcquisitionRequest:
       type: object
       required:
       properties:
@@ -3595,10 +3204,7 @@ components:
         Cost:
           type: number
           format: double
-        PurchaseInvoice:
-          type: integer
-          format: int32
-    AcquisitionFilterOptions:
+    AcquisitionRequestFilterOptions:
       type: object
       properties:
         $filter:
@@ -3633,14 +3239,6 @@ components:
                       items:
                         type: number
                         format: double
-                PurchaseInvoice:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
             notEquals:
               type: object
               properties:
@@ -3670,14 +3268,6 @@ components:
                       items:
                         type: number
                         format: double
-                PurchaseInvoice:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
             contains:
               type: object
               properties:
@@ -3685,7 +3275,6 @@ components:
                 Asset:
                 AcquisitionDate:
                 Cost:
-                PurchaseInvoice:
             greaterThan:
               type: object
               properties:
@@ -3699,9 +3288,6 @@ components:
                 Cost:
                   type: number
                   format: double
-                PurchaseInvoice:
-                  type: integer
-                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
@@ -3715,9 +3301,6 @@ components:
                 Cost:
                   type: number
                   format: double
-                PurchaseInvoice:
-                  type: integer
-                  format: int32
             lessThan:
               type: object
               properties:
@@ -3731,9 +3314,6 @@ components:
                 Cost:
                   type: number
                   format: double
-                PurchaseInvoice:
-                  type: integer
-                  format: int32
             lessThanOrEqual:
               type: object
               properties:
@@ -3747,17 +3327,14 @@ components:
                 Cost:
                   type: number
                   format: double
-                PurchaseInvoice:
-                  type: integer
-                  format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "AcquisitionDate", "Cost", "PurchaseInvoice"]
+          example: ["Id", "Asset", "AcquisitionDate", "Cost"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,AcquisitionDate,Cost,PurchaseInvoice"
+            example: "Id,Asset,AcquisitionDate,Cost"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -3786,10 +3363,9 @@ components:
         Cost:
           type: number
           format: double
-        Status:
-          type: string
-          minLength: 0
-          maxLength: 20
+        MaintenanceStatus:
+          type: integer
+          format: int32
     MaintenanceFilterOptions:
       type: object
       properties:
@@ -3836,17 +3412,14 @@ components:
                       items:
                         type: number
                         format: double
-                Status:
+                MaintenanceStatus:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
+                    - type: integer
+                      format: int32
                     - type: array
                       items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
+                        type: integer
+                        format: int32
             notEquals:
               type: object
               properties:
@@ -3887,17 +3460,14 @@ components:
                       items:
                         type: number
                         format: double
-                Status:
+                MaintenanceStatus:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
+                    - type: integer
+                      format: int32
                     - type: array
                       items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
@@ -3909,10 +3479,7 @@ components:
                   minLength: 0
                   maxLength: 256
                 Cost:
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
+                MaintenanceStatus:
             greaterThan:
               type: object
               properties:
@@ -3930,10 +3497,9 @@ components:
                 Cost:
                   type: number
                   format: double
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
+                MaintenanceStatus:
+                  type: integer
+                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
@@ -3951,10 +3517,9 @@ components:
                 Cost:
                   type: number
                   format: double
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
+                MaintenanceStatus:
+                  type: integer
+                  format: int32
             lessThan:
               type: object
               properties:
@@ -3972,10 +3537,9 @@ components:
                 Cost:
                   type: number
                   format: double
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
+                MaintenanceStatus:
+                  type: integer
+                  format: int32
             lessThanOrEqual:
               type: object
               properties:
@@ -3993,18 +3557,17 @@ components:
                 Cost:
                   type: number
                   format: double
-                Status:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
+                MaintenanceStatus:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "MaintenanceDate", "Description", "Cost", "Status"]
+          example: ["Id", "Asset", "MaintenanceDate", "Description", "Cost", "MaintenanceStatus"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,MaintenanceDate,Description,Cost,Status"
+            example: "Id,Asset,MaintenanceDate,Description,Cost,MaintenanceStatus"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -4549,6 +4112,9 @@ components:
           type: string
           minLength: 0
           maxLength: 128
+        Supplier:
+          type: integer
+          format: int32
     ValuationFilterOptions:
       type: object
       properties:
@@ -4606,6 +4172,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 128
+                Supplier:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             notEquals:
               type: object
               properties:
@@ -4657,6 +4231,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 128
+                Supplier:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
             contains:
               type: object
               properties:
@@ -4672,6 +4254,7 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
+                Supplier:
             greaterThan:
               type: object
               properties:
@@ -4693,6 +4276,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
+                Supplier:
+                  type: integer
+                  format: int32
             greaterThanOrEqual:
               type: object
               properties:
@@ -4714,6 +4300,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
+                Supplier:
+                  type: integer
+                  format: int32
             lessThan:
               type: object
               properties:
@@ -4735,6 +4324,9 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
+                Supplier:
+                  type: integer
+                  format: int32
             lessThanOrEqual:
               type: object
               properties:
@@ -4756,14 +4348,17 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 128
+                Supplier:
+                  type: integer
+                  format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "ValuationDate", "ValuationMethod", "ValuedAt", "Remarks"]
+          example: ["Id", "Asset", "ValuationDate", "ValuationMethod", "ValuedAt", "Remarks", "Supplier"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,ValuationDate,ValuationMethod,ValuedAt,Remarks"
+            example: "Id,Asset,ValuationDate,ValuationMethod,ValuedAt,Remarks,Supplier"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -4774,7 +4369,7 @@ components:
         $limit:
           type: integer
           example: 10
-    Location:
+    MaintenanceStatus:
       type: object
       required:
       properties:
@@ -4784,8 +4379,8 @@ components:
         Name:
           type: string
           minLength: 0
-          maxLength: 64
-    LocationFilterOptions:
+          maxLength: 20
+    MaintenanceStatusFilterOptions:
       type: object
       properties:
         $filter:
@@ -4806,13 +4401,13 @@ components:
                   oneOf:
                     - type: string
                       minLength: 0
-                      maxLength: 64
+                      maxLength: 20
                     - type: array
                       items:
                         type: string
                         format: double
                         minLength: 0
-                        maxLength: 64
+                        maxLength: 20
             notEquals:
               type: object
               properties:
@@ -4828,13 +4423,13 @@ components:
                   oneOf:
                     - type: string
                       minLength: 0
-                      maxLength: 64
+                      maxLength: 20
                     - type: array
                       items:
                         type: string
                         format: double
                         minLength: 0
-                        maxLength: 64
+                        maxLength: 20
             contains:
               type: object
               properties:
@@ -4842,7 +4437,7 @@ components:
                 Name:
                   type: string
                   minLength: 0
-                  maxLength: 64
+                  maxLength: 20
             greaterThan:
               type: object
               properties:
@@ -4852,7 +4447,7 @@ components:
                 Name:
                   type: string
                   minLength: 0
-                  maxLength: 64
+                  maxLength: 20
             greaterThanOrEqual:
               type: object
               properties:
@@ -4862,7 +4457,7 @@ components:
                 Name:
                   type: string
                   minLength: 0
-                  maxLength: 64
+                  maxLength: 20
             lessThan:
               type: object
               properties:
@@ -4872,7 +4467,7 @@ components:
                 Name:
                   type: string
                   minLength: 0
-                  maxLength: 64
+                  maxLength: 20
             lessThanOrEqual:
               type: object
               properties:
@@ -4882,134 +4477,7 @@ components:
                 Name:
                   type: string
                   minLength: 0
-                  maxLength: 64
-        $select:
-          type: array
-          example: ["Id", "Name"]
-          items:
-            type: string
-        $sort:
-          - type: string
-            example: "Id,Name"
-        $order:
-          type: string
-          enum: ["asc", "desc"]
-          example: "asc"
-        $offset:
-          type: integer
-          example: 0
-        $limit:
-          type: integer
-          example: 10
-    Category:
-      type: object
-      required:
-      properties:
-        Id:
-          type: integer
-          format: int32
-        Name:
-          type: string
-          minLength: 0
-          maxLength: 64
-    CategoryFilterOptions:
-      type: object
-      properties:
-        $filter:
-          type: object
-          properties:
-            equals:
-              type: object
-              properties:
-                Id:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Name:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 64
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 64
-            notEquals:
-              type: object
-              properties:
-                Id:
-                  oneOf:
-                    - type: integer
-                      format: int32
-                    - type: array
-                      items:
-                        type: integer
-                        format: int32
-                Name:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 64
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 64
-            contains:
-              type: object
-              properties:
-                Id:
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
-            greaterThan:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
-            greaterThanOrEqual:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
-            lessThan:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
-            lessThanOrEqual:
-              type: object
-              properties:
-                Id:
-                  type: integer
-                  format: int32
-                Name:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                  maxLength: 20
         $select:
           type: array
           example: ["Id", "Name"]
