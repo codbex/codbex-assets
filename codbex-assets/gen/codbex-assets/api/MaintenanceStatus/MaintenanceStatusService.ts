@@ -1,34 +1,23 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { MaintenanceRepository, MaintenanceEntityOptions } from "../../dao/Asset/MaintenanceRepository";
+import { MaintenanceStatusRepository, MaintenanceStatusEntityOptions } from "../../dao/MaintenanceStatus/MaintenanceStatusRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-assets-Asset-Maintenance", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-assets-MaintenanceStatus-MaintenanceStatus", ["validate"]);
 
 @Controller
-class MaintenanceService {
+class MaintenanceStatusService {
 
-    private readonly repository = new MaintenanceRepository();
+    private readonly repository = new MaintenanceStatusRepository();
 
     @Get("/")
     public getAll(_: any, ctx: any) {
         try {
-            const options: MaintenanceEntityOptions = {
+            const options: MaintenanceStatusEntityOptions = {
                 $limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
-
-            let Asset = parseInt(ctx.queryParameters.Asset);
-            Asset = isNaN(Asset) ? ctx.queryParameters.Asset : Asset;
-
-            if (Asset !== undefined) {
-                options.$filter = {
-                    equals: {
-                        Asset: Asset
-                    }
-                };
-            }
 
             return this.repository.findAll(options);
         } catch (error: any) {
@@ -41,7 +30,7 @@ class MaintenanceService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/MaintenanceService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -84,7 +73,7 @@ class MaintenanceService {
             if (entity) {
                 return entity;
             } else {
-                HttpUtils.sendResponseNotFound("Maintenance not found");
+                HttpUtils.sendResponseNotFound("MaintenanceStatus not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -112,7 +101,7 @@ class MaintenanceService {
                 this.repository.deleteById(id);
                 HttpUtils.sendResponseNoContent();
             } else {
-                HttpUtils.sendResponseNotFound("Maintenance not found");
+                HttpUtils.sendResponseNotFound("MaintenanceStatus not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -130,8 +119,8 @@ class MaintenanceService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.Description?.length > 256) {
-            throw new ValidationError(`The 'Description' exceeds the maximum length of [256] characters`);
+        if (entity.Name?.length > 20) {
+            throw new ValidationError(`The 'Name' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

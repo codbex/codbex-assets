@@ -297,21 +297,19 @@
                         "widgetType": "NUMBER"
                     },
                     {
-                        "dataName": "MAINTENANCE_STATUS",
+                        "dataName": "MAINTENANCE_MAINTENANCESTATUS",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "name": "MaintenanceStatus",
-                        "relationshipCardinality": "1_n",
-                        "relationshipName": "Maintenance_MaintenanceStatus",
-                        "relationshipType": "COMPOSITION",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",
                         "widgetSize": "",
                         "widgetType": "DROPDOWN",
+                        "relationshipName": "Maintenance_MaintenanceStatus",
                         "relationshipEntityName": "MaintenanceStatus",
-                        "relationshipEntityPerspectiveName": "Asset",
+                        "relationshipEntityPerspectiveName": "MaintenanceStatus",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     }
                 ],
@@ -1848,53 +1846,6 @@
                 "properties": [
                     {
                         "dataAutoIncrement": "true",
-                        "dataName": "STATUS_ID",
-                        "dataNullable": "true",
-                        "dataPrimaryKey": "true",
-                        "dataType": "INTEGER",
-                        "name": "Id",
-                        "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
-                        "widgetType": "TEXTBOX"
-                    },
-                    {
-                        "dataLength": "20",
-                        "dataName": "STATUS_NAME",
-                        "dataNullable": "true",
-                        "dataType": "VARCHAR",
-                        "name": "Name",
-                        "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "",
-                        "widgetType": "TEXTBOX"
-                    }
-                ],
-                "caption": "Manage entity MaintenanceStatus",
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}STATUS\"",
-                "dataName": "STATUS",
-                "dataQuery": "",
-                "generateReport": "false",
-                "icon": "/services/web/resources/unicons/file.svg",
-                "layoutType": "MANAGE_DETAILS",
-                "menuIndex": "100",
-                "menuKey": "MaintenanceStatus",
-                "menuLabel": "MaintenanceStatus",
-                "name": "MaintenanceStatus",
-                "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/server.svg",
-                "perspectiveLabel": "Asset",
-                "perspectiveName": "Asset",
-                "perspectiveOrder": "100",
-                "perspectiveRole": "",
-                "title": "MaintenanceStatus",
-                "tooltip": "Status",
-                "type": "DEPENDENT"
-            },
-            {
-                "properties": [
-                    {
-                        "dataAutoIncrement": "true",
                         "dataName": "SUPPLIER_ID",
                         "dataNullable": "true",
                         "dataPrimaryKey": "true",
@@ -2052,6 +2003,53 @@
                 "title": "Supplier",
                 "tooltip": "Supplier",
                 "type": "PROJECTION"
+            },
+            {
+                "properties": [
+                    {
+                        "dataAutoIncrement": "true",
+                        "dataName": "MAINTENANCESTATUS_ID",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "true",
+                        "dataType": "INTEGER",
+                        "name": "Id",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "dataLength": "20",
+                        "dataName": "MAINTENANCESTATUS_NAME",
+                        "dataNullable": "true",
+                        "dataType": "VARCHAR",
+                        "name": "Name",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "TEXTBOX"
+                    }
+                ],
+                "caption": "Manage entity MaintenanceStatus",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}MAINTENANCESTATUS\"",
+                "dataName": "MAINTENANCESTATUS",
+                "dataQuery": "",
+                "generateReport": "false",
+                "icon": "/services/web/resources/unicons/file.svg",
+                "layoutType": "MANAGE",
+                "menuIndex": "100",
+                "menuKey": "maintenancestatus",
+                "menuLabel": "MaintenanceStatus",
+                "name": "MaintenanceStatus",
+                "navigationPath": "/Home",
+                "perspectiveIcon": "/services/web/resources/unicons/align.svg",
+                "perspectiveLabel": "Maintenance Status",
+                "perspectiveName": "MaintenanceStatus",
+                "perspectiveOrder": "300",
+                "perspectiveRole": "",
+                "title": "MaintenanceStatus",
+                "tooltip": "MaintenanceStatus",
+                "type": "PRIMARY"
             }
         ],
         "perspectives": [
@@ -2067,6 +2065,13 @@
                 "label": "Acquisition Request",
                 "icon": "/services/web/resources/unicons/plus.svg",
                 "order": "101",
+                "role": {}
+            },
+            {
+                "name": "MaintenanceStatus",
+                "label": "Maintenance Status",
+                "icon": "/services/web/resources/unicons/align.svg",
+                "order": "300",
                 "role": {}
             }
         ],

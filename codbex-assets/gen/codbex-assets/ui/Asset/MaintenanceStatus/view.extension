@@ -1,5 +1,0 @@
-{
-    "module": "codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/MaintenanceStatus/view.js",
-    "extensionPoint": "codbex-assets-view",
-    "description": "codbex-assets - Application View - Details"
-}

@@ -140,7 +140,7 @@ export class MaintenanceRepository {
             },
             {
                 name: "MaintenanceStatus",
-                column: "MAINTENANCE_STATUS",
+                column: "MAINTENANCE_MAINTENANCESTATUS",
                 type: "INTEGER",
             }
         ]

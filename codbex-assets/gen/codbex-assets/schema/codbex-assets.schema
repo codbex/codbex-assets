@@ -130,7 +130,7 @@
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "MAINTENANCE_STATUS"
+                        "name": "MAINTENANCE_MAINTENANCESTATUS"
                     }
                 ]
             },
@@ -264,7 +264,7 @@
                 ]
             },
             {
-                "name": "CODBEX_STATUS",
+                "name": "CODBEX_MAINTENANCESTATUS",
                 "type": "TABLE",
                 "columns": [
                     {
@@ -272,13 +272,13 @@
                         "primaryKey": true,
                         "identity": true,
                         "nullable": true,
-                        "name": "STATUS_ID"
+                        "name": "MAINTENANCESTATUS_ID"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
-                        "name": "STATUS_NAME"
+                        "name": "MAINTENANCESTATUS_NAME"
                     }
                 ]
             },
@@ -332,9 +332,9 @@
                 "type": "foreignKey",
                 "table": "CODBEX_MAINTENANCE",
                 "constraintName": "Maintenance_MaintenanceStatus",
-                "columns": "MAINTENANCE_STATUS",
-                "referencedTable": "CODBEX_STATUS",
-                "referencedColumns": "STATUS_ID"
+                "columns": "MAINTENANCE_MAINTENANCESTATUS",
+                "referencedTable": "CODBEX_MAINTENANCESTATUS",
+                "referencedColumns": "MAINTENANCESTATUS_ID"
             },
             {
                 "name": "Depreciation_Asset",

@@ -15,7 +15,7 @@ tags:
   - name: Asset
   - name: Asset
   - name: Asset
-  - name: Asset
+  - name: MaintenanceStatus
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -2413,7 +2413,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts:
+  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts:
     get:
       summary: List MaintenanceStatus
       parameters:
@@ -2434,7 +2434,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Asset
+        - MaintenanceStatus
       responses:
         200:
           description: Successful Request
@@ -2465,7 +2465,7 @@ paths:
     post:
       summary: Create MaintenanceStatus
       tags:
-        - Asset
+        - MaintenanceStatus
       requestBody:
         content:
           application/json:
@@ -2497,7 +2497,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/{id}:
     get:
       summary: Get MaintenanceStatus by Id
       parameters:
@@ -2508,7 +2508,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - MaintenanceStatus
       responses:
         200:
           description: Successful Request
@@ -2546,7 +2546,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - MaintenanceStatus
       requestBody:
         content:
           application/json:
@@ -2594,7 +2594,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - MaintenanceStatus
       responses:
         204:
           description: Successful Request
@@ -2616,11 +2616,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/count:
     get:
       summary: Count the number of MaintenanceStatus
       tags:
-        - Asset
+        - MaintenanceStatus
       responses:
         200:
           description: Successful Request
@@ -2644,7 +2644,7 @@ paths:
     post:
       summary: Count the number of MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - Asset
+        - MaintenanceStatus
       requestBody:
         content:
           application/json:
@@ -2726,11 +2726,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/MaintenanceStatusService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/search:
     post:
       summary: Search MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - Asset
+        - MaintenanceStatus
       requestBody:
         content:
           application/json:
