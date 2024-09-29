@@ -1,15 +1,21 @@
 angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["messageHubProvider", function (messageHubProvider) {
-		messageHubProvider.eventIdPrefix = 'codbex-assets.Asset.Disposal';
+		messageHubProvider.eventIdPrefix = 'codbex-assets.Disposal.Disposal';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts";
+		entityApiProvider.baseUrl = "/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts";
 	}])
 	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', 'Extensions', function ($scope, $http, messageHub, entityApi, Extensions) {
+
+		$scope.dataPage = 1;
+		$scope.dataCount = 0;
+		$scope.dataOffset = 0;
+		$scope.dataLimit = 10;
+		$scope.action = "select";
+
 		//-----------------Custom Actions-------------------//
 		Extensions.get('dialogWindow', 'codbex-assets-custom-action').then(function (response) {
-			$scope.pageActions = response.filter(e => e.perspective === "Asset" && e.view === "Disposal" && (e.type === "page" || e.type === undefined));
-			$scope.entityActions = response.filter(e => e.perspective === "Asset" && e.view === "Disposal" && e.type === "entity");
+			$scope.pageActions = response.filter(e => e.perspective === "Disposal" && e.view === "Disposal" && (e.type === "page" || e.type === undefined));
 		});
 
 		$scope.triggerPageAction = function (action) {
@@ -21,54 +27,35 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action
 			);
 		};
-
-		$scope.triggerEntityAction = function (action) {
-			messageHub.showDialogWindow(
-				action.id,
-				{
-					id: $scope.entity.Id
-				},
-				null,
-				true,
-				action
-			);
-		};
 		//-----------------Custom Actions-------------------//
 
+		function refreshData() {
+			$scope.dataReset = true;
+			$scope.dataPage--;
+		}
+
 		function resetPagination() {
+			$scope.dataReset = true;
 			$scope.dataPage = 1;
 			$scope.dataCount = 0;
 			$scope.dataLimit = 10;
 		}
-		resetPagination();
 
 		//-----------------Events-------------------//
-		messageHub.onDidReceiveMessage("codbex-assets.Asset.${masterEntity}.entitySelected", function (msg) {
-			resetPagination();
-			$scope.selectedMainEntityId = msg.data.selectedMainEntityId;
-			$scope.loadPage($scope.dataPage);
-		}, true);
-
-		messageHub.onDidReceiveMessage("codbex-assets.Asset.${masterEntity}.clearDetails", function (msg) {
-			$scope.$apply(function () {
-				resetPagination();
-				$scope.selectedMainEntityId = null;
-				$scope.data = null;
-			});
-		}, true);
-
 		messageHub.onDidReceiveMessage("clearDetails", function (msg) {
 			$scope.$apply(function () {
-				$scope.entity = {};
-				$scope.action = 'select';
+				$scope.selectedEntity = null;
+				$scope.action = "select";
 			});
 		});
 
 		messageHub.onDidReceiveMessage("entityCreated", function (msg) {
+			refreshData();
 			$scope.loadPage($scope.dataPage, $scope.filter);
 		});
 
 		messageHub.onDidReceiveMessage("entityUpdated", function (msg) {
+			refreshData();
 			$scope.loadPage($scope.dataPage, $scope.filter);
 		});
 
@@ -81,21 +68,13 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		//-----------------Events-------------------//
 
 		$scope.loadPage = function (pageNumber, filter) {
-			let ${masterEntityId} = $scope.selectedMainEntityId;
-			$scope.dataPage = pageNumber;
 			if (!filter && $scope.filter) {
 				filter = $scope.filter;
 			}
 			if (!filter) {
 				filter = {};
 			}
-			if (!filter.$filter) {
-				filter.$filter = {};
-			}
-			if (!filter.$filter.equals) {
-				filter.$filter.equals = {};
-			}
-			filter.$filter.equals.${masterEntityId} = ${masterEntityId};
+			$scope.selectedEntity = null;
 			entityApi.count(filter).then(function (response) {
 				if (response.status != 200) {
 					messageHub.showAlertError("Disposal", `Unable to count Disposal: '${response.message}'`);
@@ -104,12 +83,22 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				if (response.data) {
 					$scope.dataCount = response.data;
 				}
-				filter.$offset = (pageNumber - 1) * $scope.dataLimit;
+				$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
+				filter.$offset = ($scope.dataPage - 1) * $scope.dataLimit;
 				filter.$limit = $scope.dataLimit;
+				if ($scope.dataReset) {
+					filter.$offset = 0;
+					filter.$limit = $scope.dataPage * $scope.dataLimit;
+				}
+
 				entityApi.search(filter).then(function (response) {
 					if (response.status != 200) {
 						messageHub.showAlertError("Disposal", `Unable to list/filter Disposal: '${response.message}'`);
 						return;
+					}
+					if ($scope.data == null || $scope.dataReset) {
+						$scope.data = [];
+						$scope.dataReset = false;
 					}
 
 					response.data.forEach(e => {
@@ -118,28 +107,18 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 						}
 					});
 
-					$scope.data = response.data;
+					$scope.data = $scope.data.concat(response.data);
+					$scope.dataPage++;
 				});
 			});
 		};
+		$scope.loadPage($scope.dataPage, $scope.filter);
 
 		$scope.selectEntity = function (entity) {
 			$scope.selectedEntity = entity;
-		};
-
-		$scope.openDetails = function (entity) {
-			$scope.selectedEntity = entity;
-			messageHub.showDialogWindow("Disposal-details", {
-				action: "select",
+			messageHub.postMessage("entitySelected", {
 				entity: entity,
-				optionsAsset: $scope.optionsAsset,
-				optionsSalesInvoice: $scope.optionsSalesInvoice,
-			});
-		};
-
-		$scope.openFilter = function (entity) {
-			messageHub.showDialogWindow("Disposal-filter", {
-				entity: $scope.filterEntity,
+				selectedMainEntityId: entity.Id,
 				optionsAsset: $scope.optionsAsset,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
@@ -147,29 +126,26 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		$scope.createEntity = function () {
 			$scope.selectedEntity = null;
-			messageHub.showDialogWindow("Disposal-details", {
-				action: "create",
+			$scope.action = "create";
+
+			messageHub.postMessage("createEntity", {
 				entity: {},
-				selectedMainEntityKey: "${masterEntityId}",
-				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
-			}, null, false);
+			});
 		};
 
-		$scope.updateEntity = function (entity) {
-			messageHub.showDialogWindow("Disposal-details", {
-				action: "update",
-				entity: entity,
-				selectedMainEntityKey: "${masterEntityId}",
-				selectedMainEntityId: $scope.selectedMainEntityId,
+		$scope.updateEntity = function () {
+			$scope.action = "update";
+			messageHub.postMessage("updateEntity", {
+				entity: $scope.selectedEntity,
 				optionsAsset: $scope.optionsAsset,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
-			}, null, false);
+			});
 		};
 
-		$scope.deleteEntity = function (entity) {
-			let id = entity.Id;
+		$scope.deleteEntity = function () {
+			let id = $scope.selectedEntity.Id;
 			messageHub.showDialogAsync(
 				'Delete Disposal?',
 				`Are you sure you want to delete Disposal? This action cannot be undone.`,
@@ -190,10 +166,19 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 							messageHub.showAlertError("Disposal", `Unable to delete Disposal: '${response.message}'`);
 							return;
 						}
+						refreshData();
 						$scope.loadPage($scope.dataPage, $scope.filter);
 						messageHub.postMessage("clearDetails");
 					});
 				}
+			});
+		};
+
+		$scope.openFilter = function (entity) {
+			messageHub.showDialogWindow("Disposal-filter", {
+				entity: $scope.filterEntity,
+				optionsAsset: $scope.optionsAsset,
+				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
 

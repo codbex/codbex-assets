@@ -6,8 +6,8 @@
 const viewData = {
     id: "Disposal-filter",
     label: "Disposal Filter",
-    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/Disposal/dialog-filter/index.html",
-    perspectiveName: "Asset",
+    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/dialog-filter/index.html",
+    perspectiveName: "Disposal",
 };
 
 if (typeof exports !== 'undefined') {

@@ -259,7 +259,7 @@ export class DisposalRepository {
     }
 
     private async triggerEvent(data: DisposalEntityEvent | DisposalUpdateEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-assets-Asset-Disposal", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-assets-Disposal-Disposal", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -267,6 +267,6 @@ export class DisposalRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-assets-Asset-Disposal").send(JSON.stringify(data));
+        producer.topic("codbex-assets-Disposal-Disposal").send(JSON.stringify(data));
     }
 }

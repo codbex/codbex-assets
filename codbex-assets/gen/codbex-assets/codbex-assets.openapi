@@ -13,7 +13,7 @@ tags:
   - name: AcquisitionRequest
   - name: Asset
   - name: Asset
-  - name: Asset
+  - name: Disposal
   - name: Asset
   - name: MaintenanceStatus
 paths:
@@ -1605,7 +1605,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts:
+  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts:
     get:
       summary: List Disposal
       parameters:
@@ -1626,7 +1626,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Asset
+        - Disposal
       responses:
         200:
           description: Successful Request
@@ -1657,7 +1657,7 @@ paths:
     post:
       summary: Create Disposal
       tags:
-        - Asset
+        - Disposal
       requestBody:
         content:
           application/json:
@@ -1689,7 +1689,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/{id}:
     get:
       summary: Get Disposal by Id
       parameters:
@@ -1700,7 +1700,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Disposal
       responses:
         200:
           description: Successful Request
@@ -1738,7 +1738,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Disposal
       requestBody:
         content:
           application/json:
@@ -1786,7 +1786,7 @@ paths:
           schema:
             type: string
       tags:
-        - Asset
+        - Disposal
       responses:
         204:
           description: Successful Request
@@ -1808,11 +1808,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/count:
     get:
       summary: Count the number of Disposal
       tags:
-        - Asset
+        - Disposal
       responses:
         200:
           description: Successful Request
@@ -1836,7 +1836,7 @@ paths:
     post:
       summary: Count the number of Disposal by DisposalFilterOptions
       tags:
-        - Asset
+        - Disposal
       requestBody:
         content:
           application/json:
@@ -1920,11 +1920,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/search:
     post:
       summary: Search Disposal by DisposalFilterOptions
       tags:
-        - Asset
+        - Disposal
       requestBody:
         content:
           application/json:

@@ -80,7 +80,7 @@
                         	<fd-form-label for="idSaleValue" dg-required="false" dg-colon="true">SaleValue</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--4 ">
-	                        <fd-step-input dg-id="idSaleValue"
+							<fd-step-input dg-id="idSaleValue"
 								name="SaleValue"
 								state="{{ forms.details['SaleValue'].$valid ? '' : 'error' }}"
 								dg-required="false"
@@ -140,6 +140,13 @@
 				</fd-bar-element>
 				<fd-bar-element>
 					<fd-button dg-label="Cancel" dg-type="transparent" ng-click="cancel()"></fd-button>
+				</fd-bar-element>
+			</fd-bar-right>
+		</fd-bar>
+		<fd-bar bar-design="footer" ng-show="action === 'select' && entityActions.length && entity.Id">
+			<fd-bar-right>
+				<fd-bar-element ng-repeat="action in entityActions">
+					<fd-button dg-label="{{action.label}}" dg-type="emphasized" ng-click="triggerEntityAction(action)"></fd-button>
 				</fd-bar-element>
 			</fd-bar-right>
 		</fd-bar>

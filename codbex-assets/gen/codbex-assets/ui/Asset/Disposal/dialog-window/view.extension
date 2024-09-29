@@ -1,5 +1,0 @@
-{
-    "module": "codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/Disposal/dialog-window/view.js",
-    "extensionPoint": "codbex-assets-dialog-window",
-    "description": "codbex-assets - Application Dialog Window"
-}

@@ -4,12 +4,12 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Disposal",
+    id: "Disposal-details",
     label: "Disposal",
     factory: "frame",
-    region: "bottom",
-    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/Disposal/index.html",
-    perspectiveName: "Asset",
+    region: "center",
+    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/main-details/index.html",
+    perspectiveName: "Disposal",
 };
 
 if (typeof exports !== 'undefined') {

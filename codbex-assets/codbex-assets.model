@@ -533,20 +533,20 @@
                 "dataQuery": "",
                 "generateReport": "false",
                 "icon": "/services/web/resources/unicons/file.svg",
-                "layoutType": "MANAGE_DETAILS",
+                "layoutType": "MANAGE_MASTER",
                 "menuIndex": "100",
                 "menuKey": "disposal",
                 "menuLabel": "Disposal",
                 "name": "Disposal",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/server.svg",
-                "perspectiveLabel": "Asset",
-                "perspectiveName": "Asset",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/x.svg",
+                "perspectiveLabel": "Disposal",
+                "perspectiveName": "Disposal",
+                "perspectiveOrder": "400",
                 "perspectiveRole": "",
                 "title": "Disposal",
                 "tooltip": "Disposal",
-                "type": "DEPENDENT"
+                "type": "PRIMARY"
             },
             {
                 "properties": [
@@ -2072,6 +2072,13 @@
                 "label": "Maintenance Status",
                 "icon": "/services/web/resources/unicons/align.svg",
                 "order": "300",
+                "role": {}
+            },
+            {
+                "name": "Disposal",
+                "label": "Disposal",
+                "icon": "/services/web/resources/unicons/x.svg",
+                "order": "400",
                 "role": {}
             }
         ],

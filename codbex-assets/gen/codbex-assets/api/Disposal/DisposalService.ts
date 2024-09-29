@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { DisposalRepository, DisposalEntityOptions } from "../../dao/Asset/DisposalRepository";
+import { DisposalRepository, DisposalEntityOptions } from "../../dao/Disposal/DisposalRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-assets-Asset-Disposal", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-assets-Disposal-Disposal", ["validate"]);
 
 @Controller
 class DisposalService {
@@ -19,17 +19,6 @@ class DisposalService {
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
 
-            let ${masterEntityId} = parseInt(ctx.queryParameters.${masterEntityId});
-            ${masterEntityId} = isNaN(${masterEntityId}) ? ctx.queryParameters.${masterEntityId} : ${masterEntityId};
-
-            if (${masterEntityId} !== undefined) {
-                options.$filter = {
-                    equals: {
-                        ${masterEntityId}: ${masterEntityId}
-                    }
-                };
-            }
-
             return this.repository.findAll(options);
         } catch (error: any) {
             this.handleError(error);
@@ -41,7 +30,7 @@ class DisposalService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/DisposalService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {

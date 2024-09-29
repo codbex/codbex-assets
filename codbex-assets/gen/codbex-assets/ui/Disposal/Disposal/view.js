@@ -4,14 +4,16 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Disposal-details",
+    id: "Disposal",
     label: "Disposal",
-    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/${masterEntity}/Disposal/dialog-window/index.html",
-    perspectiveName: "Asset",
+    factory: "frame",
+    region: "left",
+    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/index.html",
+    perspectiveName: "Disposal",
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getDialogWindow = function () {
+    exports.getView = function () {
         return viewData;
     }
 }
