@@ -9,13 +9,13 @@
         <!-- Title directive -->
         <title dg-view-title></title>
         <!-- View data -->
-        <script type="text/javascript" src="salesorder.js"></script>
+        <script type="text/javascript" src="waste.js"></script>
         <!-- IDE Core UI -->
         <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
         <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
         <theme></theme>
         <!-- Project-specific stuff -->
-        <script type="text/javascript" src="salesorder-controller.js"></script>
+        <script type="text/javascript" src="waste-controller.js"></script>
     </head>
 
     <body fd-scrollbar dg-contextmenu="contextMenuContent">
@@ -24,10 +24,11 @@
                 <fd-fieldset>
                     <fd-form-group style="display: flex; justify-content: center;">
                         <fd-form-item horizontal="false">
-                            <fd-form-label for="batchid" dg-colon="true" dg-required="true">Batch ID</fd-form-label>
-                            <fd-input id="batchid" type="text" placeholder="Here goes the batch id." ng-model="batchId">
+                            <fd-form-label for="price" dg-colon="true" dg-required="true">Accumulated Price
+                            </fd-form-label>
+                            <fd-input id="price" type="text" placeholder="Here goes the price." ng-model="price">
                             </fd-input>
-                            <fd-button ng-click="submitCopy(batchId)" dg-label="Submit" dg-type="default">Submit
+                            <fd-button ng-click="submitCopy(price)" dg-label="Submit" dg-type="default">Submit
                             </fd-button>
                         </fd-form-item>
                     </fd-form-group>
