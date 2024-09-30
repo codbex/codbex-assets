@@ -18,6 +18,18 @@
             "type": "git",
             "url": "https://github.com/codbex/codbex-invoices",
             "branch": "main"
+        },
+        {
+            "guid": "codbex-orders",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-orders",
+            "branch": "main"
+        },
+        {
+            "guid": "codbex-inventory",
+            "type": "git",
+            "url": "https://github.com/codbex/codbex-inventory",
+            "branch": "main"
         }
     ],
     "actions": [
