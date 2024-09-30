@@ -5,23 +5,30 @@ widgetsView.config(["messageHubProvider", function (messageHubProvider) {
 }])
 
 widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParameters', "messageHub", function ($scope, $http, ViewParameters, messageHub) {
-    $scope.submitCopy = function (batch) {
+    $scope.generateSalesOrder = function () {
         const params = ViewParameters.get();
 
-        const productUrl = "http://localhost:8080/services/ts/codbex-/gen/codbex-assets/api/Products/ProductService.ts/";
+        const disposalUrl = "http://localhost:8080/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/";
 
-        $http.get(productUrl + params.id)
+        $http.get(disposalUrl + params.id)
             .then(function (response) {
-                console.log(JSON.stringify(params.data));
+                let saleValue = response?.data.SaleValue ? response.data.SaleValue : null;
 
-                $http.post(productUrl, {
-                    ...response.data,
-                    Batch: batch
-                }).then(function (_) {
-                    messageHub.closeDialogWindow('product-assets');
+                if (saleValue) {
+                    console.log(saleValue);
+                    // Create sales order here
+                    // $http.post("here should be the salesorder url", {
+                    //     ...response.data,
+                    //     Batch: batch
+                    // }).then(function (_) {
+                    // });
+                }
+                else {
+                    //! Throw an error here;
+                }
 
-                    messageHub.triggerEvent('entityUpdated');
-                });
+                messageHub.closeDialogWindow('assets-sales-order');
+                messageHub.triggerEvent('entityUpdated');
             });
     }
 }]);

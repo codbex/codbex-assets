@@ -5,23 +5,25 @@ widgetsView.config(["messageHubProvider", function (messageHubProvider) {
 }])
 
 widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParameters', "messageHub", function ($scope, $http, ViewParameters, messageHub) {
-    $scope.submitCopy = function (batch) {
+    $scope.generateWaste = function () {
         const params = ViewParameters.get();
 
-        const productUrl = "http://localhost:8080/services/ts/codbex-/gen/codbex-assets/api/Products/ProductService.ts/";
+        const disposalUrl = "http://localhost:8080/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/";
 
-        $http.get(productUrl + params.id)
+        $http.get(disposalUrl + params.id)
             .then(function (response) {
-                console.log(JSON.stringify(params.data));
 
-                $http.post(productUrl, {
-                    ...response.data,
-                    Batch: batch
-                }).then(function (_) {
-                    messageHub.closeDialogWindow('product-assets');
+                // $http.post(disposalUrl, {
+                //  Should generate Waste with product from asset 
 
-                    messageHub.triggerEvent('entityUpdated');
-                });
+                console.log(JSON.stringify(response.data));
+
+                //     ...response.data,
+                //     Batch: batch
+                // }).then(function (_) {
+                messageHub.closeDialogWindow('assets-waste');
+                messageHub.triggerEvent('entityUpdated');
+                // });
             });
     }
 }]);

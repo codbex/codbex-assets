@@ -20,15 +20,11 @@
 
     <body fd-scrollbar dg-contextmenu="contextMenuContent">
         <fd-panel expanded="true">
-            <fd-panel-content aria-label="Inputs Panel Content">
+            <fd-panel-content aria-label="Generate Waste">
                 <fd-fieldset>
                     <fd-form-group style="display: flex; justify-content: center;">
                         <fd-form-item horizontal="false">
-                            <fd-form-label for="price" dg-colon="true" dg-required="true">Accumulated Price
-                            </fd-form-label>
-                            <fd-input id="price" type="text" placeholder="Here goes the price." ng-model="price">
-                            </fd-input>
-                            <fd-button ng-click="submitCopy(price)" dg-label="Submit" dg-type="default">Submit
+                            <fd-button ng-click="generateWaste()" dg-label="Generate Waste" dg-type="default">Generate
                             </fd-button>
                         </fd-form-item>
                     </fd-form-group>
