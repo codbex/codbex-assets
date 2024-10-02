@@ -31,5 +31,8 @@ widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParamet
                 messageHub.triggerEvent('entityUpdated');
             });
     }
+    $scope.closeDialog = function () {
+        messageHub.closeDialogWindow('assets-sales-order');
+    }
 }]);
 

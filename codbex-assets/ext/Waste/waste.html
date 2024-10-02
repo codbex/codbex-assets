@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="widgets" ng-controller="WidgetsViewController">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Fake favicon to silent console errors and not waste a get request -->
+        <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
+        <!-- Title directive -->
+        <title dg-view-title></title>
+        <!-- View data -->
+        <script type="text/javascript" src="waste.js"></script>
+        <!-- IDE Core UI -->
+        <script type="text/javascript" src="/services/js/resources-core/services/loader.js?id=ide-view-js"></script>
+        <link type="text/css" rel="stylesheet" href="/services/js/resources-core/services/loader.js?id=ide-view-css" />
+        <theme></theme>
+        <!-- Project-specific stuff -->
+        <script type="text/javascript" src="waste-controller.js"></script>
+    </head>
+
+    <body fd-scrollbar dg-contextmenu="contextMenuContent" class="dg-center dg-vbox">
+        <fd-panel expanded="true">
+            <fd-panel-content aria-label="Generate button"
+                style="display: flex; justify-content: center; border-bottom: 0px;">
+                <fd-fieldset>
+                    <fd-form-group>
+                        <fd-form-item horizontal="false">
+                            <fd-form-label style="margin: auto auto 15px auto; font-weight: 400; font-size: 2rem;">
+                                Generating Waste
+                            </fd-form-label>
+                            <div style="display: flex; flex-direction: row; justify-content: center;">
+                                <fd-button ng-click="gemerateWaste()" dg-label="Yes" dg-type="positive"
+                                    style="width: 180px;">
+                                </fd-button>
+                                <fd-button ng-click="closeDialog()" dg-label="No" dg-type="negative"
+                                    style="width: 180px; margin-left: 20px;"></fd-button>
+                            </div>
+                        </fd-form-item>
+                    </fd-form-group>
+                </fd-fieldset>
+            </fd-panel-content>
+        </fd-panel>
+    </body>
+
+</html>

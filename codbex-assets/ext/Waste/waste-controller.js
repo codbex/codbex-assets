@@ -26,5 +26,8 @@ widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParamet
                 // });
             });
     }
+    $scope.closeDialog = function () {
+        messageHub.closeDialogWindow('assets-waste');
+    }
 }]);
 

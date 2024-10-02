@@ -1,7 +1,7 @@
 const viewData = {
     id: 'assets-waste',
     label: 'Generate Waste',
-    link: '/services/web/codbex-inventory/gen/codbex-inventory/ui/Waste/index.html',
+    link: '/services/web/codbex-assets/ext/Waste/waste.html',
     perspective: 'Disposal',
     view: 'Disposal',
     type: 'entity',
