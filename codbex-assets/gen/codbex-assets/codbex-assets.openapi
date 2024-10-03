@@ -2843,6 +2843,9 @@ components:
         Product:
           type: integer
           format: int32
+        Store:
+          type: integer
+          format: int32
         MaintenenceCost:
           type: number
           format: double
@@ -2915,6 +2918,14 @@ components:
                         type: number
                         format: double
                 Product:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Store:
                   oneOf:
                     - type: integer
                       format: int32
@@ -3005,6 +3016,14 @@ components:
                       items:
                         type: integer
                         format: int32
+                Store:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
                 MaintenenceCost:
                   oneOf:
                     - type: number
@@ -3038,6 +3057,7 @@ components:
                 AquiredValue:
                 AccumulatedValue:
                 Product:
+                Store:
                 MaintenenceCost:
                 PurchaseInvoice:
             greaterThan:
@@ -3065,6 +3085,9 @@ components:
                   type: number
                   format: double
                 Product:
+                  type: integer
+                  format: int32
+                Store:
                   type: integer
                   format: int32
                 MaintenenceCost:
@@ -3100,6 +3123,9 @@ components:
                 Product:
                   type: integer
                   format: int32
+                Store:
+                  type: integer
+                  format: int32
                 MaintenenceCost:
                   type: number
                   format: double
@@ -3131,6 +3157,9 @@ components:
                   type: number
                   format: double
                 Product:
+                  type: integer
+                  format: int32
+                Store:
                   type: integer
                   format: int32
                 MaintenenceCost:
@@ -3166,6 +3195,9 @@ components:
                 Product:
                   type: integer
                   format: int32
+                Store:
+                  type: integer
+                  format: int32
                 MaintenenceCost:
                   type: number
                   format: double
@@ -3174,12 +3206,12 @@ components:
                   format: int32
         $select:
           type: array
-          example: ["Id", "Name", "Company", "SerialNumber", "PurchaseDate", "AquiredValue", "AccumulatedValue", "Product", "MaintenenceCost", "PurchaseInvoice"]
+          example: ["Id", "Name", "Company", "SerialNumber", "PurchaseDate", "AquiredValue", "AccumulatedValue", "Product", "Store", "MaintenenceCost", "PurchaseInvoice"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,Company,SerialNumber,PurchaseDate,AquiredValue,AccumulatedValue,Product,MaintenenceCost,PurchaseInvoice"
+            example: "Id,Name,Company,SerialNumber,PurchaseDate,AquiredValue,AccumulatedValue,Product,Store,MaintenenceCost,PurchaseInvoice"
         $order:
           type: string
           enum: ["asc", "desc"]

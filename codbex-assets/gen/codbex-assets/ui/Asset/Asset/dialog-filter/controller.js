@@ -21,6 +21,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsProduct = params.optionsProduct;
+			$scope.optionsStore = params.optionsStore;
 			$scope.optionsPurchaseInvoice = params.optionsPurchaseInvoice;
 		}
 
@@ -70,6 +71,9 @@ angular.module('page', ["ideUI", "ideView"])
 			}
 			if (entity.Product !== undefined) {
 				filter.$filter.equals.Product = entity.Product;
+			}
+			if (entity.Store !== undefined) {
+				filter.$filter.equals.Store = entity.Store;
 			}
 			if (entity.MaintenenceCost !== undefined) {
 				filter.$filter.equals.MaintenenceCost = entity.MaintenenceCost;

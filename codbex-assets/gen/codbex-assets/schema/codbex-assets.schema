@@ -53,6 +53,11 @@
                         "name": "ASSET_PRODUCT"
                     },
                     {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ASSET_STORE"
+                    },
+                    {
                         "type": "DECIMAL",
                         "length": 18,
                         "precision": "16",
@@ -299,6 +304,15 @@
                 "columns": "ASSET_PRODUCT",
                 "referencedTable": "CODBEX_PRODUCT",
                 "referencedColumns": "PRODUCT_ID"
+            },
+            {
+                "name": "Asset_Store",
+                "type": "foreignKey",
+                "table": "CODBEX_ASSET",
+                "constraintName": "Asset_Store",
+                "columns": "ASSET_STORE",
+                "referencedTable": "CODBEX_STORE",
+                "referencedColumns": "STORE_ID"
             },
             {
                 "name": "Asset_PurchaseInvoice",

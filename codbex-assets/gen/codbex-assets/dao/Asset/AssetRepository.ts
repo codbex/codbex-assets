@@ -13,6 +13,7 @@ export interface AssetEntity {
     AquiredValue?: number;
     AccumulatedValue?: number;
     Product?: number;
+    Store?: number;
     MaintenenceCost?: number;
     PurchaseInvoice?: number;
 }
@@ -25,6 +26,7 @@ export interface AssetCreateEntity {
     readonly AquiredValue?: number;
     readonly AccumulatedValue?: number;
     readonly Product?: number;
+    readonly Store?: number;
     readonly MaintenenceCost?: number;
     readonly PurchaseInvoice?: number;
 }
@@ -44,6 +46,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number | number[];
             AccumulatedValue?: number | number[];
             Product?: number | number[];
+            Store?: number | number[];
             MaintenenceCost?: number | number[];
             PurchaseInvoice?: number | number[];
         };
@@ -56,6 +59,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number | number[];
             AccumulatedValue?: number | number[];
             Product?: number | number[];
+            Store?: number | number[];
             MaintenenceCost?: number | number[];
             PurchaseInvoice?: number | number[];
         };
@@ -68,6 +72,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number;
             AccumulatedValue?: number;
             Product?: number;
+            Store?: number;
             MaintenenceCost?: number;
             PurchaseInvoice?: number;
         };
@@ -80,6 +85,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number;
             AccumulatedValue?: number;
             Product?: number;
+            Store?: number;
             MaintenenceCost?: number;
             PurchaseInvoice?: number;
         };
@@ -92,6 +98,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number;
             AccumulatedValue?: number;
             Product?: number;
+            Store?: number;
             MaintenenceCost?: number;
             PurchaseInvoice?: number;
         };
@@ -104,6 +111,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number;
             AccumulatedValue?: number;
             Product?: number;
+            Store?: number;
             MaintenenceCost?: number;
             PurchaseInvoice?: number;
         };
@@ -116,6 +124,7 @@ export interface AssetEntityOptions {
             AquiredValue?: number;
             AccumulatedValue?: number;
             Product?: number;
+            Store?: number;
             MaintenenceCost?: number;
             PurchaseInvoice?: number;
         };
@@ -187,6 +196,11 @@ export class AssetRepository {
             {
                 name: "Product",
                 column: "ASSET_PRODUCT",
+                type: "INTEGER",
+            },
+            {
+                name: "Store",
+                column: "ASSET_STORE",
                 type: "INTEGER",
             },
             {

@@ -120,6 +120,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				entity: entity,
 				selectedMainEntityId: entity.Id,
 				optionsProduct: $scope.optionsProduct,
+				optionsStore: $scope.optionsStore,
 				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
@@ -131,6 +132,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("createEntity", {
 				entity: {},
 				optionsProduct: $scope.optionsProduct,
+				optionsStore: $scope.optionsStore,
 				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
@@ -140,6 +142,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("updateEntity", {
 				entity: $scope.selectedEntity,
 				optionsProduct: $scope.optionsProduct,
+				optionsStore: $scope.optionsStore,
 				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
@@ -178,17 +181,28 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Asset-filter", {
 				entity: $scope.filterEntity,
 				optionsProduct: $scope.optionsProduct,
+				optionsStore: $scope.optionsStore,
 				optionsPurchaseInvoice: $scope.optionsPurchaseInvoice,
 			});
 		};
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsProduct = [];
+		$scope.optionsStore = [];
 		$scope.optionsPurchaseInvoice = [];
 
 
 		$http.get("/services/ts/codbex-products/gen/codbex-products/api/Products/ProductService.ts").then(function (response) {
 			$scope.optionsProduct = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-inventory/gen/codbex-inventory/api/Stores/StoreService.ts").then(function (response) {
+			$scope.optionsStore = response.data.map(e => {
 				return {
 					value: e.Id,
 					text: e.Name
@@ -209,6 +223,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			for (let i = 0; i < $scope.optionsProduct.length; i++) {
 				if ($scope.optionsProduct[i].value === optionKey) {
 					return $scope.optionsProduct[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsStoreValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsStore.length; i++) {
+				if ($scope.optionsStore[i].value === optionKey) {
+					return $scope.optionsStore[i].text;
 				}
 			}
 			return null;
