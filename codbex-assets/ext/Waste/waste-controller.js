@@ -24,20 +24,20 @@ widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParamet
                 if (!response.data || !response.data.Asset)
                     throw new Error('Invalid disposal response: Missing asset information.');
 
-                console.log('Disposal Response:', JSON.stringify(response.data));
+                // console.log('Disposal Response:', JSON.stringify(response.data));
 
-                return $http.get(assetUrl + response.data.Asset); // Getting the Product from Asset
+                return $http.get(assetUrl + response.data.Asset); // Getting the Asset info
             })
-            .then(function (response2) { // Should be the product
+            .then(function (response2) { // Should be the Asset
                 if (!response2.data || !response2.data.Product)
                     throw new Error('Invalid asset response: Missing product information.');
 
-                console.log('Asset Response:', JSON.stringify(response2.data));
+                // console.log('Asset Response:', JSON.stringify(response2.data));
 
                 const wasteData = {
                     Date: new Date().toISOString(),
                     Product: response2.data.Product || 0, // Handling case if Product is undefined
-                    Store: params.store || 0, // same
+                    Store: response2.data.Store || 0, // same
                     WasteType: 4,
                     Quantity: 1
                 };
@@ -46,7 +46,12 @@ widgetsView.controller('WidgetsViewController', ['$scope', '$http', 'ViewParamet
             })
             .then(function () {
                 messageHub.closeDialogWindow('assets-waste');
+                // console.log("Success");
                 messageHub.triggerEvent('entityUpdated');
+                messageHub.showAlertSuccess(
+                    "Successfully generated Waste",
+                    "Waste has been generated!"
+                );
             })
             .catch(function (error) {
                 console.error('Error during waste generation:', error);
