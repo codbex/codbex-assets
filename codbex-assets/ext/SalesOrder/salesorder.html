@@ -21,19 +21,82 @@
     <body fd-scrollbar dg-contextmenu="contextMenuContent" class="dg-center dg-vbox">
         <fd-panel expanded="true">
             <fd-panel-content aria-label="Generate button"
-                style="display: flex; justify-content: center; border-bottom: 0px;">
-                <fd-fieldset>
+                style="display: flex; justify-content: center; border-bottom: 0px; background: white; padding: 30px; border-radius: 8px;">
+                <fd-fieldset ng-form="forms.details">
                     <fd-form-group>
                         <fd-form-item horizontal="false">
                             <fd-form-label style="margin: auto auto 25px auto; font-weight: 400; font-size: 1.7rem;">
                                 Generating Sales Order
                             </fd-form-label>
-                            <div style="display: flex; flex-direction: row; justify-content: center;">
+
+                            <fd-form-item class="fd-row">
+                                <div class="fd-col fd-col-md--2">
+                                    <fd-form-label for="idDue" dg-required="true" dg-colon="true">Due</fd-form-label>
+                                </div>
+                                <div class="fd-col fd-col-md--10 fd-col--3">
+                                    <fd-form-input-message-group dg-inactive="{{ forms.details['Due'].$valid }}">
+                                        <fd-input id="idDue" name="Due"
+                                            state="{{ forms.details['Due'].$valid ? 'normal' : 'error' }}"
+                                            ng-required="true" ng-model="entity.Due" ng-readonly="action === 'select'"
+                                            type="date">
+                                        </fd-input>
+                                        <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+                                    </fd-form-input-message-group>
+                                </div>
+                            </fd-form-item>
+
+                            <fd-form-item class="fd-row">
+                                <div class="fd-col fd-col-md--2">
+                                    <fd-form-label for="idCustomer" dg-required="true" dg-colon="true">Customer
+                                    </fd-form-label>
+                                </div>
+                                <div class="fd-col fd-col-md--10">
+                                    <fd-combobox-input id="idCustomer" name="Customer"
+                                        state="{{ forms.details['Customer'].$valid ? 'normal' : 'error' }}"
+                                        ng-required="true" ng-model="entity.Customer" dg-disabled="action === 'select'"
+                                        dropdown-items="optionsCustomer" item-label="name" item-value="id"
+                                        dg-placeholder="Search Customer ...">
+                                    </fd-combobox-input>
+                                </div>
+                            </fd-form-item>
+
+                            <fd-form-item class="fd-row">
+                                <div class="fd-col fd-col-md--2">
+                                    <fd-form-label for="idSentMethod" dg-required="true" dg-colon="true">Sent Method
+                                    </fd-form-label>
+                                </div>
+                                <div class="fd-col fd-col-md--10">
+                                    <fd-combobox-input id="idSentMethod" name="SentMethod"
+                                        state="{{ forms.details['SentMethod'].$valid ? 'normal' : 'error' }}"
+                                        ng-required="true" ng-model="entity.SentMethod"
+                                        dg-disabled="action === 'select'" dropdown-items="optionsSentMethod"
+                                        dg-placeholder="Search Sent Method ...">
+                                    </fd-combobox-input>
+                                </div>
+                            </fd-form-item>
+
+                            <fd-form-item class="fd-row">
+                                <div class="fd-col fd-col-md--2">
+                                    <fd-form-label for="idOperator" dg-required="true" dg-colon="true">Operator
+                                    </fd-form-label>
+                                </div>
+                                <div class="fd-col fd-col-md--10">
+                                    <fd-combobox-input id="idOperator" name="Operator"
+                                        state="{{ forms.details['Operator'].$valid ? 'normal' : 'error' }}"
+                                        ng-required="true" ng-model="entity.Operator" dg-disabled="action === 'select'"
+                                        dropdown-items="optionsOperator" item-label="name" item-value="id"
+                                        dg-placeholder="Search Operator ...">
+                                    </fd-combobox-input>
+                                </div>
+                            </fd-form-item>
+
+                            <div style="display: flex; flex-direction: row; justify-content: center; margin-top: 20px;">
                                 <fd-button ng-click="generateSalesOrder()" dg-label="Generate" dg-type="emphasized"
-                                    style="width: 120px;">
+                                    state="{{ forms.details.$valid ? 'normal' : 'disabled' }}" style="width: 120px;">
                                 </fd-button>
                                 <fd-button ng-click="closeDialog()" dg-label="Cancel" dg-type="default"
-                                    style="width: 120px; margin-left: 15px;"></fd-button>
+                                    style="width: 120px; margin-left: 15px;">
+                                </fd-button>
                             </div>
                         </fd-form-item>
                     </fd-form-group>
