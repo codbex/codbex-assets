@@ -1,0 +1,14 @@
+{
+    "parameters": [
+        {
+            "name": "AccumulatedValue",
+            "type": "number",
+            "defaultValue": "0",
+            "description": ""
+        }
+    ],
+    "group": "defined",
+    "expression": "*/1 * * * *",
+    "handler": "codbex-assets/scheduled-jobs/AssetDeprecation/asset-deprecation-handler.mjs",
+    "description": "Asset Deprecation job"
+}
