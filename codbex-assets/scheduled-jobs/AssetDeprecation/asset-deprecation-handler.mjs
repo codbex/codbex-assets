@@ -10,28 +10,40 @@ const assets = AssetDao.findAll();
 assets.forEach((asset) => {
     console.log(`Processing asset: ID=${asset.Id}, Name=${asset.Name}`);
 
+    let currentAccumulatedValue = asset.AccumulatedValue || 0;
+    console.log(`Current accumulated value for asset ID=${asset.Id} is ${currentAccumulatedValue}`);
+
     const depreciations = DepreciationDao.findAll({
         $filter: {
             equals: {
-                DepreciationAsset: asset.Id
+                Asset: asset.Id
             }
         }
     });
+
+    depreciations.forEach((depreciation) => {
+        console.log(depreciation.Asset);
+    })
 
     if (depreciations.length === 0) {
         console.log(`No depreciation records found for asset ID=${asset.Id}`);
     }
 
-    // Calculate the accumulated depreciation value
-    let accumulatedValue = 0;
+    let totalDepreciation = 0;
     depreciations.forEach((depreciation) => {
-        accumulatedValue += depreciation.AnnualDepreciation;
-        console.log(`Adding AnnualDepreciation=${depreciation.AnnualDepreciation} for asset ID=${asset.Id}`);
+        totalDepreciation += depreciation.AnnualDepreciation;
+        console.log(`Subtracting AnnualDepreciation=${depreciation.AnnualDepreciation} for asset ID=${asset.Id}`);
     });
 
-    // Update the asset's accumulated value
-    AssetDeprecationService.updateAccumulatedValue(asset.Id, accumulatedValue);
-    console.log(`Updated accumulated value to ${accumulatedValue} for asset ID=${asset.Id}`);
+    let newAccumulatedValue = currentAccumulatedValue - totalDepreciation;
+
+    if (newAccumulatedValue < 0) {
+        newAccumulatedValue = 0;
+        console.log(`Accumulated value for asset ID=${asset.Id} is below zero, setting it to zero.`);
+    }
+
+    AssetDeprecationService.updateAccumulatedValue(asset.Id, newAccumulatedValue);
+    console.log(`Updated accumulated value to ${newAccumulatedValue} for asset ID=${asset.Id}`);
 });
 
 console.log('Processing completed.');
