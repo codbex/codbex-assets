@@ -1,7 +1,7 @@
 import { AssetRepository } from "../../gen/codbex-assets/dao/Asset/AssetRepository";
 import { MaintenanceRepository } from "../../gen/codbex-assets/dao/Asset/MaintenanceRepository";
 
-export const trigger = (event: any) => {
+export const trigger = (event) => {
     const assetRepo = new AssetRepository();
     const maintenanceRepo = new MaintenanceRepository();
     const maintenance = event.entity;
