@@ -1,34 +1,23 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { ValuationRepository, ValuationEntityOptions } from "../../dao/Asset/ValuationRepository";
+import { ValuationMethodRepository, ValuationMethodEntityOptions } from "../../dao/entities/ValuationMethodRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-assets-Asset-Valuation", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-assets-entities-ValuationMethod", ["validate"]);
 
 @Controller
-class ValuationService {
+class ValuationMethodService {
 
-    private readonly repository = new ValuationRepository();
+    private readonly repository = new ValuationMethodRepository();
 
     @Get("/")
     public getAll(_: any, ctx: any) {
         try {
-            const options: ValuationEntityOptions = {
+            const options: ValuationMethodEntityOptions = {
                 $limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
-
-            let Asset = parseInt(ctx.queryParameters.Asset);
-            Asset = isNaN(Asset) ? ctx.queryParameters.Asset : Asset;
-
-            if (Asset !== undefined) {
-                options.$filter = {
-                    equals: {
-                        Asset: Asset
-                    }
-                };
-            }
 
             return this.repository.findAll(options);
         } catch (error: any) {
@@ -41,7 +30,7 @@ class ValuationService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/ValuationService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -84,7 +73,7 @@ class ValuationService {
             if (entity) {
                 return entity;
             } else {
-                HttpUtils.sendResponseNotFound("Valuation not found");
+                HttpUtils.sendResponseNotFound("ValuationMethod not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -112,7 +101,7 @@ class ValuationService {
                 this.repository.deleteById(id);
                 HttpUtils.sendResponseNoContent();
             } else {
-                HttpUtils.sendResponseNotFound("Valuation not found");
+                HttpUtils.sendResponseNotFound("ValuationMethod not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -130,8 +119,8 @@ class ValuationService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.Remarks?.length > 128) {
-            throw new ValidationError(`The 'Remarks' exceeds the maximum length of [128] characters`);
+        if (entity.Name?.length > 20) {
+            throw new ValidationError(`The 'Name' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

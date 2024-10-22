@@ -8,8 +8,8 @@ export interface ValuationEntity {
     readonly Id: number;
     Asset?: number;
     ValuationDate?: Date;
-    ValuationMethod?: string;
     ValuedAt?: number;
+    ValuationMethod?: number;
     Remarks?: string;
     Supplier?: number;
 }
@@ -17,8 +17,8 @@ export interface ValuationEntity {
 export interface ValuationCreateEntity {
     readonly Asset?: number;
     readonly ValuationDate?: Date;
-    readonly ValuationMethod?: string;
     readonly ValuedAt?: number;
+    readonly ValuationMethod?: number;
     readonly Remarks?: string;
     readonly Supplier?: number;
 }
@@ -33,8 +33,8 @@ export interface ValuationEntityOptions {
             Id?: number | number[];
             Asset?: number | number[];
             ValuationDate?: Date | Date[];
-            ValuationMethod?: string | string[];
             ValuedAt?: number | number[];
+            ValuationMethod?: number | number[];
             Remarks?: string | string[];
             Supplier?: number | number[];
         };
@@ -42,8 +42,8 @@ export interface ValuationEntityOptions {
             Id?: number | number[];
             Asset?: number | number[];
             ValuationDate?: Date | Date[];
-            ValuationMethod?: string | string[];
             ValuedAt?: number | number[];
+            ValuationMethod?: number | number[];
             Remarks?: string | string[];
             Supplier?: number | number[];
         };
@@ -51,8 +51,8 @@ export interface ValuationEntityOptions {
             Id?: number;
             Asset?: number;
             ValuationDate?: Date;
-            ValuationMethod?: string;
             ValuedAt?: number;
+            ValuationMethod?: number;
             Remarks?: string;
             Supplier?: number;
         };
@@ -60,8 +60,8 @@ export interface ValuationEntityOptions {
             Id?: number;
             Asset?: number;
             ValuationDate?: Date;
-            ValuationMethod?: string;
             ValuedAt?: number;
+            ValuationMethod?: number;
             Remarks?: string;
             Supplier?: number;
         };
@@ -69,8 +69,8 @@ export interface ValuationEntityOptions {
             Id?: number;
             Asset?: number;
             ValuationDate?: Date;
-            ValuationMethod?: string;
             ValuedAt?: number;
+            ValuationMethod?: number;
             Remarks?: string;
             Supplier?: number;
         };
@@ -78,8 +78,8 @@ export interface ValuationEntityOptions {
             Id?: number;
             Asset?: number;
             ValuationDate?: Date;
-            ValuationMethod?: string;
             ValuedAt?: number;
+            ValuationMethod?: number;
             Remarks?: string;
             Supplier?: number;
         };
@@ -87,8 +87,8 @@ export interface ValuationEntityOptions {
             Id?: number;
             Asset?: number;
             ValuationDate?: Date;
-            ValuationMethod?: string;
             ValuedAt?: number;
+            ValuationMethod?: number;
             Remarks?: string;
             Supplier?: number;
         };
@@ -138,14 +138,14 @@ export class ValuationRepository {
                 type: "DATE",
             },
             {
-                name: "ValuationMethod",
-                column: "VALUATION_VALUATIONMETHOD",
-                type: "VARCHAR",
-            },
-            {
                 name: "ValuedAt",
                 column: "VALUATION_VALUEDAT",
                 type: "DECIMAL",
+            },
+            {
+                name: "ValuationMethod",
+                column: "VALUATION_VALUATIONMETHOD",
+                type: "INTEGER",
             },
             {
                 name: "Remarks",

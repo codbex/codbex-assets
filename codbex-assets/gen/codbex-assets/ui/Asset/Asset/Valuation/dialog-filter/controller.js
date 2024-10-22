@@ -21,6 +21,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsAsset = params.optionsAsset;
+			$scope.optionsValuationMethod = params.optionsValuationMethod;
 			$scope.optionsSupplier = params.optionsSupplier;
 		}
 
@@ -56,11 +57,11 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.ValuationDateTo) {
 				filter.$filter.lessThanOrEqual.ValuationDate = entity.ValuationDateTo;
 			}
-			if (entity.ValuationMethod) {
-				filter.$filter.contains.ValuationMethod = entity.ValuationMethod;
-			}
 			if (entity.ValuedAt !== undefined) {
 				filter.$filter.equals.ValuedAt = entity.ValuedAt;
+			}
+			if (entity.ValuationMethod !== undefined) {
+				filter.$filter.equals.ValuationMethod = entity.ValuationMethod;
 			}
 			if (entity.Remarks) {
 				filter.$filter.contains.Remarks = entity.Remarks;

@@ -6,14 +6,14 @@
 exports.getTile = function () {
     return {
         group: "codbex-assets",
-        name: "MaintenanceStatus",
-        caption: "Manage entity MaintenanceStatus",
-        tooltip: "MaintenanceStatus",
+        name: "ValuationMethod",
+        caption: "Manage entity ValuationMethod",
+        tooltip: "ValuationMethod",
         type: "SETTING",
         report: "false",
         icon: "/services/web/resources/unicons/file.svg",
-        location: "/services/web/codbex-assets/gen/codbex-assets/ui/MaintenanceStatus/index.html",
+        location: "/services/web/codbex-assets/gen/codbex-assets/ui/entities/index.html",
         order: "100",
-        groupOrder: "300",
+        groupOrder: "100",
     };
 };

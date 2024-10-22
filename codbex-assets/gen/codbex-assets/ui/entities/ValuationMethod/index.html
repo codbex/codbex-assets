@@ -16,27 +16,19 @@
 	</head>
 
 	<body class="dg-vbox">
-		<fd-message-page glyph="sap-icon--hint" ng-show="data == null">
-			<fd-message-page-title>Select a record to get a list of it's details.</fd-message-page-title>
-		</fd-message-page>
-
-		<fd-toolbar has-title="true" ng-hide="data == null">
+		<fd-toolbar has-title="true">
 			<fd-toolbar-title>Items ({{dataCount}})</fd-toolbar-title>
 			<fd-button compact="true" dg-type="transparent" dg-label="Filter" ng-click="openFilter()"></fd-button>
 			<fd-button ng-repeat="action in pageActions" compact="true" dg-type="transparent" dg-label="{{action.label}}" ng-click="triggerPageAction(action)"></fd-button>
 			<fd-toolbar-spacer></fd-toolbar-spacer>
-			<fd-button compact="true" dg-type="transparent" dg-label="Create" ng-click="createEntity()"
-				state="{{selectedMainEntityId == null ? 'disabled' : ''}}"></fd-button>
+			<fd-button compact="true" dg-type="transparent" dg-label="Create" ng-click="createEntity()"></fd-button>
 		</fd-toolbar>
+
 		<fd-scrollbar class="dg-full-height" ng-hide="data == null">
 			<table fd-table display-mode="compact" inner-borders="top" outer-borders="none">
 				<thead fd-table-header sticky="true">
 					<tr fd-table-row>
-						<th fd-table-header-cell>ValuationDate</th>
-						<th fd-table-header-cell>ValuedAt</th>
-						<th fd-table-header-cell>ValuationMethod</th>
-						<th fd-table-header-cell>Remarks</th>
-						<th fd-table-header-cell>Supplier</th>
+						<th fd-table-header-cell>Name</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -46,17 +38,7 @@
 					</tr>
 					<tr fd-table-row hoverable="true" ng-repeat="next in data"
 						dg-selected="next.Id === selectedEntity.Id" ng-click="selectEntity(next)">
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							<fd-input type="date" ng-model="next.ValuationDate" ng-readonly="true"></fd-input>
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.ValuedAt}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							{{optionsValuationMethodValue(next.ValuationMethod)}}
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Remarks}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							{{optionsSupplierValue(next.Supplier)}}
-						</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Name}}</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>

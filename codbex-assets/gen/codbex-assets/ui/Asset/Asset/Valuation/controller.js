@@ -133,6 +133,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "select",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
+				optionsValuationMethod: $scope.optionsValuationMethod,
 				optionsSupplier: $scope.optionsSupplier,
 			});
 		};
@@ -141,6 +142,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Valuation-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
+				optionsValuationMethod: $scope.optionsValuationMethod,
 				optionsSupplier: $scope.optionsSupplier,
 			});
 		};
@@ -153,6 +155,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
+				optionsValuationMethod: $scope.optionsValuationMethod,
 				optionsSupplier: $scope.optionsSupplier,
 			}, null, false);
 		};
@@ -164,6 +167,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
+				optionsValuationMethod: $scope.optionsValuationMethod,
 				optionsSupplier: $scope.optionsSupplier,
 			}, null, false);
 		};
@@ -199,11 +203,21 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
+		$scope.optionsValuationMethod = [];
 		$scope.optionsSupplier = [];
 
 
 		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts").then(function (response) {
 			$scope.optionsAsset = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts").then(function (response) {
+			$scope.optionsValuationMethod = response.data.map(e => {
 				return {
 					value: e.Id,
 					text: e.Name
@@ -224,6 +238,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			for (let i = 0; i < $scope.optionsAsset.length; i++) {
 				if ($scope.optionsAsset[i].value === optionKey) {
 					return $scope.optionsAsset[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsValuationMethodValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsValuationMethod.length; i++) {
+				if ($scope.optionsValuationMethod[i].value === optionKey) {
+					return $scope.optionsValuationMethod[i].text;
 				}
 			}
 			return null;

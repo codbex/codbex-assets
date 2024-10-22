@@ -245,15 +245,14 @@
                         "name": "VALUATION_VALUATIONDATE"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 64,
-                        "nullable": true,
-                        "name": "VALUATION_VALUATIONMETHOD"
-                    },
-                    {
                         "type": "DECIMAL",
                         "nullable": true,
                         "name": "VALUATION_VALUEDAT"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "VALUATION_VALUATIONMETHOD"
                     },
                     {
                         "type": "VARCHAR",
@@ -284,6 +283,25 @@
                         "length": 20,
                         "nullable": true,
                         "name": "MAINTENANCESTATUS_NAME"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_VALUATIONMETHOD",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "VALUATIONMETHOD_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "VALUATIONMETHOD_NAME"
                     }
                 ]
             },
@@ -385,6 +403,15 @@
                 "columns": "VALUATION_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Valuation_ValuationMethod",
+                "type": "foreignKey",
+                "table": "CODBEX_VALUATION",
+                "constraintName": "Valuation_ValuationMethod",
+                "columns": "VALUATION_VALUATIONMETHOD",
+                "referencedTable": "CODBEX_VALUATIONMETHOD",
+                "referencedColumns": "VALUATIONMETHOD_ID"
             },
             {
                 "name": "Valuation_Supplier",
