@@ -51,7 +51,7 @@
 							item-title="{{optionsAssetValue(next.Asset)}}">
 							<fd-list-byline dg-align="left">
 								{{next.DisposalDate | date: "dd/MMM/yyyy"}} |
-								{{next.Method}} |
+								{{optionsDisposalMethodValue(next.DisposalMethod)}} |
 								{{next.SaleValue}} |
 								{{next.Remarks}} |
 								{{optionsSalesInvoiceValue(next.SalesInvoice)}}

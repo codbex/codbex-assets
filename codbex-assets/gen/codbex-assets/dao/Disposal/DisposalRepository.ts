@@ -8,7 +8,7 @@ export interface DisposalEntity {
     readonly Id: number;
     Asset?: number;
     DisposalDate?: Date;
-    Method?: string;
+    DisposalMethod?: number;
     SaleValue?: number;
     Remarks?: string;
     SalesInvoice?: number;
@@ -17,7 +17,7 @@ export interface DisposalEntity {
 export interface DisposalCreateEntity {
     readonly Asset?: number;
     readonly DisposalDate?: Date;
-    readonly Method?: string;
+    readonly DisposalMethod?: number;
     readonly SaleValue?: number;
     readonly Remarks?: string;
     readonly SalesInvoice?: number;
@@ -33,7 +33,7 @@ export interface DisposalEntityOptions {
             Id?: number | number[];
             Asset?: number | number[];
             DisposalDate?: Date | Date[];
-            Method?: string | string[];
+            DisposalMethod?: number | number[];
             SaleValue?: number | number[];
             Remarks?: string | string[];
             SalesInvoice?: number | number[];
@@ -42,7 +42,7 @@ export interface DisposalEntityOptions {
             Id?: number | number[];
             Asset?: number | number[];
             DisposalDate?: Date | Date[];
-            Method?: string | string[];
+            DisposalMethod?: number | number[];
             SaleValue?: number | number[];
             Remarks?: string | string[];
             SalesInvoice?: number | number[];
@@ -51,7 +51,7 @@ export interface DisposalEntityOptions {
             Id?: number;
             Asset?: number;
             DisposalDate?: Date;
-            Method?: string;
+            DisposalMethod?: number;
             SaleValue?: number;
             Remarks?: string;
             SalesInvoice?: number;
@@ -60,7 +60,7 @@ export interface DisposalEntityOptions {
             Id?: number;
             Asset?: number;
             DisposalDate?: Date;
-            Method?: string;
+            DisposalMethod?: number;
             SaleValue?: number;
             Remarks?: string;
             SalesInvoice?: number;
@@ -69,7 +69,7 @@ export interface DisposalEntityOptions {
             Id?: number;
             Asset?: number;
             DisposalDate?: Date;
-            Method?: string;
+            DisposalMethod?: number;
             SaleValue?: number;
             Remarks?: string;
             SalesInvoice?: number;
@@ -78,7 +78,7 @@ export interface DisposalEntityOptions {
             Id?: number;
             Asset?: number;
             DisposalDate?: Date;
-            Method?: string;
+            DisposalMethod?: number;
             SaleValue?: number;
             Remarks?: string;
             SalesInvoice?: number;
@@ -87,7 +87,7 @@ export interface DisposalEntityOptions {
             Id?: number;
             Asset?: number;
             DisposalDate?: Date;
-            Method?: string;
+            DisposalMethod?: number;
             SaleValue?: number;
             Remarks?: string;
             SalesInvoice?: number;
@@ -138,9 +138,9 @@ export class DisposalRepository {
                 type: "DATE",
             },
             {
-                name: "Method",
-                column: "DISPOSAL_METHOD",
-                type: "VARCHAR",
+                name: "DisposalMethod",
+                column: "DISPOSAL_DISPOSALMETHOD",
+                type: "INTEGER",
             },
             {
                 name: "SaleValue",

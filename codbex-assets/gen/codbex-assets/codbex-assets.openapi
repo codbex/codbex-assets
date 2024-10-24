@@ -16,7 +16,8 @@ tags:
   - name: Disposal
   - name: Asset
   - name: MaintenanceStatus
-  - name: entities
+  - name: ValuationMethod
+  - name: DisposalMethod
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -1851,7 +1852,6 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      Method: "abcd"
                       Remarks: "abcd"
                     greaterThan:
                       Id: 0
@@ -1874,7 +1874,6 @@ paths:
                 value:
                   $filter:
                     contains:
-                      Method: "abcd"
                       Remarks: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
@@ -1939,7 +1938,6 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      Method: "abcd"
                       Remarks: "abcd"
                     greaterThan:
                       Id: 0
@@ -1962,7 +1960,6 @@ paths:
                 value:
                   $filter:
                     contains:
-                      Method: "abcd"
                       Remarks: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
@@ -2810,7 +2807,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts:
+  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts:
     get:
       summary: List ValuationMethod
       parameters:
@@ -2831,7 +2828,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - entities
+        - ValuationMethod
       responses:
         200:
           description: Successful Request
@@ -2862,7 +2859,7 @@ paths:
     post:
       summary: Create ValuationMethod
       tags:
-        - entities
+        - ValuationMethod
       requestBody:
         content:
           application/json:
@@ -2894,7 +2891,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/{id}:
     get:
       summary: Get ValuationMethod by Id
       parameters:
@@ -2905,7 +2902,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - ValuationMethod
       responses:
         200:
           description: Successful Request
@@ -2943,7 +2940,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - ValuationMethod
       requestBody:
         content:
           application/json:
@@ -2991,7 +2988,7 @@ paths:
           schema:
             type: string
       tags:
-        - entities
+        - ValuationMethod
       responses:
         204:
           description: Successful Request
@@ -3013,11 +3010,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/count:
     get:
       summary: Count the number of ValuationMethod
       tags:
-        - entities
+        - ValuationMethod
       responses:
         200:
           description: Successful Request
@@ -3041,7 +3038,7 @@ paths:
     post:
       summary: Count the number of ValuationMethod by ValuationMethodFilterOptions
       tags:
-        - entities
+        - ValuationMethod
       requestBody:
         content:
           application/json:
@@ -3123,11 +3120,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/entities/ValuationMethodService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/search:
     post:
       summary: Search ValuationMethod by ValuationMethodFilterOptions
       tags:
-        - entities
+        - ValuationMethod
       requestBody:
         content:
           application/json:
@@ -3198,6 +3195,406 @@ paths:
                 type: array
                 items:
                     $ref: '#/components/schemas/ValuationMethod'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts:
+    get:
+      summary: List DisposalMethod
+      parameters:
+        - in: query
+          name: $limit
+          description: The number of records to be returned _(both `$limit` and `$offset` should be provided)_.
+          required: false
+          allowReserved: true
+          schema:
+            type: integer
+            allowEmptyValue: true
+        - in: query
+          name: $offset
+          description: The number of records to skip _(both `$limit` and `$offset` should be provided)_.
+          required: false
+          allowReserved: true
+          schema:
+            type: integer
+            allowEmptyValue: true
+      tags:
+        - DisposalMethod
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/DisposalMethod'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Create DisposalMethod
+      tags:
+        - DisposalMethod
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisposalMethod'
+        required: true
+      responses:
+        201:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisposalMethod'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/{id}:
+    get:
+      summary: Get DisposalMethod by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - DisposalMethod
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/DisposalMethod'
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update DisposalMethod by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - DisposalMethod
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisposalMethod'
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisposalMethod'
+        400:
+          description: Bad Request Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      summary: Delete DisposalMethod by Id
+      parameters:
+        - in: path
+          name: id
+          description: The Id of the entity.
+          required: true
+          schema:
+            type: string
+      tags:
+        - DisposalMethod
+      responses:
+        204:
+          description: Successful Request
+        404:
+          description: Entity Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/count:
+    get:
+      summary: Count the number of DisposalMethod
+      tags:
+        - DisposalMethod
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 100
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: Count the number of DisposalMethod by DisposalMethodFilterOptions
+      tags:
+        - DisposalMethod
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisposalMethodFilterOptions'
+            examples:
+              countWithMultipleCriteria:
+                summary: Count with multiple criteria
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 33
+                    contains:
+                      Name: "abcd"
+                    greaterThan:
+                      Id: 0
+                    lessThanOrEqual:
+                      Id: 100
+              countWithEquals:
+                summary: Count with Equals
+                value:
+                  $filter:
+                    equals:
+                      Id: 0
+              countWithNotEquals:
+                summary: Count with Not Equals
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 0
+              countWithContains:
+                summary: Count with Contains
+                value:
+                  $filter:
+                    contains:
+                      Name: "abcd"
+              countWithGreaterThan:
+                summary: Count with Greater Than
+                value:
+                  $filter:
+                    greaterThan:
+                      Id: 0
+              countWithGreaterThanOrEqual:
+                summary: Count with Greater Than Or Equal
+                value:
+                  $filter:
+                    greaterThanOrEqual:
+                      Id: 0
+              countWithLessThan:
+                summary: Count with Less Than
+                value:
+                  $filter:
+                    lessThan:
+                      Id: 0
+              countWithLessThanOrEqual:
+                summary: Count with Less Than Or Equal
+                value:
+                  $filter:
+                    lessThanOrEqual:
+                      Id: 0
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: integer
+                example: 100
+        403:
+          description: Forbidden Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/search:
+    post:
+      summary: Search DisposalMethod by DisposalMethodFilterOptions
+      tags:
+        - DisposalMethod
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisposalMethodFilterOptions'
+            examples:
+              searchWithMultipleCriteria:
+                summary: Search with multiple criteria
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 33
+                    contains:
+                      Name: "abcd"
+                    greaterThan:
+                      Id: 0
+                    lessThanOrEqual:
+                      Id: 100
+              searchWithEquals:
+                summary: Search with Equals
+                value:
+                  $filter:
+                    equals:
+                      Id: 0
+              searchWithNotEquals:
+                summary: Search with Not Equals
+                value:
+                  $filter:
+                    notEquals:
+                      Id: 0
+              searchWithContains:
+                summary: Search with Contains
+                value:
+                  $filter:
+                    contains:
+                      Name: "abcd"
+              searchWithGreaterThan:
+                summary: Search with Greater Than
+                value:
+                  $filter:
+                    greaterThan:
+                      Id: 0
+              searchWithGreaterThanOrEqual:
+                summary: Search with Greater Than Or Equal
+                value:
+                  $filter:
+                    greaterThanOrEqual:
+                      Id: 0
+              searchWithLessThan:
+                summary: Search with Less Than
+                value:
+                  $filter:
+                    lessThan:
+                      Id: 0
+              searchWithLessThanOrEqual:
+                summary: Search with Less Than Or Equal
+                value:
+                  $filter:
+                    lessThanOrEqual:
+                      Id: 0
+        required: true
+      responses:
+        200:
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/DisposalMethod'
         403:
           description: Forbidden Error
           content:
@@ -4251,10 +4648,9 @@ components:
           type: integer
           format: int32
         DisposalDate:
-        Method:
-          type: string
-          minLength: 0
-          maxLength: 64
+        DisposalMethod:
+          type: integer
+          format: int32
         SaleValue:
           type: number
           format: double
@@ -4292,17 +4688,14 @@ components:
                         format: int32
                 DisposalDate:
                   oneOf:
-                Method:
+                DisposalMethod:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 64
+                    - type: integer
+                      format: int32
                     - type: array
                       items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 64
+                        type: integer
+                        format: int32
                 SaleValue:
                   oneOf:
                     - type: number
@@ -4351,17 +4744,14 @@ components:
                         format: int32
                 DisposalDate:
                   oneOf:
-                Method:
+                DisposalMethod:
                   oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 64
+                    - type: integer
+                      format: int32
                     - type: array
                       items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 64
+                        type: integer
+                        format: int32
                 SaleValue:
                   oneOf:
                     - type: number
@@ -4395,10 +4785,7 @@ components:
                 Id:
                 Asset:
                 DisposalDate:
-                Method:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                DisposalMethod:
                 SaleValue:
                 Remarks:
                   type: string
@@ -4415,10 +4802,9 @@ components:
                   type: integer
                   format: int32
                 DisposalDate:
-                Method:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                DisposalMethod:
+                  type: integer
+                  format: int32
                 SaleValue:
                   type: number
                   format: double
@@ -4439,10 +4825,9 @@ components:
                   type: integer
                   format: int32
                 DisposalDate:
-                Method:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                DisposalMethod:
+                  type: integer
+                  format: int32
                 SaleValue:
                   type: number
                   format: double
@@ -4463,10 +4848,9 @@ components:
                   type: integer
                   format: int32
                 DisposalDate:
-                Method:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                DisposalMethod:
+                  type: integer
+                  format: int32
                 SaleValue:
                   type: number
                   format: double
@@ -4487,10 +4871,9 @@ components:
                   type: integer
                   format: int32
                 DisposalDate:
-                Method:
-                  type: string
-                  minLength: 0
-                  maxLength: 64
+                DisposalMethod:
+                  type: integer
+                  format: int32
                 SaleValue:
                   type: number
                   format: double
@@ -4503,12 +4886,12 @@ components:
                   format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "DisposalDate", "Method", "SaleValue", "Remarks", "SalesInvoice"]
+          example: ["Id", "Asset", "DisposalDate", "DisposalMethod", "SaleValue", "Remarks", "SalesInvoice"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,DisposalDate,Method,SaleValue,Remarks,SalesInvoice"
+            example: "Id,Asset,DisposalDate,DisposalMethod,SaleValue,Remarks,SalesInvoice"
         $order:
           type: string
           enum: ["asc", "desc"]
@@ -4923,6 +5306,133 @@ components:
           minLength: 0
           maxLength: 20
     ValuationMethodFilterOptions:
+      type: object
+      properties:
+        $filter:
+          type: object
+          properties:
+            equals:
+              type: object
+              properties:
+                Id:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Name:
+                  oneOf:
+                    - type: string
+                      minLength: 0
+                      maxLength: 20
+                    - type: array
+                      items:
+                        type: string
+                        format: double
+                        minLength: 0
+                        maxLength: 20
+            notEquals:
+              type: object
+              properties:
+                Id:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
+                Name:
+                  oneOf:
+                    - type: string
+                      minLength: 0
+                      maxLength: 20
+                    - type: array
+                      items:
+                        type: string
+                        format: double
+                        minLength: 0
+                        maxLength: 20
+            contains:
+              type: object
+              properties:
+                Id:
+                Name:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
+            greaterThan:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Name:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
+            greaterThanOrEqual:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Name:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
+            lessThan:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Name:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
+            lessThanOrEqual:
+              type: object
+              properties:
+                Id:
+                  type: integer
+                  format: int32
+                Name:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
+        $select:
+          type: array
+          example: ["Id", "Name"]
+          items:
+            type: string
+        $sort:
+          - type: string
+            example: "Id,Name"
+        $order:
+          type: string
+          enum: ["asc", "desc"]
+          example: "asc"
+        $offset:
+          type: integer
+          example: 0
+        $limit:
+          type: integer
+          example: 10
+    DisposalMethod:
+      type: object
+      required:
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          minLength: 0
+          maxLength: 20
+    DisposalMethodFilterOptions:
       type: object
       properties:
         $filter:

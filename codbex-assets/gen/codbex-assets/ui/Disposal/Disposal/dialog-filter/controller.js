@@ -21,6 +21,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsAsset = params.optionsAsset;
+			$scope.optionsDisposalMethod = params.optionsDisposalMethod;
 			$scope.optionsSalesInvoice = params.optionsSalesInvoice;
 		}
 
@@ -56,8 +57,8 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.DisposalDateTo) {
 				filter.$filter.lessThanOrEqual.DisposalDate = entity.DisposalDateTo;
 			}
-			if (entity.Method) {
-				filter.$filter.contains.Method = entity.Method;
+			if (entity.DisposalMethod !== undefined) {
+				filter.$filter.equals.DisposalMethod = entity.DisposalMethod;
 			}
 			if (entity.SaleValue !== undefined) {
 				filter.$filter.equals.SaleValue = entity.SaleValue;

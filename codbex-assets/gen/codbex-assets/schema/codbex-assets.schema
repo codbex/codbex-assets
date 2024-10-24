@@ -200,10 +200,9 @@
                         "name": "DISPOSAL_DISPOSALDATE"
                     },
                     {
-                        "type": "VARCHAR",
-                        "length": 64,
+                        "type": "INTEGER",
                         "nullable": true,
-                        "name": "DISPOSAL_METHOD"
+                        "name": "DISPOSAL_DISPOSALMETHOD"
                     },
                     {
                         "type": "DECIMAL",
@@ -306,6 +305,25 @@
                 ]
             },
             {
+                "name": "CODBEX_DISPOSALMETHOD",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "DISPOSALMETHOD_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "DISPOSALMETHOD_NAME"
+                    }
+                ]
+            },
+            {
                 "name": "Asset_Company",
                 "type": "foreignKey",
                 "table": "CODBEX_ASSET",
@@ -385,6 +403,15 @@
                 "columns": "DISPOSAL_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Disposal_DisposalMethod",
+                "type": "foreignKey",
+                "table": "CODBEX_DISPOSAL",
+                "constraintName": "Disposal_DisposalMethod",
+                "columns": "DISPOSAL_DISPOSALMETHOD",
+                "referencedTable": "CODBEX_DISPOSALMETHOD",
+                "referencedColumns": "DISPOSALMETHOD_ID"
             },
             {
                 "name": "Disposal_SalesInvoice",

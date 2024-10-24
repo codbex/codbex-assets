@@ -1,20 +1,20 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { DisposalRepository, DisposalEntityOptions } from "../../dao/Disposal/DisposalRepository";
+import { ValuationMethodRepository, ValuationMethodEntityOptions } from "../../dao/ValuationMethod/ValuationMethodRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-assets-Disposal-Disposal", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-assets-ValuationMethod-ValuationMethod", ["validate"]);
 
 @Controller
-class DisposalService {
+class ValuationMethodService {
 
-    private readonly repository = new DisposalRepository();
+    private readonly repository = new ValuationMethodRepository();
 
     @Get("/")
     public getAll(_: any, ctx: any) {
         try {
-            const options: DisposalEntityOptions = {
+            const options: ValuationMethodEntityOptions = {
                 $limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
@@ -30,7 +30,7 @@ class DisposalService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -73,7 +73,7 @@ class DisposalService {
             if (entity) {
                 return entity;
             } else {
-                HttpUtils.sendResponseNotFound("Disposal not found");
+                HttpUtils.sendResponseNotFound("ValuationMethod not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -101,7 +101,7 @@ class DisposalService {
                 this.repository.deleteById(id);
                 HttpUtils.sendResponseNoContent();
             } else {
-                HttpUtils.sendResponseNotFound("Disposal not found");
+                HttpUtils.sendResponseNotFound("ValuationMethod not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -119,8 +119,8 @@ class DisposalService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.Remarks?.length > 128) {
-            throw new ValidationError(`The 'Remarks' exceeds the maximum length of [128] characters`);
+        if (entity.Name?.length > 20) {
+            throw new ValidationError(`The 'Name' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);

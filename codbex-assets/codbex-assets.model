@@ -556,17 +556,22 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataLength": "64",
-                        "dataName": "DISPOSAL_METHOD",
+                        "dataName": "DISPOSAL_DISPOSALMETHOD",
                         "dataNullable": "true",
-                        "dataType": "VARCHAR",
+                        "dataType": "INTEGER",
                         "description": "",
-                        "name": "Method",
+                        "name": "DisposalMethod",
                         "tooltip": "",
+                        "widgetDropDownKey": "Id",
+                        "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
-                        "widgetLength": "64",
-                        "widgetSize": "fd-col-md--4 fd-col--6",
-                        "widgetType": "TEXTBOX"
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "DROPDOWN",
+                        "relationshipName": "Disposal_DisposalMethod",
+                        "relationshipEntityName": "DisposalMethod",
+                        "relationshipEntityPerspectiveName": "DisposalMethod",
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
                         "dataLength": "NaN",
@@ -715,7 +720,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "Valuation_ValuationMethod",
                         "relationshipEntityName": "ValuationMethod",
-                        "relationshipEntityPerspectiveName": "entities",
+                        "relationshipEntityPerspectiveName": "ValuationMethod",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -2605,20 +2610,72 @@
                 "dataQuery": "",
                 "description": "Manage entity ValuationMethod",
                 "generateReport": "false",
-                "icon": "/services/web/resources/unicons/file.svg",
+                "icon": "/services/web/resources/unicons/percentage.svg",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
                 "menuKey": "valuationmethod",
                 "menuLabel": "ValuationMethod",
                 "name": "ValuationMethod",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/copy.svg",
-                "perspectiveLabel": "Entities",
-                "perspectiveName": "entities",
-                "perspectiveOrder": "100",
+                "perspectiveIcon": "/services/web/resources/unicons/download-alt.svg",
+                "perspectiveLabel": "Valuation Method",
+                "perspectiveName": "ValuationMethod",
+                "perspectiveOrder": "301",
                 "perspectiveRole": "",
                 "title": "ValuationMethod",
                 "tooltip": "ValuationMethod",
+                "type": "SETTING"
+            },
+            {
+                "properties": [
+                    {
+                        "dataAutoIncrement": "true",
+                        "dataName": "DISPOSALMETHOD_ID",
+                        "dataNullable": "true",
+                        "dataPrimaryKey": "true",
+                        "dataType": "INTEGER",
+                        "description": "",
+                        "name": "Id",
+                        "tooltip": "",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "dataLength": "20",
+                        "dataName": "DISPOSALMETHOD_NAME",
+                        "dataNullable": "true",
+                        "dataType": "VARCHAR",
+                        "description": "",
+                        "name": "Name",
+                        "tooltip": "",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
+                        "widgetSize": "",
+                        "widgetType": "TEXTBOX"
+                    }
+                ],
+                "caption": "Manage entity DisposalMethod",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}DISPOSALMETHOD\"",
+                "dataName": "DISPOSALMETHOD",
+                "dataQuery": "",
+                "description": "Manage entity DisposalMethod",
+                "generateReport": "false",
+                "icon": "/services/web/resources/unicons/file.svg",
+                "layoutType": "MANAGE",
+                "menuIndex": "100",
+                "menuKey": "disposalmethod",
+                "menuLabel": "DisposalMethod",
+                "name": "DisposalMethod",
+                "navigationPath": "/Home",
+                "perspectiveIcon": "/services/web/resources/unicons/trash.svg",
+                "perspectiveLabel": "Disposal Method",
+                "perspectiveName": "DisposalMethod",
+                "perspectiveOrder": "302",
+                "perspectiveRole": "",
+                "title": "DisposalMethod",
+                "tooltip": "DisposalMethod",
                 "type": "SETTING"
             }
         ],
@@ -2654,8 +2711,15 @@
             {
                 "name": "ValuationMethod",
                 "label": "Valuation Method",
-                "icon": "/services/web/resources/unicons/behance-alt.svg",
+                "icon": "/services/web/resources/unicons/download-alt.svg",
                 "order": "301",
+                "role": {}
+            },
+            {
+                "name": "DisposalMethod",
+                "label": "Disposal Method",
+                "icon": "/services/web/resources/unicons/trash.svg",
+                "order": "302",
                 "role": {}
             }
         ],

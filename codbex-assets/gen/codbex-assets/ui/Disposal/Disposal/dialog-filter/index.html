@@ -73,21 +73,16 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idMethod" dg-colon="true">Method</fd-form-label>
+                        	<fd-form-label for="idDisposalMethod" dg-colon="true">DisposalMethod</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Method'].$valid }}">
-	                            <fd-input id="idMethod"
-	                                name="Method"
-	                                state="{{ forms.details['Method'].$valid ? '' : 'error' }}"
-	                                ng-model="entity.Method"
-	                                ng-minlength="0.0 || 0"
-	                                ng-maxlength="64.0 || -1"
-	                                type="text"
-	                                placeholder="Enter Method">
-	                            </fd-input>
-	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
-	                        </fd-form-input-message-group>
+	                        <fd-combobox-input id="idDisposalMethod"
+	                            name="DisposalMethod"
+	                            state="{{ forms.details['DisposalMethod'].$valid ? '' : 'error' }}"
+	                            ng-model="entity.DisposalMethod"
+	                            dropdown-items="optionsDisposalMethod"
+	                            dg-placeholder="Search DisposalMethod ...">
+	                        </fd-combobox-input>
 	                    </div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">

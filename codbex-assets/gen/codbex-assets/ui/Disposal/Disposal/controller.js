@@ -120,6 +120,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				entity: entity,
 				selectedMainEntityId: entity.Id,
 				optionsAsset: $scope.optionsAsset,
+				optionsDisposalMethod: $scope.optionsDisposalMethod,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
@@ -131,6 +132,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("createEntity", {
 				entity: {},
 				optionsAsset: $scope.optionsAsset,
+				optionsDisposalMethod: $scope.optionsDisposalMethod,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
@@ -140,6 +142,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("updateEntity", {
 				entity: $scope.selectedEntity,
 				optionsAsset: $scope.optionsAsset,
+				optionsDisposalMethod: $scope.optionsDisposalMethod,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
@@ -178,17 +181,28 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Disposal-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
+				optionsDisposalMethod: $scope.optionsDisposalMethod,
 				optionsSalesInvoice: $scope.optionsSalesInvoice,
 			});
 		};
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
+		$scope.optionsDisposalMethod = [];
 		$scope.optionsSalesInvoice = [];
 
 
 		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts").then(function (response) {
 			$scope.optionsAsset = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts").then(function (response) {
+			$scope.optionsDisposalMethod = response.data.map(e => {
 				return {
 					value: e.Id,
 					text: e.Name
@@ -209,6 +223,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			for (let i = 0; i < $scope.optionsAsset.length; i++) {
 				if ($scope.optionsAsset[i].value === optionKey) {
 					return $scope.optionsAsset[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsDisposalMethodValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsDisposalMethod.length; i++) {
+				if ($scope.optionsDisposalMethod[i].value === optionKey) {
+					return $scope.optionsDisposalMethod[i].text;
 				}
 			}
 			return null;
