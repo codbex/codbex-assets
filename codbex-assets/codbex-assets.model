@@ -229,7 +229,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "ACQUISITION_ACQUISITIONDATE",
+                        "dataName": "ACQUISITION_DATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "description": "",
@@ -248,7 +248,7 @@
                         "dataScale": "NaN",
                         "dataType": "DECIMAL",
                         "description": "",
-                        "name": "Cost",
+                        "name": "AcquisitionCost",
                         "tooltip": "",
                         "widgetIsMajor": "true",
                         "widgetLength": "20",

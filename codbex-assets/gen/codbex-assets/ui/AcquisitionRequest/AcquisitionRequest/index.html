@@ -30,7 +30,7 @@
 					<tr fd-table-row>
 						<th fd-table-header-cell>Asset</th>
 						<th fd-table-header-cell>AcquisitionDate</th>
-						<th fd-table-header-cell>Cost</th>
+						<th fd-table-header-cell>AcquisitionCost</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -46,7 +46,7 @@
 						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
 							<fd-input type="date" ng-model="next.AcquisitionDate" ng-readonly="true"></fd-input>
 						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Cost}}</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.AcquisitionCost}}</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>

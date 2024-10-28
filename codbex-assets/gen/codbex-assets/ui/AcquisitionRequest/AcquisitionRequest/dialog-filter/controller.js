@@ -55,8 +55,8 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.AcquisitionDateTo) {
 				filter.$filter.lessThanOrEqual.AcquisitionDate = entity.AcquisitionDateTo;
 			}
-			if (entity.Cost !== undefined) {
-				filter.$filter.equals.Cost = entity.Cost;
+			if (entity.AcquisitionCost !== undefined) {
+				filter.$filter.equals.AcquisitionCost = entity.AcquisitionCost;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

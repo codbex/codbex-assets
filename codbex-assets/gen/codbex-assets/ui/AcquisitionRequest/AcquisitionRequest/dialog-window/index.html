@@ -65,16 +65,16 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idCost" dg-required="false" dg-colon="true">Cost</fd-form-label>
+                        	<fd-form-label for="idAcquisitionCost" dg-required="false" dg-colon="true">AcquisitionCost</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--4 ">
-	                        <fd-step-input dg-id="idCost"
-								name="Cost"
-								state="{{ forms.details['Cost'].$valid ? '' : 'error' }}"
+	                        <fd-step-input dg-id="idAcquisitionCost"
+								name="AcquisitionCost"
+								state="{{ forms.details['AcquisitionCost'].$valid ? '' : 'error' }}"
 								dg-required="false"
-								ng-model="entity.Cost"
+								ng-model="entity.AcquisitionCost"
 								is-readonly="action === 'select'"
-								placeholder="Enter Cost"
+								placeholder="Enter AcquisitionCost"
 								>
 							</fd-step-input>
 							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>

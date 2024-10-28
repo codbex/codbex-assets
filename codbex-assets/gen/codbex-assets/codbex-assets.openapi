@@ -4027,7 +4027,7 @@ components:
           type: integer
           format: int32
         AcquisitionDate:
-        Cost:
+        AcquisitionCost:
           type: number
           format: double
     AcquisitionRequestFilterOptions:
@@ -4057,7 +4057,7 @@ components:
                         format: int32
                 AcquisitionDate:
                   oneOf:
-                Cost:
+                AcquisitionCost:
                   oneOf:
                     - type: number
                       format: double
@@ -4086,7 +4086,7 @@ components:
                         format: int32
                 AcquisitionDate:
                   oneOf:
-                Cost:
+                AcquisitionCost:
                   oneOf:
                     - type: number
                       format: double
@@ -4100,7 +4100,7 @@ components:
                 Id:
                 Asset:
                 AcquisitionDate:
-                Cost:
+                AcquisitionCost:
             greaterThan:
               type: object
               properties:
@@ -4111,7 +4111,7 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Cost:
+                AcquisitionCost:
                   type: number
                   format: double
             greaterThanOrEqual:
@@ -4124,7 +4124,7 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Cost:
+                AcquisitionCost:
                   type: number
                   format: double
             lessThan:
@@ -4137,7 +4137,7 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Cost:
+                AcquisitionCost:
                   type: number
                   format: double
             lessThanOrEqual:
@@ -4150,17 +4150,17 @@ components:
                   type: integer
                   format: int32
                 AcquisitionDate:
-                Cost:
+                AcquisitionCost:
                   type: number
                   format: double
         $select:
           type: array
-          example: ["Id", "Asset", "AcquisitionDate", "Cost"]
+          example: ["Id", "Asset", "AcquisitionDate", "AcquisitionCost"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,AcquisitionDate,Cost"
+            example: "Id,Asset,AcquisitionDate,AcquisitionCost"
         $order:
           type: string
           enum: ["asc", "desc"]

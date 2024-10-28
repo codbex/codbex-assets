@@ -91,7 +91,7 @@
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "ACQUISITION_ACQUISITIONDATE"
+                        "name": "ACQUISITION_DATE"
                     },
                     {
                         "type": "DECIMAL",

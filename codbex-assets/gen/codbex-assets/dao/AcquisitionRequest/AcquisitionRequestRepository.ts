@@ -8,13 +8,13 @@ export interface AcquisitionRequestEntity {
     readonly Id: number;
     Asset?: number;
     AcquisitionDate?: Date;
-    Cost?: number;
+    AcquisitionCost?: number;
 }
 
 export interface AcquisitionRequestCreateEntity {
     readonly Asset?: number;
     readonly AcquisitionDate?: Date;
-    readonly Cost?: number;
+    readonly AcquisitionCost?: number;
 }
 
 export interface AcquisitionRequestUpdateEntity extends AcquisitionRequestCreateEntity {
@@ -27,43 +27,43 @@ export interface AcquisitionRequestEntityOptions {
             Id?: number | number[];
             Asset?: number | number[];
             AcquisitionDate?: Date | Date[];
-            Cost?: number | number[];
+            AcquisitionCost?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
             Asset?: number | number[];
             AcquisitionDate?: Date | Date[];
-            Cost?: number | number[];
+            AcquisitionCost?: number | number[];
         };
         contains?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
-            Cost?: number;
+            AcquisitionCost?: number;
         };
         greaterThan?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
-            Cost?: number;
+            AcquisitionCost?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
-            Cost?: number;
+            AcquisitionCost?: number;
         };
         lessThan?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
-            Cost?: number;
+            AcquisitionCost?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
             Asset?: number;
             AcquisitionDate?: Date;
-            Cost?: number;
+            AcquisitionCost?: number;
         };
     },
     $select?: (keyof AcquisitionRequestEntity)[],
@@ -107,11 +107,11 @@ export class AcquisitionRequestRepository {
             },
             {
                 name: "AcquisitionDate",
-                column: "ACQUISITION_ACQUISITIONDATE",
+                column: "ACQUISITION_DATE",
                 type: "DATE",
             },
             {
-                name: "Cost",
+                name: "AcquisitionCost",
                 column: "ACQUISITION_COST",
                 type: "DECIMAL",
             }
