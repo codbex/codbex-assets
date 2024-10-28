@@ -1351,7 +1351,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DISPOSAL_DISPOSALDATE",
+          "dataName": "DISPOSAL_DATE",
           "dataNullable": true,
           "dataType": "DATE",
           "description": "",
@@ -1375,7 +1375,7 @@
           "inputRule": ""
         },
         {
-          "dataName": "DISPOSAL_DISPOSALMETHOD",
+          "dataName": "DISPOSAL_METHOD",
           "dataNullable": true,
           "dataType": "INTEGER",
           "description": "",
@@ -1547,7 +1547,7 @@
         },
         "properties": [
           {
-            "dataName": "DISPOSAL_DISPOSALDATE",
+            "dataName": "DISPOSAL_DATE",
             "dataNullable": true,
             "dataType": "DATE",
             "description": "",
@@ -1571,7 +1571,7 @@
             "inputRule": ""
           },
           {
-            "dataName": "DISPOSAL_DISPOSALMETHOD",
+            "dataName": "DISPOSAL_METHOD",
             "dataNullable": true,
             "dataType": "INTEGER",
             "description": "",

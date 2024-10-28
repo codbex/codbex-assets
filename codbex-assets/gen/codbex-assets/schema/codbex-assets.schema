@@ -197,12 +197,12 @@
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "DISPOSAL_DISPOSALDATE"
+                        "name": "DISPOSAL_DATE"
                     },
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "DISPOSAL_DISPOSALMETHOD"
+                        "name": "DISPOSAL_METHOD"
                     },
                     {
                         "type": "DECIMAL",
@@ -409,7 +409,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_DISPOSAL",
                 "constraintName": "Disposal_DisposalMethod",
-                "columns": "DISPOSAL_DISPOSALMETHOD",
+                "columns": "DISPOSAL_METHOD",
                 "referencedTable": "CODBEX_DISPOSALMETHOD",
                 "referencedColumns": "DISPOSALMETHOD_ID"
             },

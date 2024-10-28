@@ -544,7 +544,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
-                        "dataName": "DISPOSAL_DISPOSALDATE",
+                        "dataName": "DISPOSAL_DATE",
                         "dataNullable": "true",
                         "dataType": "DATE",
                         "description": "",
@@ -556,7 +556,7 @@
                         "widgetType": "DATE"
                     },
                     {
-                        "dataName": "DISPOSAL_DISPOSALMETHOD",
+                        "dataName": "DISPOSAL_METHOD",
                         "dataNullable": "true",
                         "dataType": "INTEGER",
                         "description": "",

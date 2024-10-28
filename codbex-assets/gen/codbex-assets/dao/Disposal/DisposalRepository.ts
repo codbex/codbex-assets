@@ -134,12 +134,12 @@ export class DisposalRepository {
             },
             {
                 name: "DisposalDate",
-                column: "DISPOSAL_DISPOSALDATE",
+                column: "DISPOSAL_DATE",
                 type: "DATE",
             },
             {
                 name: "DisposalMethod",
-                column: "DISPOSAL_DISPOSALMETHOD",
+                column: "DISPOSAL_METHOD",
                 type: "INTEGER",
             },
             {
