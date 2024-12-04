@@ -1,0 +1,5 @@
+{
+    "extensionPoint": "codbex-assets-custom-action",
+    "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/dialog-print/print.js",
+    "description": "Print AssetAcquisitionDisposal Report"
+}

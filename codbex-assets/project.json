@@ -32,12 +32,6 @@
             "branch": "main"
         },
         {
-            "guid": "codbex-assets-reports",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-assets-reports",
-            "branch": "main"
-        },
-        {
             "guid": "codbex-navigation-groups",
             "type": "git",
             "url": "https://github.com/codbex/codbex-navigation-groups",
