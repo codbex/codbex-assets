@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'maintenance-status-navigation',
     label: "Maintenance Status",
-    view: "maintenance-status",
-    group: "maintenance-status",
-    orderNumber: 1,
-    lazyLoad: true,
+    group: "reference-data",
+    order: 2100,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/MaintenanceStatus/index.html?embedded"
 };
 

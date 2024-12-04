@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'valuation-method-navigation',
     label: "Valuation Method",
-    view: "valuation-method",
     group: "valuation-method",
-    orderNumber: 1,
-    lazyLoad: true,
+    order: 1,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/ValuationMethod/index.html?embedded"
 };
 

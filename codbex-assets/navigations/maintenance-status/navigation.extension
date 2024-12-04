@@ -1,5 +1,5 @@
 {
     "extensionPoint": "dashboard-navigations",
-    "module": "codbex-assets/navigations/services/disposal-method.js",
+    "module": "codbex-assets/navigations/maintenance-status/service.js",
     "description": "Assets Navigation"
 }

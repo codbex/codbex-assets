@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'acquisition-navigation',
     label: "Acquisition",
-    view: "acquisition",
-    group: "acquisition",
-    orderNumber: 1,
-    lazyLoad: true,
+    group: "assets",
+    order: 200,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/index.html?embedded"
 };
 

@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'disposal-method-navigation',
     label: "Disposal Method",
-    view: "disposal-method",
-    group: "disposal-method",
-    orderNumber: 1,
-    lazyLoad: true,
+    group: "reference-data",
+    order: 2200,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/DisposalMethod/index.html?embedded"
 };
 

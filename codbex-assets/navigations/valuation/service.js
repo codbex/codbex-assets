@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'valuation-navigation',
     label: "Valuation",
-    view: "valuation",
-    group: "valuation",
-    orderNumber: 1,
-    lazyLoad: true,
+    group: "assets",
+    order: 500,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/Valuation/index.html?embedded"
 };
 

@@ -1,11 +1,9 @@
 const navigationData = {
-    id: 'assets-navigation',
-    label: "Assets",
-    view: "assets",
+    id: 'disposal-navigation',
+    label: "Disposal",
     group: "assets",
-    orderNumber: 1,
-    lazyLoad: true,
-    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/index.html?embedded"
+    order: 600,
+    link: "/services/web/codbex-assets/gen/codbex-assets/ui/Disposal/index.html?embedded"
 };
 
 function getNavigation() {

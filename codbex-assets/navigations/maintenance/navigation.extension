@@ -1,5 +1,5 @@
 {
     "extensionPoint": "dashboard-navigations",
-    "module": "codbex-assets/navigations/services/maintenance-status.js",
+    "module": "codbex-assets/navigations/maintenance/service.js",
     "description": "Assets Navigation"
 }

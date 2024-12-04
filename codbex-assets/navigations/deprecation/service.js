@@ -1,10 +1,8 @@
 const navigationData = {
     id: 'deprecation-navigation',
     label: "Deprecation",
-    view: "deprecation",
-    group: "deprecation",
-    orderNumber: 1,
-    lazyLoad: true,
+    group: "assets",
+    order: 300,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/Deprecation/index.html?embedded"
 };
 
