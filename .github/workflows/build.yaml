@@ -1,0 +1,13 @@
+name: Build - Module
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-build.yaml@main
+    with:
+      packages-build: codbex-assets
+    secrets: inherit

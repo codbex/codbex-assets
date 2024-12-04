@@ -1,0 +1,13 @@
+name: Pull Request - Module
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-pull-request.yaml@main
+    with:
+      packages-build: codbex-assets
+    secrets: inherit

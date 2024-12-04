@@ -1,0 +1,34 @@
+name: Release - Module
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-version:
+        description: Release Version
+        required: true
+        default: 1.0.0
+
+run-name: 'version set to ${{ inputs.release-version }} for release'
+
+jobs:
+  main:
+    uses: codbex/codbex-infra/.github/workflows/module-release.yaml@main
+    with:
+      packages: codbex-assets
+      packages-build: codbex-assets
+      release-version: ${{ inputs.release-version }}
+      release-content: |
+        ## codbex-assets - ${{ inputs.release-version }}
+        
+        Assets Management Module
+        
+        ## Installation
+        
+        ```
+        npm install @codbex/codbex-assets@${{ inputs.release-version }}
+        ```
+        
+        ## Access points:
+        
+        - [/services/web/codbex-assets/gen/](http://localhost:80/services/web/codbex-assets/gen/) - Admin Panel
+    secrets: inherit
