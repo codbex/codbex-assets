@@ -9,10 +9,9 @@
         "registry": "https://npm.pkg.github.com"
     },
     "dependencies": {
-        "@codbex/codbex-products": "0.3.0",
-        "@codbex/codbex-invoices": "0.3.0",
-        "@codbex/codbex-orders": "0.3.0",
-        "@codbex/codbex-inventory": "0.3.0",
-        "@codbex/codbex-invoices": "0.3.0"
+        "@codbex/codbex-products": "0.6.0",
+        "@codbex/codbex-invoices": "0.6.0",
+        "@codbex/codbex-orders": "0.6.0",
+        "@codbex/codbex-inventory": "0.6.0"
     }
 }
