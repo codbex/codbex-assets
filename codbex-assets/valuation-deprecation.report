@@ -1,0 +1,70 @@
+{
+    "name": "ASSET_VALUATION_DEPRECIATION_REPORT",
+    "alias": "CODBEX_ASSET",
+    "table": "CODBEX_ASSET",
+    "columns": [
+        {
+            "table": "CODBEX_ASSET",
+            "alias": "assetName",
+            "name": "ASSET_NAME",
+            "type": "CHARACTER VARYING",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_ASSET",
+            "alias": "assetValue",
+            "name": "ASSET_VALUE",
+            "type": "DECIMAL",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_DEPRECIATION",
+            "alias": "depreciationDepreciationdate",
+            "name": "DEPRECIATION_DEPRECIATIONDATE",
+            "type": "DATE",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_DEPRECIATION",
+            "alias": "depreciationAnnualdepreciation",
+            "name": "DEPRECIATION_ANNUALDEPRECIATION",
+            "type": "DECIMAL",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_VALUATION",
+            "alias": "valuationValuationdate",
+            "name": "VALUATION_VALUATIONDATE",
+            "type": "DATE",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_VALUATION",
+            "alias": "valuationValuedat",
+            "name": "VALUATION_VALUEDAT",
+            "type": "DECIMAL",
+            "select": true,
+            "grouping": false
+        }
+    ],
+    "joins": [
+        {
+            "alias": "CODBEX_DEPRECIATION",
+            "name": "CODBEX_DEPRECIATION",
+            "type": "INNER",
+            "condition": "CODBEX_ASSET.ASSET_ID = CODBEX_DEPRECIATION.DEPRECIATION_ASSET"
+        },
+        {
+            "alias": "CODBEX_VALUATION",
+            "name": "CODBEX_VALUATION",
+            "type": "INNER",
+            "condition": "CODBEX_ASSET.ASSET_ID = CODBEX_VALUATION.VALUATION_ASSET"
+        }
+    ],
+    "query": "SELECT CODBEX_ASSET.ASSET_NAME as \"assetName\", CODBEX_ASSET.ASSET_VALUE as \"assetValue\", CODBEX_DEPRECIATION.DEPRECIATION_DEPRECIATIONDATE as \"depreciationDepreciationdate\", CODBEX_DEPRECIATION.DEPRECIATION_ANNUALDEPRECIATION as \"depreciationAnnualdepreciation\", CODBEX_VALUATION.VALUATION_VALUATIONDATE as \"valuationValuationdate\", CODBEX_VALUATION.VALUATION_VALUEDAT as \"valuationValuedat\"\nFROM CODBEX_ASSET as CODBEX_ASSET\n  INNER JOIN CODBEX_DEPRECIATION CODBEX_DEPRECIATION ON CODBEX_ASSET.ASSET_ID = CODBEX_DEPRECIATION.DEPRECIATION_ASSET\n  INNER JOIN CODBEX_VALUATION CODBEX_VALUATION ON CODBEX_ASSET.ASSET_ID = CODBEX_VALUATION.VALUATION_ASSET"
+}

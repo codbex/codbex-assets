@@ -1,0 +1,5 @@
+{
+    "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/view.js",
+    "extensionPoint": "codbex-assets-view",
+    "description": "codbex-assets - Application View"
+}

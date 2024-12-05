@@ -1,0 +1,56 @@
+{
+    "name": "ASSET_MAINTENANCE_STATUS_REPORT",
+    "alias": "CODBEX_ASSET",
+    "table": "CODBEX_ASSET",
+    "columns": [
+        {
+            "table": "CODBEX_ASSET",
+            "alias": "assetName",
+            "name": "ASSET_NAME",
+            "type": "CHARACTER VARYING",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_ASSET",
+            "alias": "assetMaintenencecost",
+            "name": "ASSET_MAINTENENCECOST",
+            "type": "DECIMAL",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_MAINTENANCE",
+            "alias": "maintenanceMaintenancedate",
+            "name": "MAINTENANCE_MAINTENANCEDATE",
+            "type": "DATE",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_MAINTENANCE",
+            "alias": "maintenanceDescription",
+            "name": "MAINTENANCE_DESCRIPTION",
+            "type": "CHARACTER VARYING",
+            "select": true,
+            "grouping": false
+        },
+        {
+            "table": "CODBEX_MAINTENANCE",
+            "alias": "maintenanceCost",
+            "name": "MAINTENANCE_COST",
+            "type": "DECIMAL",
+            "select": true,
+            "grouping": false
+        }
+    ],
+    "joins": [
+        {
+            "alias": "CODBEX_MAINTENANCE",
+            "name": "CODBEX_MAINTENANCE",
+            "type": "INNER",
+            "condition": "CODBEX_ASSET.ASSET_ID = CODBEX_MAINTENANCE.MAINTENANCE_ASSET"
+        }
+    ],
+    "query": "SELECT CODBEX_ASSET.ASSET_NAME as \"assetName\", CODBEX_ASSET.ASSET_MAINTENENCECOST as \"assetMaintenencecost\", CODBEX_MAINTENANCE.MAINTENANCE_MAINTENANCEDATE as \"maintenanceMaintenancedate\", CODBEX_MAINTENANCE.MAINTENANCE_DESCRIPTION as \"maintenanceDescription\", CODBEX_MAINTENANCE.MAINTENANCE_COST as \"maintenanceCost\"\nFROM CODBEX_ASSET as CODBEX_ASSET\n  INNER JOIN CODBEX_MAINTENANCE CODBEX_MAINTENANCE ON CODBEX_ASSET.ASSET_ID = CODBEX_MAINTENANCE.MAINTENANCE_ASSET"
+}

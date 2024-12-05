@@ -1,0 +1,14 @@
+{
+  "brand": "codbex",
+  "brandUrl": "https://www.codbex.com/",
+  "title": "Valuation Deprecation Report",
+  "projectName": "codbex-assets",
+  "workspaceName": "workspace",
+  "filePath": "valuation-deprecation.report",
+  "templateId": "template-application-ui-angular/template/template-report-file.js",
+  "fileName": "valuation-deprecation",
+  "genFolderName": "valuation-deprecation",
+  "extensionPoint": "codbex-assets",
+  "name": "ASSET_VALUATION_DEPRECIATION_REPORT",
+  "perspectiveName": "ASSET_VALUATION_DEPRECIATION_REPORT"
+}

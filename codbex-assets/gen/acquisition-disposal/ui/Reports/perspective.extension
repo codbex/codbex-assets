@@ -1,0 +1,5 @@
+{
+    "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/perspective.js",
+    "extensionPoint": "codbex-assets",
+    "description": "codbex-assets - Perspective - Reports"
+}

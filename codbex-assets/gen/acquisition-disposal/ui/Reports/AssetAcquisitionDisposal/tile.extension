@@ -1,0 +1,5 @@
+{
+    "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/tile.js",
+    "extensionPoint": "codbex-assets-tile",
+    "description": "codbex-assets - Application Tile"
+}

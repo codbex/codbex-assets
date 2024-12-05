@@ -1,0 +1,5 @@
+{
+    "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/dialog-filter/view.js",
+    "extensionPoint": "codbex-assets-dialog-window",
+    "description": "codbex-assets - Application Dialog Window"
+}

@@ -1,0 +1,5 @@
+{
+    "module": "codbex-assets/gen/maintenance/ui/Reports/ASSET_MAINTENANCE_STATUS_REPORT/tile.js",
+    "extensionPoint": "codbex-assets-tile",
+    "description": "codbex-assets - Application Tile"
+}
