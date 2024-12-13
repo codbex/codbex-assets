@@ -1198,7 +1198,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "calculatedPropertyExpressionCreate": "new NumberGeneratorService().generate(14)",
+                        "calculatedPropertyExpressionCreate": "new NumberGeneratorService().generate(12)",
                         "dataLength": "20",
                         "dataName": "PURCHASEINVOICE_NUMBER",
                         "dataNullable": "true",
@@ -2065,7 +2065,6 @@
                         "relationshipEntityPerspectiveName": "Cities",
                         "relationshipName": "Company_City",
                         "tooltip": "",
-                        "widgetDropDownDependsOn": "Country",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
@@ -2250,7 +2249,6 @@
                         "relationshipEntityPerspectiveName": "Cities",
                         "relationshipName": "Supplier_City",
                         "tooltip": "",
-                        "widgetDropDownDependsOn": "Country",
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name",
                         "widgetIsMajor": "true",
