@@ -1,7 +1,7 @@
 const navigationData = {
     id: 'maintenance-status-navigation',
     label: "Maintenance Status",
-    group: "metadata",
+    group: "reference data",
     order: 2100,
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/MaintenanceStatus/index.html?embedded"
 };
