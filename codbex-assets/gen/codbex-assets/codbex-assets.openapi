@@ -3612,6 +3612,16 @@ components:
     Asset:
       type: object
       required:
+        - Name
+        - Company
+        - PurchaseDate
+        - AquiredValue
+        - UsefulLife
+        - ResidualValue
+        - Product
+        - Store
+        - PurchaseInvoice
+        - TotalOperationCost
       properties:
         Id:
           type: integer
@@ -3634,18 +3644,22 @@ components:
         AccumulatedValue:
           type: number
           format: double
+        UsefulLife:
+        ResidualValue:
+          type: number
+          format: double
         Product:
           type: integer
           format: int32
         Store:
           type: integer
           format: int32
-        MaintenenceCost:
-          type: number
-          format: double
         PurchaseInvoice:
           type: integer
           format: int32
+        TotalOperationCost:
+          type: number
+          format: double
     AssetFilterOptions:
       type: object
       properties:
@@ -3711,6 +3725,16 @@ components:
                       items:
                         type: number
                         format: double
+                UsefulLife:
+                  oneOf:
+                ResidualValue:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
                 Product:
                   oneOf:
                     - type: integer
@@ -3727,14 +3751,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                MaintenenceCost:
-                  oneOf:
-                    - type: number
-                      format: double
-                    - type: array
-                      items:
-                        type: number
-                        format: double
                 PurchaseInvoice:
                   oneOf:
                     - type: integer
@@ -3743,6 +3759,14 @@ components:
                       items:
                         type: integer
                         format: int32
+                TotalOperationCost:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
             notEquals:
               type: object
               properties:
@@ -3802,6 +3826,16 @@ components:
                       items:
                         type: number
                         format: double
+                UsefulLife:
+                  oneOf:
+                ResidualValue:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
                 Product:
                   oneOf:
                     - type: integer
@@ -3818,14 +3852,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                MaintenenceCost:
-                  oneOf:
-                    - type: number
-                      format: double
-                    - type: array
-                      items:
-                        type: number
-                        format: double
                 PurchaseInvoice:
                   oneOf:
                     - type: integer
@@ -3834,6 +3860,14 @@ components:
                       items:
                         type: integer
                         format: int32
+                TotalOperationCost:
+                  oneOf:
+                    - type: number
+                      format: double
+                    - type: array
+                      items:
+                        type: number
+                        format: double
             contains:
               type: object
               properties:
@@ -3850,10 +3884,12 @@ components:
                 PurchaseDate:
                 AquiredValue:
                 AccumulatedValue:
+                UsefulLife:
+                ResidualValue:
                 Product:
                 Store:
-                MaintenenceCost:
                 PurchaseInvoice:
+                TotalOperationCost:
             greaterThan:
               type: object
               properties:
@@ -3878,18 +3914,22 @@ components:
                 AccumulatedValue:
                   type: number
                   format: double
+                UsefulLife:
+                ResidualValue:
+                  type: number
+                  format: double
                 Product:
                   type: integer
                   format: int32
                 Store:
                   type: integer
                   format: int32
-                MaintenenceCost:
-                  type: number
-                  format: double
                 PurchaseInvoice:
                   type: integer
                   format: int32
+                TotalOperationCost:
+                  type: number
+                  format: double
             greaterThanOrEqual:
               type: object
               properties:
@@ -3914,18 +3954,22 @@ components:
                 AccumulatedValue:
                   type: number
                   format: double
+                UsefulLife:
+                ResidualValue:
+                  type: number
+                  format: double
                 Product:
                   type: integer
                   format: int32
                 Store:
                   type: integer
                   format: int32
-                MaintenenceCost:
-                  type: number
-                  format: double
                 PurchaseInvoice:
                   type: integer
                   format: int32
+                TotalOperationCost:
+                  type: number
+                  format: double
             lessThan:
               type: object
               properties:
@@ -3950,18 +3994,22 @@ components:
                 AccumulatedValue:
                   type: number
                   format: double
+                UsefulLife:
+                ResidualValue:
+                  type: number
+                  format: double
                 Product:
                   type: integer
                   format: int32
                 Store:
                   type: integer
                   format: int32
-                MaintenenceCost:
-                  type: number
-                  format: double
                 PurchaseInvoice:
                   type: integer
                   format: int32
+                TotalOperationCost:
+                  type: number
+                  format: double
             lessThanOrEqual:
               type: object
               properties:
@@ -3986,26 +4034,30 @@ components:
                 AccumulatedValue:
                   type: number
                   format: double
+                UsefulLife:
+                ResidualValue:
+                  type: number
+                  format: double
                 Product:
                   type: integer
                   format: int32
                 Store:
                   type: integer
                   format: int32
-                MaintenenceCost:
-                  type: number
-                  format: double
                 PurchaseInvoice:
                   type: integer
                   format: int32
+                TotalOperationCost:
+                  type: number
+                  format: double
         $select:
           type: array
-          example: ["Id", "Name", "Company", "SerialNumber", "PurchaseDate", "AquiredValue", "AccumulatedValue", "Product", "Store", "MaintenenceCost", "PurchaseInvoice"]
+          example: ["Id", "Name", "Company", "SerialNumber", "PurchaseDate", "AquiredValue", "AccumulatedValue", "UsefulLife", "ResidualValue", "Product", "Store", "PurchaseInvoice", "TotalOperationCost"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,Company,SerialNumber,PurchaseDate,AquiredValue,AccumulatedValue,Product,Store,MaintenenceCost,PurchaseInvoice"
+            example: "Id,Name,Company,SerialNumber,PurchaseDate,AquiredValue,AccumulatedValue,UsefulLife,ResidualValue,Product,Store,PurchaseInvoice,TotalOperationCost"
         $order:
           type: string
           enum: ["asc", "desc"]

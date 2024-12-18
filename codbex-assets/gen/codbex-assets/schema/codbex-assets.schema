@@ -48,6 +48,19 @@
                         "name": "ASSET_ACCUMULATEDVALUE"
                     },
                     {
+                        "type": "DATE",
+                        "nullable": true,
+                        "name": "ASSET_USEFULLIFE"
+                    },
+                    {
+                        "type": "DECIMAL",
+                        "length": 18,
+                        "precision": "16",
+                        "scale": "2",
+                        "nullable": true,
+                        "name": "ASSET_RESIDUALVALUE"
+                    },
+                    {
                         "type": "INTEGER",
                         "nullable": true,
                         "name": "ASSET_PRODUCT"
@@ -58,17 +71,17 @@
                         "name": "ASSET_STORE"
                     },
                     {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "ASSET_PURCHASEINVOICE"
+                    },
+                    {
                         "type": "DECIMAL",
                         "length": 18,
                         "precision": "16",
                         "scale": "2",
                         "nullable": true,
-                        "name": "ASSET_MAINTENENCECOST"
-                    },
-                    {
-                        "type": "INTEGER",
-                        "nullable": true,
-                        "name": "ASSET_PURCHASEINVOICE"
+                        "name": "ASSET_TOTALOPERATIONCOST"
                     }
                 ]
             },
