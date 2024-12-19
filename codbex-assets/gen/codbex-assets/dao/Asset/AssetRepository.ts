@@ -12,10 +12,12 @@ export interface AssetEntity {
     PurchaseDate?: Date;
     AquiredValue?: number;
     AccumulatedValue?: number;
+    UsefulLife?: Date;
+    ResidualValue?: number;
     Product?: number;
     Store?: number;
-    MaintenenceCost?: number;
     PurchaseInvoice?: number;
+    TotalOperationCost?: number;
 }
 
 export interface AssetCreateEntity {
@@ -25,10 +27,12 @@ export interface AssetCreateEntity {
     readonly PurchaseDate?: Date;
     readonly AquiredValue?: number;
     readonly AccumulatedValue?: number;
+    readonly UsefulLife?: Date;
+    readonly ResidualValue?: number;
     readonly Product?: number;
     readonly Store?: number;
-    readonly MaintenenceCost?: number;
     readonly PurchaseInvoice?: number;
+    readonly TotalOperationCost?: number;
 }
 
 export interface AssetUpdateEntity extends AssetCreateEntity {
@@ -45,10 +49,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date | Date[];
             AquiredValue?: number | number[];
             AccumulatedValue?: number | number[];
+            UsefulLife?: Date | Date[];
+            ResidualValue?: number | number[];
             Product?: number | number[];
             Store?: number | number[];
-            MaintenenceCost?: number | number[];
             PurchaseInvoice?: number | number[];
+            TotalOperationCost?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -58,10 +64,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date | Date[];
             AquiredValue?: number | number[];
             AccumulatedValue?: number | number[];
+            UsefulLife?: Date | Date[];
+            ResidualValue?: number | number[];
             Product?: number | number[];
             Store?: number | number[];
-            MaintenenceCost?: number | number[];
             PurchaseInvoice?: number | number[];
+            TotalOperationCost?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -71,10 +79,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             AquiredValue?: number;
             AccumulatedValue?: number;
+            UsefulLife?: Date;
+            ResidualValue?: number;
             Product?: number;
             Store?: number;
-            MaintenenceCost?: number;
             PurchaseInvoice?: number;
+            TotalOperationCost?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -84,10 +94,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             AquiredValue?: number;
             AccumulatedValue?: number;
+            UsefulLife?: Date;
+            ResidualValue?: number;
             Product?: number;
             Store?: number;
-            MaintenenceCost?: number;
             PurchaseInvoice?: number;
+            TotalOperationCost?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -97,10 +109,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             AquiredValue?: number;
             AccumulatedValue?: number;
+            UsefulLife?: Date;
+            ResidualValue?: number;
             Product?: number;
             Store?: number;
-            MaintenenceCost?: number;
             PurchaseInvoice?: number;
+            TotalOperationCost?: number;
         };
         lessThan?: {
             Id?: number;
@@ -110,10 +124,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             AquiredValue?: number;
             AccumulatedValue?: number;
+            UsefulLife?: Date;
+            ResidualValue?: number;
             Product?: number;
             Store?: number;
-            MaintenenceCost?: number;
             PurchaseInvoice?: number;
+            TotalOperationCost?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -123,10 +139,12 @@ export interface AssetEntityOptions {
             PurchaseDate?: Date;
             AquiredValue?: number;
             AccumulatedValue?: number;
+            UsefulLife?: Date;
+            ResidualValue?: number;
             Product?: number;
             Store?: number;
-            MaintenenceCost?: number;
             PurchaseInvoice?: number;
+            TotalOperationCost?: number;
         };
     },
     $select?: (keyof AssetEntity)[],
@@ -194,6 +212,16 @@ export class AssetRepository {
                 type: "DECIMAL",
             },
             {
+                name: "UsefulLife",
+                column: "ASSET_USEFULLIFE",
+                type: "DATE",
+            },
+            {
+                name: "ResidualValue",
+                column: "ASSET_RESIDUALVALUE",
+                type: "DECIMAL",
+            },
+            {
                 name: "Product",
                 column: "ASSET_PRODUCT",
                 type: "INTEGER",
@@ -204,14 +232,14 @@ export class AssetRepository {
                 type: "INTEGER",
             },
             {
-                name: "MaintenenceCost",
-                column: "ASSET_MAINTENENCECOST",
-                type: "DECIMAL",
-            },
-            {
                 name: "PurchaseInvoice",
                 column: "ASSET_PURCHASEINVOICE",
                 type: "INTEGER",
+            },
+            {
+                name: "TotalOperationCost",
+                column: "ASSET_TOTALOPERATIONCOST",
+                type: "DECIMAL",
             }
         ]
     };
@@ -225,6 +253,7 @@ export class AssetRepository {
     public findAll(options?: AssetEntityOptions): AssetEntity[] {
         return this.dao.list(options).map((e: AssetEntity) => {
             EntityUtils.setDate(e, "PurchaseDate");
+            EntityUtils.setDate(e, "UsefulLife");
             return e;
         });
     }
@@ -232,11 +261,13 @@ export class AssetRepository {
     public findById(id: number): AssetEntity | undefined {
         const entity = this.dao.find(id);
         EntityUtils.setDate(entity, "PurchaseDate");
+        EntityUtils.setDate(entity, "UsefulLife");
         return entity ?? undefined;
     }
 
     public create(entity: AssetCreateEntity): number {
         EntityUtils.setLocalDate(entity, "PurchaseDate");
+        EntityUtils.setLocalDate(entity, "UsefulLife");
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -253,6 +284,7 @@ export class AssetRepository {
 
     public update(entity: AssetUpdateEntity): void {
         // EntityUtils.setLocalDate(entity, "PurchaseDate");
+        // EntityUtils.setLocalDate(entity, "UsefulLife");
         const previousEntity = this.findById(entity.Id);
         this.dao.update(entity);
         this.triggerEvent({

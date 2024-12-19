@@ -119,11 +119,41 @@ class AssetService {
     }
 
     private validateEntity(entity: any): void {
+        if (entity.Name === null || entity.Name === undefined) {
+            throw new ValidationError(`The 'Name' property is required, provide a valid value`);
+        }
         if (entity.Name?.length > 128) {
             throw new ValidationError(`The 'Name' exceeds the maximum length of [128] characters`);
         }
+        if (entity.Company === null || entity.Company === undefined) {
+            throw new ValidationError(`The 'Company' property is required, provide a valid value`);
+        }
         if (entity.SerialNumber?.length > 20) {
             throw new ValidationError(`The 'SerialNumber' exceeds the maximum length of [20] characters`);
+        }
+        if (entity.PurchaseDate === null || entity.PurchaseDate === undefined) {
+            throw new ValidationError(`The 'PurchaseDate' property is required, provide a valid value`);
+        }
+        if (entity.AquiredValue === null || entity.AquiredValue === undefined) {
+            throw new ValidationError(`The 'AquiredValue' property is required, provide a valid value`);
+        }
+        if (entity.UsefulLife === null || entity.UsefulLife === undefined) {
+            throw new ValidationError(`The 'UsefulLife' property is required, provide a valid value`);
+        }
+        if (entity.ResidualValue === null || entity.ResidualValue === undefined) {
+            throw new ValidationError(`The 'ResidualValue' property is required, provide a valid value`);
+        }
+        if (entity.Product === null || entity.Product === undefined) {
+            throw new ValidationError(`The 'Product' property is required, provide a valid value`);
+        }
+        if (entity.Store === null || entity.Store === undefined) {
+            throw new ValidationError(`The 'Store' property is required, provide a valid value`);
+        }
+        if (entity.PurchaseInvoice === null || entity.PurchaseInvoice === undefined) {
+            throw new ValidationError(`The 'PurchaseInvoice' property is required, provide a valid value`);
+        }
+        if (entity.TotalOperationCost === null || entity.TotalOperationCost === undefined) {
+            throw new ValidationError(`The 'TotalOperationCost' property is required, provide a valid value`);
         }
         for (const next of validationModules) {
             next.validate(entity);

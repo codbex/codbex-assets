@@ -52,6 +52,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				if (msg.data.entity.PurchaseDate) {
 					msg.data.entity.PurchaseDate = new Date(msg.data.entity.PurchaseDate);
 				}
+				if (msg.data.entity.UsefulLife) {
+					msg.data.entity.UsefulLife = new Date(msg.data.entity.UsefulLife);
+				}
 				$scope.entity = msg.data.entity;
 				$scope.optionsProduct = msg.data.optionsProduct;
 				$scope.optionsStore = msg.data.optionsStore;
@@ -74,6 +77,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.$apply(function () {
 				if (msg.data.entity.PurchaseDate) {
 					msg.data.entity.PurchaseDate = new Date(msg.data.entity.PurchaseDate);
+				}
+				if (msg.data.entity.UsefulLife) {
+					msg.data.entity.UsefulLife = new Date(msg.data.entity.UsefulLife);
 				}
 				$scope.entity = msg.data.entity;
 				$scope.optionsProduct = msg.data.optionsProduct;
