@@ -21,15 +21,15 @@
                 <fd-form-group dg-header="{{formHeaders[action]}}" name="entityForm" class="fd-container fd-form-layout-grid-container">
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idDepreciationDate" dg-required="false" dg-colon="true">DepreciationDate</fd-form-label>
+                        	<fd-form-label for="idDepreciationStartDate" dg-required="true" dg-colon="true">DepreciationStartDate</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--2 ">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationDate'].$valid }}">
-	                            <fd-input id="idDepreciationDate"
-	                                name="DepreciationDate"
-	                                state="{{ forms.details['DepreciationDate'].$valid ? '' : 'error' }}"
-									ng-required="false"
-	                                ng-model="entity.DepreciationDate"
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationStartDate'].$valid }}">
+	                            <fd-input id="idDepreciationStartDate"
+	                                name="DepreciationStartDate"
+	                                state="{{ forms.details['DepreciationStartDate'].$valid ? '' : 'error' }}"
+									ng-required="true"
+	                                ng-model="entity.DepreciationStartDate"
 	                                ng-readonly="action === 'select'"
 	                                type="date">
 	                            </fd-input>
@@ -40,14 +40,86 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idMethod" dg-required="false" dg-colon="true">Method</fd-form-label>
+                        	<fd-form-label for="idDeprecationEndDate" dg-required="true" dg-colon="true">DeprecationEndDate</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--2 ">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DeprecationEndDate'].$valid }}">
+	                            <fd-input id="idDeprecationEndDate"
+	                                name="DeprecationEndDate"
+	                                state="{{ forms.details['DeprecationEndDate'].$valid ? '' : 'error' }}"
+									ng-required="true"
+	                                ng-model="entity.DeprecationEndDate"
+	                                ng-readonly="action === 'select'"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationSchedule" dg-required="false" dg-colon="true">DeprecationSchedule</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+	                        <fd-combobox-input id="idDeprecationSchedule"
+	                            name="DeprecationSchedule"
+	                            state="{{ forms.details['DeprecationSchedule'].$valid ? '' : 'error' }}"
+	                            ng-required="false"
+	                            ng-model="entity.DeprecationSchedule"
+	                            dg-disabled="action === 'select'"
+	                            dropdown-items="optionsDeprecationSchedule"
+	                            dg-placeholder="Search DeprecationSchedule ...">
+	                        </fd-combobox-input>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idLastDeprecationDate" dg-required="true" dg-colon="true">LastDeprecationDate</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--2 ">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['LastDeprecationDate'].$valid }}">
+	                            <fd-input id="idLastDeprecationDate"
+	                                name="LastDeprecationDate"
+	                                state="{{ forms.details['LastDeprecationDate'].$valid ? '' : 'error' }}"
+									ng-required="true"
+	                                ng-model="entity.LastDeprecationDate"
+	                                ng-readonly="action === 'select'"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationRate" dg-required="true" dg-colon="true">DeprecationRate</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--4 ">
+	                        <fd-step-input dg-id="idDeprecationRate"
+								name="DeprecationRate"
+								state="{{ forms.details['DeprecationRate'].$valid ? '' : 'error' }}"
+								dg-required="true"
+								ng-model="entity.DeprecationRate"
+								is-readonly="action === 'select'"
+								placeholder="Enter DeprecationRate"
+								>
+							</fd-step-input>
+							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idMethod" dg-required="true" dg-colon="true">Method</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4 fd-col--6">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Method'].$valid }}">
 	                            <fd-input id="idMethod"
 	                                name="Method"
 	                                state="{{ forms.details['Method'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.Method"
 	                                ng-readonly="action === 'select'"
 	                                ng-minlength="0.0 || 0"
@@ -63,13 +135,13 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idAnnualDepreciation" dg-required="false" dg-colon="true">AnnualDepreciation</fd-form-label>
+                        	<fd-form-label for="idAnnualDepreciation" dg-required="true" dg-colon="true">AnnualDepreciation</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--4 ">
 	                        <fd-step-input dg-id="idAnnualDepreciation"
 								name="AnnualDepreciation"
 								state="{{ forms.details['AnnualDepreciation'].$valid ? '' : 'error' }}"
-								dg-required="false"
+								dg-required="true"
 								ng-model="entity.AnnualDepreciation"
 								is-readonly="action === 'select'"
 								placeholder="Enter AnnualDepreciation"

@@ -11,16 +11,29 @@ angular.module('page', ["ideUI", "ideView"])
 
 		let params = ViewParameters.get();
 		if (Object.keys(params).length) {
-			if (params?.entity?.DepreciationDateFrom) {
-				params.entity.DepreciationDateFrom = new Date(params.entity.DepreciationDateFrom);
+			if (params?.entity?.DepreciationStartDateFrom) {
+				params.entity.DepreciationStartDateFrom = new Date(params.entity.DepreciationStartDateFrom);
 			}
-			if (params?.entity?.DepreciationDateTo) {
-				params.entity.DepreciationDateTo = new Date(params.entity.DepreciationDateTo);
+			if (params?.entity?.DepreciationStartDateTo) {
+				params.entity.DepreciationStartDateTo = new Date(params.entity.DepreciationStartDateTo);
+			}
+			if (params?.entity?.DeprecationEndDateFrom) {
+				params.entity.DeprecationEndDateFrom = new Date(params.entity.DeprecationEndDateFrom);
+			}
+			if (params?.entity?.DeprecationEndDateTo) {
+				params.entity.DeprecationEndDateTo = new Date(params.entity.DeprecationEndDateTo);
+			}
+			if (params?.entity?.LastDeprecationDateFrom) {
+				params.entity.LastDeprecationDateFrom = new Date(params.entity.LastDeprecationDateFrom);
+			}
+			if (params?.entity?.LastDeprecationDateTo) {
+				params.entity.LastDeprecationDateTo = new Date(params.entity.LastDeprecationDateTo);
 			}
 			$scope.entity = params.entity ?? {};
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsAsset = params.optionsAsset;
+			$scope.optionsDeprecationSchedule = params.optionsDeprecationSchedule;
 		}
 
 		$scope.filter = function () {
@@ -49,11 +62,29 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Asset !== undefined) {
 				filter.$filter.equals.Asset = entity.Asset;
 			}
-			if (entity.DepreciationDateFrom) {
-				filter.$filter.greaterThanOrEqual.DepreciationDate = entity.DepreciationDateFrom;
+			if (entity.DepreciationStartDateFrom) {
+				filter.$filter.greaterThanOrEqual.DepreciationStartDate = entity.DepreciationStartDateFrom;
 			}
-			if (entity.DepreciationDateTo) {
-				filter.$filter.lessThanOrEqual.DepreciationDate = entity.DepreciationDateTo;
+			if (entity.DepreciationStartDateTo) {
+				filter.$filter.lessThanOrEqual.DepreciationStartDate = entity.DepreciationStartDateTo;
+			}
+			if (entity.DeprecationEndDateFrom) {
+				filter.$filter.greaterThanOrEqual.DeprecationEndDate = entity.DeprecationEndDateFrom;
+			}
+			if (entity.DeprecationEndDateTo) {
+				filter.$filter.lessThanOrEqual.DeprecationEndDate = entity.DeprecationEndDateTo;
+			}
+			if (entity.DeprecationSchedule !== undefined) {
+				filter.$filter.equals.DeprecationSchedule = entity.DeprecationSchedule;
+			}
+			if (entity.LastDeprecationDateFrom) {
+				filter.$filter.greaterThanOrEqual.LastDeprecationDate = entity.LastDeprecationDateFrom;
+			}
+			if (entity.LastDeprecationDateTo) {
+				filter.$filter.lessThanOrEqual.LastDeprecationDate = entity.LastDeprecationDateTo;
+			}
+			if (entity.DeprecationRate !== undefined) {
+				filter.$filter.equals.DeprecationRate = entity.DeprecationRate;
 			}
 			if (entity.Method) {
 				filter.$filter.contains.Method = entity.Method;

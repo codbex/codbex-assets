@@ -171,7 +171,30 @@
                     {
                         "type": "DATE",
                         "nullable": true,
-                        "name": "DEPRECIATION_DEPRECIATIONDATE"
+                        "name": "DEPRECIATION_DEPRECIATIONSTARTDATE"
+                    },
+                    {
+                        "type": "DATE",
+                        "nullable": true,
+                        "name": "DEPRECIATION_DEPRECATIONENDDATE"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "DEPRECIATION_DEPRECATIONSCHEDULE"
+                    },
+                    {
+                        "type": "DATE",
+                        "nullable": true,
+                        "name": "DEPRECIATION_LASTDEPRECATIONDATE"
+                    },
+                    {
+                        "type": "DECIMAL",
+                        "length": 18,
+                        "precision": "16",
+                        "scale": "2",
+                        "nullable": true,
+                        "name": "DEPRECIATION_DEPRECATIONRATE"
                     },
                     {
                         "type": "VARCHAR",
@@ -337,6 +360,25 @@
                 ]
             },
             {
+                "name": "CODBEX_DEPRECATIONSCHEDULE",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "DEPRECATIONSCHEDULE_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "DEPRECATIONSCHEDULE_NAME"
+                    }
+                ]
+            },
+            {
                 "name": "Asset_Company",
                 "type": "foreignKey",
                 "table": "CODBEX_ASSET",
@@ -407,6 +449,15 @@
                 "columns": "DEPRECIATION_ASSET",
                 "referencedTable": "CODBEX_ASSET",
                 "referencedColumns": "ASSET_ID"
+            },
+            {
+                "name": "Depreciation_DeprecationSchedule",
+                "type": "foreignKey",
+                "table": "CODBEX_DEPRECIATION",
+                "constraintName": "Depreciation_DeprecationSchedule",
+                "columns": "DEPRECIATION_DEPRECATIONSCHEDULE",
+                "referencedTable": "CODBEX_DEPRECATIONSCHEDULE",
+                "referencedColumns": "DEPRECATIONSCHEDULE_ID"
             },
             {
                 "name": "Disposal_Asset",

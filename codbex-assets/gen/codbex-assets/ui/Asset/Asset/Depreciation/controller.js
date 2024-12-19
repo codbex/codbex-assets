@@ -113,8 +113,14 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 					}
 
 					response.data.forEach(e => {
-						if (e.DepreciationDate) {
-							e.DepreciationDate = new Date(e.DepreciationDate);
+						if (e.DepreciationStartDate) {
+							e.DepreciationStartDate = new Date(e.DepreciationStartDate);
+						}
+						if (e.DeprecationEndDate) {
+							e.DeprecationEndDate = new Date(e.DeprecationEndDate);
+						}
+						if (e.LastDeprecationDate) {
+							e.LastDeprecationDate = new Date(e.LastDeprecationDate);
 						}
 					});
 
@@ -133,6 +139,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "select",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
+				optionsDeprecationSchedule: $scope.optionsDeprecationSchedule,
 			});
 		};
 
@@ -140,6 +147,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Depreciation-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
+				optionsDeprecationSchedule: $scope.optionsDeprecationSchedule,
 			});
 		};
 
@@ -151,6 +159,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
+				optionsDeprecationSchedule: $scope.optionsDeprecationSchedule,
 			}, null, false);
 		};
 
@@ -161,6 +170,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
+				optionsDeprecationSchedule: $scope.optionsDeprecationSchedule,
 			}, null, false);
 		};
 
@@ -195,6 +205,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
+		$scope.optionsDeprecationSchedule = [];
 
 
 		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts").then(function (response) {
@@ -206,10 +217,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts").then(function (response) {
+			$scope.optionsDeprecationSchedule = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
 		$scope.optionsAssetValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsAsset.length; i++) {
 				if ($scope.optionsAsset[i].value === optionKey) {
 					return $scope.optionsAsset[i].text;
+				}
+			}
+			return null;
+		};
+		$scope.optionsDeprecationScheduleValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsDeprecationSchedule.length; i++) {
+				if ($scope.optionsDeprecationSchedule[i].value === optionKey) {
+					return $scope.optionsDeprecationSchedule[i].text;
 				}
 			}
 			return null;

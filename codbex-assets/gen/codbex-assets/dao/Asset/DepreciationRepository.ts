@@ -7,7 +7,11 @@ import { EntityUtils } from "../utils/EntityUtils";
 export interface DepreciationEntity {
     readonly Id: number;
     Asset?: number;
-    DepreciationDate?: Date;
+    DepreciationStartDate?: Date;
+    DeprecationEndDate?: Date;
+    DeprecationSchedule?: number;
+    LastDeprecationDate?: Date;
+    DeprecationRate?: number;
     Method?: string;
     AnnualDepreciation?: number;
     AccumulatedDepreciation?: number;
@@ -15,7 +19,11 @@ export interface DepreciationEntity {
 
 export interface DepreciationCreateEntity {
     readonly Asset?: number;
-    readonly DepreciationDate?: Date;
+    readonly DepreciationStartDate?: Date;
+    readonly DeprecationEndDate?: Date;
+    readonly DeprecationSchedule?: number;
+    readonly LastDeprecationDate?: Date;
+    readonly DeprecationRate?: number;
     readonly Method?: string;
     readonly AnnualDepreciation?: number;
     readonly AccumulatedDepreciation?: number;
@@ -30,7 +38,11 @@ export interface DepreciationEntityOptions {
         equals?: {
             Id?: number | number[];
             Asset?: number | number[];
-            DepreciationDate?: Date | Date[];
+            DepreciationStartDate?: Date | Date[];
+            DeprecationEndDate?: Date | Date[];
+            DeprecationSchedule?: number | number[];
+            LastDeprecationDate?: Date | Date[];
+            DeprecationRate?: number | number[];
             Method?: string | string[];
             AnnualDepreciation?: number | number[];
             AccumulatedDepreciation?: number | number[];
@@ -38,7 +50,11 @@ export interface DepreciationEntityOptions {
         notEquals?: {
             Id?: number | number[];
             Asset?: number | number[];
-            DepreciationDate?: Date | Date[];
+            DepreciationStartDate?: Date | Date[];
+            DeprecationEndDate?: Date | Date[];
+            DeprecationSchedule?: number | number[];
+            LastDeprecationDate?: Date | Date[];
+            DeprecationRate?: number | number[];
             Method?: string | string[];
             AnnualDepreciation?: number | number[];
             AccumulatedDepreciation?: number | number[];
@@ -46,7 +62,11 @@ export interface DepreciationEntityOptions {
         contains?: {
             Id?: number;
             Asset?: number;
-            DepreciationDate?: Date;
+            DepreciationStartDate?: Date;
+            DeprecationEndDate?: Date;
+            DeprecationSchedule?: number;
+            LastDeprecationDate?: Date;
+            DeprecationRate?: number;
             Method?: string;
             AnnualDepreciation?: number;
             AccumulatedDepreciation?: number;
@@ -54,7 +74,11 @@ export interface DepreciationEntityOptions {
         greaterThan?: {
             Id?: number;
             Asset?: number;
-            DepreciationDate?: Date;
+            DepreciationStartDate?: Date;
+            DeprecationEndDate?: Date;
+            DeprecationSchedule?: number;
+            LastDeprecationDate?: Date;
+            DeprecationRate?: number;
             Method?: string;
             AnnualDepreciation?: number;
             AccumulatedDepreciation?: number;
@@ -62,7 +86,11 @@ export interface DepreciationEntityOptions {
         greaterThanOrEqual?: {
             Id?: number;
             Asset?: number;
-            DepreciationDate?: Date;
+            DepreciationStartDate?: Date;
+            DeprecationEndDate?: Date;
+            DeprecationSchedule?: number;
+            LastDeprecationDate?: Date;
+            DeprecationRate?: number;
             Method?: string;
             AnnualDepreciation?: number;
             AccumulatedDepreciation?: number;
@@ -70,7 +98,11 @@ export interface DepreciationEntityOptions {
         lessThan?: {
             Id?: number;
             Asset?: number;
-            DepreciationDate?: Date;
+            DepreciationStartDate?: Date;
+            DeprecationEndDate?: Date;
+            DeprecationSchedule?: number;
+            LastDeprecationDate?: Date;
+            DeprecationRate?: number;
             Method?: string;
             AnnualDepreciation?: number;
             AccumulatedDepreciation?: number;
@@ -78,7 +110,11 @@ export interface DepreciationEntityOptions {
         lessThanOrEqual?: {
             Id?: number;
             Asset?: number;
-            DepreciationDate?: Date;
+            DepreciationStartDate?: Date;
+            DeprecationEndDate?: Date;
+            DeprecationSchedule?: number;
+            LastDeprecationDate?: Date;
+            DeprecationRate?: number;
             Method?: string;
             AnnualDepreciation?: number;
             AccumulatedDepreciation?: number;
@@ -124,9 +160,29 @@ export class DepreciationRepository {
                 type: "INTEGER",
             },
             {
-                name: "DepreciationDate",
-                column: "DEPRECIATION_DEPRECIATIONDATE",
+                name: "DepreciationStartDate",
+                column: "DEPRECIATION_DEPRECIATIONSTARTDATE",
                 type: "DATE",
+            },
+            {
+                name: "DeprecationEndDate",
+                column: "DEPRECIATION_DEPRECATIONENDDATE",
+                type: "DATE",
+            },
+            {
+                name: "DeprecationSchedule",
+                column: "DEPRECIATION_DEPRECATIONSCHEDULE",
+                type: "INTEGER",
+            },
+            {
+                name: "LastDeprecationDate",
+                column: "DEPRECIATION_LASTDEPRECATIONDATE",
+                type: "DATE",
+            },
+            {
+                name: "DeprecationRate",
+                column: "DEPRECIATION_DEPRECATIONRATE",
+                type: "DECIMAL",
             },
             {
                 name: "Method",
@@ -154,19 +210,25 @@ export class DepreciationRepository {
 
     public findAll(options?: DepreciationEntityOptions): DepreciationEntity[] {
         return this.dao.list(options).map((e: DepreciationEntity) => {
-            EntityUtils.setDate(e, "DepreciationDate");
+            EntityUtils.setDate(e, "DepreciationStartDate");
+            EntityUtils.setDate(e, "DeprecationEndDate");
+            EntityUtils.setDate(e, "LastDeprecationDate");
             return e;
         });
     }
 
     public findById(id: number): DepreciationEntity | undefined {
         const entity = this.dao.find(id);
-        EntityUtils.setDate(entity, "DepreciationDate");
+        EntityUtils.setDate(entity, "DepreciationStartDate");
+        EntityUtils.setDate(entity, "DeprecationEndDate");
+        EntityUtils.setDate(entity, "LastDeprecationDate");
         return entity ?? undefined;
     }
 
     public create(entity: DepreciationCreateEntity): number {
-        EntityUtils.setLocalDate(entity, "DepreciationDate");
+        EntityUtils.setLocalDate(entity, "DepreciationStartDate");
+        EntityUtils.setLocalDate(entity, "DeprecationEndDate");
+        EntityUtils.setLocalDate(entity, "LastDeprecationDate");
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -182,7 +244,9 @@ export class DepreciationRepository {
     }
 
     public update(entity: DepreciationUpdateEntity): void {
-        // EntityUtils.setLocalDate(entity, "DepreciationDate");
+        // EntityUtils.setLocalDate(entity, "DepreciationStartDate");
+        // EntityUtils.setLocalDate(entity, "DeprecationEndDate");
+        // EntityUtils.setLocalDate(entity, "LastDeprecationDate");
         const previousEntity = this.findById(entity.Id);
         this.dao.update(entity);
         this.triggerEvent({

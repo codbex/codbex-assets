@@ -1,34 +1,23 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
 import { Extensions } from "sdk/extensions"
-import { DepreciationRepository, DepreciationEntityOptions } from "../../dao/Asset/DepreciationRepository";
+import { DeprecationScheduleRepository, DeprecationScheduleEntityOptions } from "../../dao/DeprecationSchedule/DeprecationScheduleRepository";
 import { ValidationError } from "../utils/ValidationError";
 import { HttpUtils } from "../utils/HttpUtils";
 
-const validationModules = await Extensions.loadExtensionModules("codbex-assets-Asset-Depreciation", ["validate"]);
+const validationModules = await Extensions.loadExtensionModules("codbex-assets-DeprecationSchedule-DeprecationSchedule", ["validate"]);
 
 @Controller
-class DepreciationService {
+class DeprecationScheduleService {
 
-    private readonly repository = new DepreciationRepository();
+    private readonly repository = new DeprecationScheduleRepository();
 
     @Get("/")
     public getAll(_: any, ctx: any) {
         try {
-            const options: DepreciationEntityOptions = {
+            const options: DeprecationScheduleEntityOptions = {
                 $limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 $offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
-
-            let Asset = parseInt(ctx.queryParameters.Asset);
-            Asset = isNaN(Asset) ? ctx.queryParameters.Asset : Asset;
-
-            if (Asset !== undefined) {
-                options.$filter = {
-                    equals: {
-                        Asset: Asset
-                    }
-                };
-            }
 
             return this.repository.findAll(options);
         } catch (error: any) {
@@ -41,7 +30,7 @@ class DepreciationService {
         try {
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/DepreciationService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -84,7 +73,7 @@ class DepreciationService {
             if (entity) {
                 return entity;
             } else {
-                HttpUtils.sendResponseNotFound("Depreciation not found");
+                HttpUtils.sendResponseNotFound("DeprecationSchedule not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -112,7 +101,7 @@ class DepreciationService {
                 this.repository.deleteById(id);
                 HttpUtils.sendResponseNoContent();
             } else {
-                HttpUtils.sendResponseNotFound("Depreciation not found");
+                HttpUtils.sendResponseNotFound("DeprecationSchedule not found");
             }
         } catch (error: any) {
             this.handleError(error);
@@ -130,29 +119,11 @@ class DepreciationService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.Asset === null || entity.Asset === undefined) {
-            throw new ValidationError(`The 'Asset' property is required, provide a valid value`);
+        if (entity.Name === null || entity.Name === undefined) {
+            throw new ValidationError(`The 'Name' property is required, provide a valid value`);
         }
-        if (entity.DepreciationStartDate === null || entity.DepreciationStartDate === undefined) {
-            throw new ValidationError(`The 'DepreciationStartDate' property is required, provide a valid value`);
-        }
-        if (entity.DeprecationEndDate === null || entity.DeprecationEndDate === undefined) {
-            throw new ValidationError(`The 'DeprecationEndDate' property is required, provide a valid value`);
-        }
-        if (entity.LastDeprecationDate === null || entity.LastDeprecationDate === undefined) {
-            throw new ValidationError(`The 'LastDeprecationDate' property is required, provide a valid value`);
-        }
-        if (entity.DeprecationRate === null || entity.DeprecationRate === undefined) {
-            throw new ValidationError(`The 'DeprecationRate' property is required, provide a valid value`);
-        }
-        if (entity.Method === null || entity.Method === undefined) {
-            throw new ValidationError(`The 'Method' property is required, provide a valid value`);
-        }
-        if (entity.Method?.length > 64) {
-            throw new ValidationError(`The 'Method' exceeds the maximum length of [64] characters`);
-        }
-        if (entity.AnnualDepreciation === null || entity.AnnualDepreciation === undefined) {
-            throw new ValidationError(`The 'AnnualDepreciation' property is required, provide a valid value`);
+        if (entity.Name?.length > 20) {
+            throw new ValidationError(`The 'Name' exceeds the maximum length of [20] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);
