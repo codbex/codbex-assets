@@ -17,6 +17,12 @@ angular.module('page', ["ideUI", "ideView"])
 			if (params?.entity?.PurchaseDateTo) {
 				params.entity.PurchaseDateTo = new Date(params.entity.PurchaseDateTo);
 			}
+			if (params?.entity?.UsefulLifeFrom) {
+				params.entity.UsefulLifeFrom = new Date(params.entity.UsefulLifeFrom);
+			}
+			if (params?.entity?.UsefulLifeTo) {
+				params.entity.UsefulLifeTo = new Date(params.entity.UsefulLifeTo);
+			}
 			$scope.entity = params.entity ?? {};
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
@@ -69,17 +75,26 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.AccumulatedValue !== undefined) {
 				filter.$filter.equals.AccumulatedValue = entity.AccumulatedValue;
 			}
+			if (entity.UsefulLifeFrom) {
+				filter.$filter.greaterThanOrEqual.UsefulLife = entity.UsefulLifeFrom;
+			}
+			if (entity.UsefulLifeTo) {
+				filter.$filter.lessThanOrEqual.UsefulLife = entity.UsefulLifeTo;
+			}
+			if (entity.ResidualValue !== undefined) {
+				filter.$filter.equals.ResidualValue = entity.ResidualValue;
+			}
 			if (entity.Product !== undefined) {
 				filter.$filter.equals.Product = entity.Product;
 			}
 			if (entity.Store !== undefined) {
 				filter.$filter.equals.Store = entity.Store;
 			}
-			if (entity.MaintenenceCost !== undefined) {
-				filter.$filter.equals.MaintenenceCost = entity.MaintenenceCost;
-			}
 			if (entity.PurchaseInvoice !== undefined) {
 				filter.$filter.equals.PurchaseInvoice = entity.PurchaseInvoice;
+			}
+			if (entity.TotalOperationCost !== undefined) {
+				filter.$filter.equals.TotalOperationCost = entity.TotalOperationCost;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

@@ -29,32 +29,120 @@
                 <fd-form-group dg-header="Depreciation Filter" name="entityForm" class="fd-container fd-form-layout-grid-container">
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idDepreciationDateFrom" dg-colon="true">From DepreciationDate</fd-form-label>
+                        	<fd-form-label for="idDepreciationStartDateFrom" dg-colon="true">From DepreciationStartDate</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--2">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationDate'].$valid }}">
-	                            <fd-input id="idDepreciationDateFrom"
-	                                name="DepreciationDate"
-	                                state="{{ forms.details['DepreciationDate'].$valid ? '' : 'error' }}"
-	                                ng-model="entity.DepreciationDateFrom"
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationStartDate'].$valid }}">
+	                            <fd-input id="idDepreciationStartDateFrom"
+	                                name="DepreciationStartDate"
+	                                state="{{ forms.details['DepreciationStartDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.DepreciationStartDateFrom"
 	                                type="date">
 	                            </fd-input>
 	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
 	                        </fd-form-input-message-group>
 	                    </div>
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idDepreciationDateTo" dg-colon="true">To DepreciationDate</fd-form-label>
+                        	<fd-form-label for="idDepreciationStartDateTo" dg-colon="true">To DepreciationStartDate</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--2">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationDate'].$valid }}">
-	                            <fd-input id="idDepreciationDateTo"
-	                                name="DepreciationDate"
-	                                state="{{ forms.details['DepreciationDate'].$valid ? '' : 'error' }}"
-	                                ng-model="entity.DepreciationDateTo"
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DepreciationStartDate'].$valid }}">
+	                            <fd-input id="idDepreciationStartDateTo"
+	                                name="DepreciationStartDate"
+	                                state="{{ forms.details['DepreciationStartDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.DepreciationStartDateTo"
 	                                type="date">
 	                            </fd-input>
 	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
 	                        </fd-form-input-message-group>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationEndDateFrom" dg-colon="true">From DeprecationEndDate</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--2">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DeprecationEndDate'].$valid }}">
+	                            <fd-input id="idDeprecationEndDateFrom"
+	                                name="DeprecationEndDate"
+	                                state="{{ forms.details['DeprecationEndDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.DeprecationEndDateFrom"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                    </div>
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationEndDateTo" dg-colon="true">To DeprecationEndDate</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--2">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['DeprecationEndDate'].$valid }}">
+	                            <fd-input id="idDeprecationEndDateTo"
+	                                name="DeprecationEndDate"
+	                                state="{{ forms.details['DeprecationEndDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.DeprecationEndDateTo"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationSchedule" dg-colon="true">DeprecationSchedule</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--8">
+	                        <fd-combobox-input id="idDeprecationSchedule"
+	                            name="DeprecationSchedule"
+	                            state="{{ forms.details['DeprecationSchedule'].$valid ? '' : 'error' }}"
+	                            ng-model="entity.DeprecationSchedule"
+	                            dropdown-items="optionsDeprecationSchedule"
+	                            dg-placeholder="Search DeprecationSchedule ...">
+	                        </fd-combobox-input>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idLastDeprecationDateFrom" dg-colon="true">From LastDeprecationDate</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--2">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['LastDeprecationDate'].$valid }}">
+	                            <fd-input id="idLastDeprecationDateFrom"
+	                                name="LastDeprecationDate"
+	                                state="{{ forms.details['LastDeprecationDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.LastDeprecationDateFrom"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                    </div>
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idLastDeprecationDateTo" dg-colon="true">To LastDeprecationDate</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--2">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['LastDeprecationDate'].$valid }}">
+	                            <fd-input id="idLastDeprecationDateTo"
+	                                name="LastDeprecationDate"
+	                                state="{{ forms.details['LastDeprecationDate'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.LastDeprecationDateTo"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idDeprecationRate" dg-colon="true">DeprecationRate</fd-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--4">
+	                        <fd-step-input dg-id="idDeprecationRate"
+								name="DeprecationRate"
+								state="{{ forms.details['DeprecationRate'].$valid ? '' : 'error' }}"
+								ng-model="entity.DeprecationRate"
+								placeholder="Enter DeprecationRate"
+								>
+							</fd-step-input>
 	                    </div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">

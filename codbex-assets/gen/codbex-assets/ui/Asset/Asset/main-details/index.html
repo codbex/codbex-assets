@@ -21,14 +21,14 @@
                 <fd-form-group dg-header="{{formHeaders[action]}}" name="entityForm" class="fd-container fd-form-layout-grid-container">
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idName" dg-required="false" dg-colon="true">Name</fd-form-label>
+                        	<fd-form-label for="idName" dg-required="true" dg-colon="true">Name</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--2 fd-col--3">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Name'].$valid }}">
 	                            <fd-input id="idName"
 	                                name="Name"
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.Name"
 	                                ng-readonly="action === 'select'"
 	                                ng-minlength="0.0 || 0"
@@ -44,14 +44,14 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idCompany" dg-required="false" dg-colon="true">Company</fd-form-label>
+                        	<fd-form-label for="idCompany" dg-required="true" dg-colon="true">Company</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Company'].$valid }}">
 	                            <fd-input id="idCompany"
 	                                name="Company"
 	                                state="{{ forms.details['Company'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.Company"
 	                                ng-readonly="action === 'select'"
 	                                ng-minlength="${property.minLength} || 0"
@@ -90,14 +90,14 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idPurchaseDate" dg-required="false" dg-colon="true">PurchaseDate</fd-form-label>
+                        	<fd-form-label for="idPurchaseDate" dg-required="true" dg-colon="true">PurchaseDate</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--2 ">
 	                        <fd-form-input-message-group dg-inactive="{{ forms.details['PurchaseDate'].$valid }}">
 	                            <fd-input id="idPurchaseDate"
 	                                name="PurchaseDate"
 	                                state="{{ forms.details['PurchaseDate'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.PurchaseDate"
 	                                ng-readonly="action === 'select'"
 	                                type="date">
@@ -109,13 +109,13 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idAquiredValue" dg-required="false" dg-colon="true">AquiredValue</fd-form-label>
+                        	<fd-form-label for="idAquiredValue" dg-required="true" dg-colon="true">AquiredValue</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--4 ">
 							<fd-step-input dg-id="idAquiredValue"
 								name="AquiredValue"
 								state="{{ forms.details['AquiredValue'].$valid ? '' : 'error' }}"
-								dg-required="false"
+								dg-required="true"
 								ng-model="entity.AquiredValue"
 								is-readonly="action === 'select'"
 								placeholder="Enter AquiredValue"
@@ -149,13 +149,55 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idProduct" dg-required="false" dg-colon="true">Product</fd-form-label>
+                        	<fd-form-label for="idUsefulLife" dg-required="true" dg-colon="true">UsefulLife</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--2 ">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['UsefulLife'].$valid }}">
+	                            <fd-input id="idUsefulLife"
+	                                name="UsefulLife"
+	                                state="{{ forms.details['UsefulLife'].$valid ? '' : 'error' }}"
+									ng-required="true"
+	                                ng-model="entity.UsefulLife"
+	                                ng-readonly="action === 'select'"
+	                                type="date">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                        </fd-form-input-message-group>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idResidualValue" dg-required="true" dg-colon="true">ResidualValue</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['ResidualValue'].$valid }}">
+	                            <fd-input id="idResidualValue"
+	                                name="ResidualValue"
+	                                state="{{ forms.details['ResidualValue'].$valid ? '' : 'error' }}"
+									ng-required="true"
+	                                ng-model="entity.ResidualValue"
+	                                ng-readonly="action === 'select'"
+	                                ng-minlength="${property.minLength} || 0"
+	                                ng-maxlength="${property.maxLength} || -1"
+	                                dg-input-rules="{ patterns: [''] }"
+	                                type="text"
+	                                placeholder="Enter ResidualValue">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">The value doesn't match the required pattern ''</fd-form-message>
+	                        </fd-form-input-message-group>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idProduct" dg-required="true" dg-colon="true">Product</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <fd-combobox-input id="idProduct"
 	                            name="Product"
 	                            state="{{ forms.details['Product'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
+	                            ng-required="true"
 	                            ng-model="entity.Product"
 	                            dg-disabled="action === 'select'"
 	                            dropdown-items="optionsProduct"
@@ -166,13 +208,13 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idStore" dg-required="false" dg-colon="true">Store</fd-form-label>
+                        	<fd-form-label for="idStore" dg-required="true" dg-colon="true">Store</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <fd-combobox-input id="idStore"
 	                            name="Store"
 	                            state="{{ forms.details['Store'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
+	                            ng-required="true"
 	                            ng-model="entity.Store"
 	                            dg-disabled="action === 'select'"
 	                            dropdown-items="optionsStore"
@@ -183,42 +225,36 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idMaintenenceCost" dg-required="false" dg-colon="true">MaintenenceCost</fd-form-label>
-                        </div>
-                        <div class="fd-col  fd-col-md--8 ">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['MaintenenceCost'].$valid }}">
-	                            <fd-input id="idMaintenenceCost"
-	                                name="MaintenenceCost"
-	                                state="{{ forms.details['MaintenenceCost'].$valid ? '' : 'error' }}"
-									ng-required="false"
-	                                ng-model="entity.MaintenenceCost"
-	                                ng-readonly="action === 'select'"
-	                                ng-minlength="${property.minLength} || 0"
-	                                ng-maxlength="${property.maxLength} || -1"
-	                                dg-input-rules="{ patterns: [''] }"
-	                                type="text"
-	                                placeholder="Enter MaintenenceCost">
-	                            </fd-input>
-	                            <fd-form-message dg-type="error">The value doesn't match the required pattern ''</fd-form-message>
-	                        </fd-form-input-message-group>
-	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
-	                    </div>
-                    </fd-form-item>
-                    <fd-form-item class="fd-row">
-                    	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idPurchaseInvoice" dg-required="false" dg-colon="true">PurchaseInvoice</fd-form-label>
+                        	<fd-form-label for="idPurchaseInvoice" dg-required="true" dg-colon="true">PurchaseInvoice</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <fd-combobox-input id="idPurchaseInvoice"
 	                            name="PurchaseInvoice"
 	                            state="{{ forms.details['PurchaseInvoice'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
+	                            ng-required="true"
 	                            ng-model="entity.PurchaseInvoice"
 	                            dg-disabled="action === 'select'"
 	                            dropdown-items="optionsPurchaseInvoice"
 	                            dg-placeholder="Search PurchaseInvoice ...">
 	                        </fd-combobox-input>
 	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idTotalOperationCost" dg-required="true" dg-colon="true">TotalOperationCost</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--4 ">
+							<fd-step-input dg-id="idTotalOperationCost"
+								name="TotalOperationCost"
+								state="{{ forms.details['TotalOperationCost'].$valid ? '' : 'error' }}"
+								dg-required="true"
+								ng-model="entity.TotalOperationCost"
+								is-readonly="action === 'select'"
+								placeholder="Enter TotalOperationCost"
+								>
+							</fd-step-input>
+							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 	                    </div>
                     </fd-form-item>
                 </fd-form-group>

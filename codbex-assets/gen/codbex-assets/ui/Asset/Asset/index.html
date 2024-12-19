@@ -55,10 +55,12 @@
 								{{next.PurchaseDate | date: "dd/MMM/yyyy"}} |
 								{{next.AquiredValue}} |
 								{{next.AccumulatedValue}} |
+								{{next.UsefulLife | date: "dd/MMM/yyyy"}} |
+								{{next.ResidualValue}} |
 								{{optionsProductValue(next.Product)}} |
 								{{optionsStoreValue(next.Store)}} |
-								{{next.MaintenenceCost}} |
-								{{optionsPurchaseInvoiceValue(next.PurchaseInvoice)}}
+								{{optionsPurchaseInvoiceValue(next.PurchaseInvoice)}} |
+								{{next.TotalOperationCost}}
 							</fd-list-byline>
 						</fd-list-content>
 					</fd-list-link>

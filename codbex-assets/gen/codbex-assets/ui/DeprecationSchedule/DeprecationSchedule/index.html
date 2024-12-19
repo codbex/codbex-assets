@@ -16,30 +16,19 @@
 	</head>
 
 	<body class="dg-vbox">
-		<fd-message-page glyph="sap-icon--hint" ng-show="data == null">
-			<fd-message-page-title>Select a record to get a list of it's details.</fd-message-page-title>
-		</fd-message-page>
-
-		<fd-toolbar has-title="true" ng-hide="data == null">
+		<fd-toolbar has-title="true">
 			<fd-toolbar-title>Items <span fd-object-status text="{{dataCount}}" inverted="true"></fd-toolbar-title>
 			<fd-button compact="true" dg-type="transparent" dg-label="Filter" ng-click="openFilter()"></fd-button>
 			<fd-button ng-repeat="action in pageActions" compact="true" dg-type="transparent" dg-label="{{action.label}}" ng-click="triggerPageAction(action)"></fd-button>
 			<fd-toolbar-spacer></fd-toolbar-spacer>
-			<fd-button compact="true" dg-type="emphasized" dg-label="Create" ng-click="createEntity()"
-				state="{{selectedMainEntityId == null ? 'disabled' : ''}}"></fd-button>
+			<fd-button compact="true" dg-type="emphasized" dg-label="Create" ng-click="createEntity()"></fd-button>
 		</fd-toolbar>
+
 		<fd-scrollbar class="dg-full-height" ng-hide="data == null">
 			<table fd-table display-mode="compact" inner-borders="top" outer-borders="none">
 				<thead fd-table-header sticky="true">
 					<tr fd-table-row>
-						<th fd-table-header-cell>DepreciationStartDate</th>
-						<th fd-table-header-cell>DeprecationEndDate</th>
-						<th fd-table-header-cell>DeprecationSchedule</th>
-						<th fd-table-header-cell>LastDeprecationDate</th>
-						<th fd-table-header-cell>DeprecationRate</th>
-						<th fd-table-header-cell>Method</th>
-						<th fd-table-header-cell>AnnualDepreciation</th>
-						<th fd-table-header-cell>AccumulatedDepreciation</th>
+						<th fd-table-header-cell>Name</th>
 						<th fd-table-header-cell></th>
 					</tr>
 				</thead>
@@ -49,22 +38,7 @@
 					</tr>
 					<tr fd-table-row hoverable="true" ng-repeat="next in data"
 						dg-selected="next.Id === selectedEntity.Id" ng-click="selectEntity(next)">
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							<fd-input type="date" ng-model="next.DepreciationStartDate" ng-readonly="true"></fd-input>
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							<fd-input type="date" ng-model="next.DeprecationEndDate" ng-readonly="true"></fd-input>
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							{{optionsDeprecationScheduleValue(next.DeprecationSchedule)}}
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">
-							<fd-input type="date" ng-model="next.LastDeprecationDate" ng-readonly="true"></fd-input>
-						</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.DeprecationRate}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Method}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.AnnualDepreciation}}</td>
-						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.AccumulatedDepreciation}}</td>
+						<td fd-table-cell ng-click="openDetails(next)" hoverable="true" activable="true">{{next.Name}}</td>
 						<td fd-table-cell fit-content="true">
 							<fd-popover>
 								<fd-popover-control>
