@@ -2,12 +2,6 @@
     "guid": "assets",
     "dependencies": [
         {
-            "guid": "codbex-plutus-data-sample",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-plutus-data-sample",
-            "branch": "main"
-        },
-        {
             "guid": "codbex-products",
             "type": "git",
             "url": "https://github.com/codbex/codbex-products",
