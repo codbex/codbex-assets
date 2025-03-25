@@ -8,6 +8,9 @@ const viewData = {
     label: "AcquisitionRequest",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/dialog-window/index.html",
     perspectiveName: "AcquisitionRequest",
+    roles: [
+        "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly",
+    ]
 };
 
 if (typeof exports !== 'undefined') {

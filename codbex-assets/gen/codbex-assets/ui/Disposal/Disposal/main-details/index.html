@@ -23,7 +23,7 @@
                     	<div class="fd-col fd-col-md--2">
                         	<fd-form-label for="idAsset" dg-required="false" dg-colon="true">Asset</fd-form-label>
                         </div>
-                        <div class="fd-col  fd-col-md--8 ">
+                        <div class="fd-col  fd-col-md--7 ">
 	                        <fd-combobox-input id="idAsset"
 	                            name="Asset"
 	                            state="{{ forms.details['Asset'].$valid ? '' : 'error' }}"
@@ -33,8 +33,16 @@
 	                            dropdown-items="optionsAsset"
 	                            dg-placeholder="Search Asset ...">
 	                        </fd-combobox-input>
-	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 	                    </div>
+	                    <div class="fd-col fd-col-md--1">
+							<button class="fd-button" ng-click="createAsset()" ng-hide="action === 'select'">
+								<i class="sap-icon--add" role="presentation"></i>
+							</button>
+							<button class="fd-button" ng-click="refreshAsset()" ng-hide="action === 'select'">
+								<i class="sap-icon--refresh" role="presentation"></i>
+							</button>
+							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+						</div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
@@ -59,7 +67,7 @@
                     	<div class="fd-col fd-col-md--2">
                         	<fd-form-label for="idDisposalMethod" dg-required="false" dg-colon="true">DisposalMethod</fd-form-label>
                         </div>
-                        <div class="fd-col  fd-col-md--8 ">
+                        <div class="fd-col  fd-col-md--7 ">
 	                        <fd-combobox-input id="idDisposalMethod"
 	                            name="DisposalMethod"
 	                            state="{{ forms.details['DisposalMethod'].$valid ? '' : 'error' }}"
@@ -69,8 +77,16 @@
 	                            dropdown-items="optionsDisposalMethod"
 	                            dg-placeholder="Search DisposalMethod ...">
 	                        </fd-combobox-input>
-	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 	                    </div>
+	                    <div class="fd-col fd-col-md--1">
+							<button class="fd-button" ng-click="createDisposalMethod()" ng-hide="action === 'select'">
+								<i class="sap-icon--add" role="presentation"></i>
+							</button>
+							<button class="fd-button" ng-click="refreshDisposalMethod()" ng-hide="action === 'select'">
+								<i class="sap-icon--refresh" role="presentation"></i>
+							</button>
+							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+						</div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
@@ -116,7 +132,7 @@
                     	<div class="fd-col fd-col-md--2">
                         	<fd-form-label for="idSalesInvoice" dg-required="false" dg-colon="true">SalesInvoice</fd-form-label>
                         </div>
-                        <div class="fd-col  fd-col-md--8 ">
+                        <div class="fd-col  fd-col-md--7 ">
 	                        <fd-combobox-input id="idSalesInvoice"
 	                            name="SalesInvoice"
 	                            state="{{ forms.details['SalesInvoice'].$valid ? '' : 'error' }}"
@@ -126,8 +142,16 @@
 	                            dropdown-items="optionsSalesInvoice"
 	                            dg-placeholder="Search SalesInvoice ...">
 	                        </fd-combobox-input>
-	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 	                    </div>
+	                    <div class="fd-col fd-col-md--1">
+							<button class="fd-button" ng-click="createSalesInvoice()" ng-hide="action === 'select'">
+								<i class="sap-icon--add" role="presentation"></i>
+							</button>
+							<button class="fd-button" ng-click="refreshSalesInvoice()" ng-hide="action === 'select'">
+								<i class="sap-icon--refresh" role="presentation"></i>
+							</button>
+							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+						</div>
                     </fd-form-item>
                 </fd-form-group>
             </fd-fieldset>

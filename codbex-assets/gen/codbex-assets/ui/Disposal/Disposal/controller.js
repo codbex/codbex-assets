@@ -201,7 +201,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts").then(function (response) {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts").then(function (response) {
 			$scope.optionsDisposalMethod = response.data.map(e => {
 				return {
 					value: e.Id,

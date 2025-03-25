@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/DeprecationSchedule/view.js",
+    "extensionPoint": "codbex-assets-view",
+    "description": "codbex-assets - Application View",
+    "role": "codbex-assets.DeprecationSchedule.DeprecationScheduleReadOnly,codbex-assets.DeprecationSchedule.DeprecationScheduleFullAccess"
+}

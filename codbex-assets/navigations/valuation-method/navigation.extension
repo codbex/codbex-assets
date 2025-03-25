@@ -1,5 +1,6 @@
 {
     "extensionPoint": "dashboard-navigations",
     "module": "codbex-assets/navigations/valuation-method/service.js",
-    "description": "Assets Navigation"
+    "description": "Assets Navigation",
+    "role": "codbex-assets.ValuationMethod.ValuationMethodReadOnly,codbex-assets.ValuationMethod.ValuationMethodFullAccess"
 }

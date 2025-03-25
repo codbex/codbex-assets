@@ -148,7 +148,7 @@
                     {
                         "type": "INTEGER",
                         "nullable": true,
-                        "name": "MAINTENANCE_MAINTENANCESTATUS"
+                        "name": "MAINTENANCE_STATUS"
                     }
                 ]
             },
@@ -437,7 +437,7 @@
                 "type": "foreignKey",
                 "table": "CODBEX_MAINTENANCE",
                 "constraintName": "Maintenance_MaintenanceStatus",
-                "columns": "MAINTENANCE_MAINTENANCESTATUS",
+                "columns": "MAINTENANCE_STATUS",
                 "referencedTable": "CODBEX_MAINTENANCESTATUS",
                 "referencedColumns": "MAINTENANCESTATUS_ID"
             },

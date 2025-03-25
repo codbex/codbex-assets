@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/ValuationMethod/tile.js",
+    "extensionPoint": "portal-tile",
+    "description": "codbex-assets - Application Tile",
+    "role": "codbex-assets.ValuationMethod.ValuationMethodReadOnly,codbex-assets.ValuationMethod.ValuationMethodFullAccess"
+}

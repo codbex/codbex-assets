@@ -10,7 +10,7 @@ export interface MaintenanceEntity {
     MaintenanceDate?: Date;
     Description?: string;
     Cost?: number;
-    MaintenanceStatus?: number;
+    Status?: number;
 }
 
 export interface MaintenanceCreateEntity {
@@ -18,7 +18,7 @@ export interface MaintenanceCreateEntity {
     readonly MaintenanceDate?: Date;
     readonly Description?: string;
     readonly Cost?: number;
-    readonly MaintenanceStatus?: number;
+    readonly Status?: number;
 }
 
 export interface MaintenanceUpdateEntity extends MaintenanceCreateEntity {
@@ -33,7 +33,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date | Date[];
             Description?: string | string[];
             Cost?: number | number[];
-            MaintenanceStatus?: number | number[];
+            Status?: number | number[];
         };
         notEquals?: {
             Id?: number | number[];
@@ -41,7 +41,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date | Date[];
             Description?: string | string[];
             Cost?: number | number[];
-            MaintenanceStatus?: number | number[];
+            Status?: number | number[];
         };
         contains?: {
             Id?: number;
@@ -49,7 +49,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date;
             Description?: string;
             Cost?: number;
-            MaintenanceStatus?: number;
+            Status?: number;
         };
         greaterThan?: {
             Id?: number;
@@ -57,7 +57,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date;
             Description?: string;
             Cost?: number;
-            MaintenanceStatus?: number;
+            Status?: number;
         };
         greaterThanOrEqual?: {
             Id?: number;
@@ -65,7 +65,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date;
             Description?: string;
             Cost?: number;
-            MaintenanceStatus?: number;
+            Status?: number;
         };
         lessThan?: {
             Id?: number;
@@ -73,7 +73,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date;
             Description?: string;
             Cost?: number;
-            MaintenanceStatus?: number;
+            Status?: number;
         };
         lessThanOrEqual?: {
             Id?: number;
@@ -81,7 +81,7 @@ export interface MaintenanceEntityOptions {
             MaintenanceDate?: Date;
             Description?: string;
             Cost?: number;
-            MaintenanceStatus?: number;
+            Status?: number;
         };
     },
     $select?: (keyof MaintenanceEntity)[],
@@ -139,8 +139,8 @@ export class MaintenanceRepository {
                 type: "DECIMAL",
             },
             {
-                name: "MaintenanceStatus",
-                column: "MAINTENANCE_MAINTENANCESTATUS",
+                name: "Status",
+                column: "MAINTENANCE_STATUS",
                 type: "INTEGER",
             }
         ]

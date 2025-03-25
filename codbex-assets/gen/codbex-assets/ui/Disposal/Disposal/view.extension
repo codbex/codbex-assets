@@ -1,1 +1,6 @@
-{"module":"codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/view.js","extensionPoint":"codbex-assets-view","description":"codbex-assets - Application View"}
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/view.js",
+    "extensionPoint": "codbex-assets-view",
+    "description": "codbex-assets - Application View",
+    "role": "codbex-assets.Disposal.DisposalReadOnly,codbex-assets.Disposal.DisposalFullAccess"
+}

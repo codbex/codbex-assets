@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: 'AcquisitionRequest',
 	name: 'Acquisition Request',
 	link: '/services/web/codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/index.html',
-	order: 101,
-	icon: '/services/web/resources/unicons/plus.svg',
+	order: '101',
+	icon: '/services/web/resources/unicons/plus.svg'
 };
 
 if (typeof exports !== 'undefined') {

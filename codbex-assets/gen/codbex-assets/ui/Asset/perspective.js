@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: 'Asset',
 	name: 'Asset',
 	link: '/services/web/codbex-assets/gen/codbex-assets/ui/Asset/index.html',
-	order: 100,
-	icon: '/services/web/resources/unicons/server.svg',
+	order: '100',
+	icon: '/services/web/resources/unicons/server.svg'
 };
 
 if (typeof exports !== 'undefined') {

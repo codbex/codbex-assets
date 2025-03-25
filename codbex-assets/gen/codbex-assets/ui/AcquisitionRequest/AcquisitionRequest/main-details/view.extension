@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/main-details/view.js",
+    "extensionPoint": "codbex-assets-view",
+    "description": "codbex-assets - Application View - Main Details",
+    "role": "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly,codbex-assets.AcquisitionRequest.AcquisitionRequestFullAccess"
+}

@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-assets/gen/codbex-assets/api/Disposal/DisposalService.ts";
 	}])
-	.controller('PageController', ['$scope', 'Extensions', 'messageHub', 'entityApi', function ($scope, Extensions, messageHub, entityApi) {
+	.controller('PageController', ['$scope',  '$http', 'Extensions', 'messageHub', 'entityApi', function ($scope,  $http, Extensions, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -84,7 +84,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		});
 
 		$scope.serviceAsset = "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts";
-		$scope.serviceDisposalMethod = "/services/ts/codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts";
+		$scope.serviceDisposalMethod = "/services/ts/codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts";
 		$scope.serviceSalesInvoice = "/services/ts/codbex-invoices/gen/codbex-invoices/api/salesinvoice/SalesInvoiceService.ts";
 
 		//-----------------Events-------------------//
@@ -116,5 +116,69 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.cancel = function () {
 			messageHub.postMessage("clearDetails");
 		};
+		
+		//-----------------Dialogs-------------------//
+		
+		$scope.createAsset = function () {
+			messageHub.showDialogWindow("Asset-details", {
+				action: "create",
+				entity: {},
+			}, null, false);
+		};
+		$scope.createDisposalMethod = function () {
+			messageHub.showDialogWindow("DisposalMethod-details", {
+				action: "create",
+				entity: {},
+			}, null, false);
+		};
+		$scope.createSalesInvoice = function () {
+			messageHub.showDialogWindow("SalesInvoice-details", {
+				action: "create",
+				entity: {},
+			}, null, false);
+		};
+
+		//-----------------Dialogs-------------------//
+
+
+
+		//----------------Dropdowns-----------------//
+
+		$scope.refreshAsset = function () {
+			$scope.optionsAsset = [];
+			$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts").then(function (response) {
+				$scope.optionsAsset = response.data.map(e => {
+					return {
+						value: e.Id,
+						text: e.Name
+					}
+				});
+			});
+		};
+		$scope.refreshDisposalMethod = function () {
+			$scope.optionsDisposalMethod = [];
+			$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts").then(function (response) {
+				$scope.optionsDisposalMethod = response.data.map(e => {
+					return {
+						value: e.Id,
+						text: e.Name
+					}
+				});
+			});
+		};
+		$scope.refreshSalesInvoice = function () {
+			$scope.optionsSalesInvoice = [];
+			$http.get("/services/ts/codbex-invoices/gen/codbex-invoices/api/salesinvoice/SalesInvoiceService.ts").then(function (response) {
+				$scope.optionsSalesInvoice = response.data.map(e => {
+					return {
+						value: e.Id,
+						text: e.Name
+					}
+				});
+			});
+		};
+
+		//----------------Dropdowns-----------------//	
+		
 
 	}]);

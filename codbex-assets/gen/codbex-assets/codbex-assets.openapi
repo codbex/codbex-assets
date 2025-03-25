@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Codbex Assets - OpenAPI 3.0
+  title: Assets Management Module - OpenAPI 3.0
   version: 1.0.0
-  description: Codbex Assets managing application
+  description: Managing assets data
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io
@@ -15,10 +15,10 @@ tags:
   - name: Asset
   - name: Disposal
   - name: Asset
-  - name: MaintenanceStatus
-  - name: ValuationMethod
-  - name: DisposalMethod
-  - name: DeprecationSchedule
+  - name: Settings
+  - name: Settings
+  - name: Settings
+  - name: Settings
 paths:
   /codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts:
     get:
@@ -2408,7 +2408,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts:
+  /codbex-assets/gen/codbex-assets/api/Settings/MaintenanceStatusService.ts:
     get:
       summary: List MaintenanceStatus
       parameters:
@@ -2429,7 +2429,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - MaintenanceStatus
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -2460,7 +2460,7 @@ paths:
     post:
       summary: Create MaintenanceStatus
       tags:
-        - MaintenanceStatus
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2492,7 +2492,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Settings/MaintenanceStatusService.ts/{id}:
     get:
       summary: Get MaintenanceStatus by Id
       parameters:
@@ -2503,7 +2503,7 @@ paths:
           schema:
             type: string
       tags:
-        - MaintenanceStatus
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -2541,7 +2541,7 @@ paths:
           schema:
             type: string
       tags:
-        - MaintenanceStatus
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2589,7 +2589,7 @@ paths:
           schema:
             type: string
       tags:
-        - MaintenanceStatus
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -2611,11 +2611,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Settings/MaintenanceStatusService.ts/count:
     get:
       summary: Count the number of MaintenanceStatus
       tags:
-        - MaintenanceStatus
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -2639,7 +2639,7 @@ paths:
     post:
       summary: Count the number of MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - MaintenanceStatus
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2721,11 +2721,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Settings/MaintenanceStatusService.ts/search:
     post:
       summary: Search MaintenanceStatus by MaintenanceStatusFilterOptions
       tags:
-        - MaintenanceStatus
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2808,7 +2808,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts:
+  /codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts:
     get:
       summary: List ValuationMethod
       parameters:
@@ -2829,7 +2829,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - ValuationMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -2860,7 +2860,7 @@ paths:
     post:
       summary: Create ValuationMethod
       tags:
-        - ValuationMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2892,7 +2892,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts/{id}:
     get:
       summary: Get ValuationMethod by Id
       parameters:
@@ -2903,7 +2903,7 @@ paths:
           schema:
             type: string
       tags:
-        - ValuationMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -2941,7 +2941,7 @@ paths:
           schema:
             type: string
       tags:
-        - ValuationMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -2989,7 +2989,7 @@ paths:
           schema:
             type: string
       tags:
-        - ValuationMethod
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -3011,11 +3011,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts/count:
     get:
       summary: Count the number of ValuationMethod
       tags:
-        - ValuationMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3039,7 +3039,7 @@ paths:
     post:
       summary: Count the number of ValuationMethod by ValuationMethodFilterOptions
       tags:
-        - ValuationMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3121,11 +3121,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts/search:
     post:
       summary: Search ValuationMethod by ValuationMethodFilterOptions
       tags:
-        - ValuationMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3208,7 +3208,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts:
+  /codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts:
     get:
       summary: List DisposalMethod
       parameters:
@@ -3229,7 +3229,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - DisposalMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3260,7 +3260,7 @@ paths:
     post:
       summary: Create DisposalMethod
       tags:
-        - DisposalMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3292,7 +3292,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts/{id}:
     get:
       summary: Get DisposalMethod by Id
       parameters:
@@ -3303,7 +3303,7 @@ paths:
           schema:
             type: string
       tags:
-        - DisposalMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3341,7 +3341,7 @@ paths:
           schema:
             type: string
       tags:
-        - DisposalMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3389,7 +3389,7 @@ paths:
           schema:
             type: string
       tags:
-        - DisposalMethod
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -3411,11 +3411,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts/count:
     get:
       summary: Count the number of DisposalMethod
       tags:
-        - DisposalMethod
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3439,7 +3439,7 @@ paths:
     post:
       summary: Count the number of DisposalMethod by DisposalMethodFilterOptions
       tags:
-        - DisposalMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3521,11 +3521,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DisposalMethod/DisposalMethodService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Settings/DisposalMethodService.ts/search:
     post:
       summary: Search DisposalMethod by DisposalMethodFilterOptions
       tags:
-        - DisposalMethod
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3608,7 +3608,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts:
+  /codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts:
     get:
       summary: List DeprecationSchedule
       parameters:
@@ -3629,7 +3629,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - DeprecationSchedule
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3660,7 +3660,7 @@ paths:
     post:
       summary: Create DeprecationSchedule
       tags:
-        - DeprecationSchedule
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3692,7 +3692,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts/{id}:
+  /codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts/{id}:
     get:
       summary: Get DeprecationSchedule by Id
       parameters:
@@ -3703,7 +3703,7 @@ paths:
           schema:
             type: string
       tags:
-        - DeprecationSchedule
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3741,7 +3741,7 @@ paths:
           schema:
             type: string
       tags:
-        - DeprecationSchedule
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3789,7 +3789,7 @@ paths:
           schema:
             type: string
       tags:
-        - DeprecationSchedule
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -3811,11 +3811,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts/count:
+  /codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts/count:
     get:
       summary: Count the number of DeprecationSchedule
       tags:
-        - DeprecationSchedule
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -3839,7 +3839,7 @@ paths:
     post:
       summary: Count the number of DeprecationSchedule by DeprecationScheduleFilterOptions
       tags:
-        - DeprecationSchedule
+        - Settings
       requestBody:
         content:
           application/json:
@@ -3921,11 +3921,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts/search:
+  /codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts/search:
     post:
       summary: Search DeprecationSchedule by DeprecationScheduleFilterOptions
       tags:
-        - DeprecationSchedule
+        - Settings
       requestBody:
         content:
           application/json:
@@ -4642,7 +4642,7 @@ components:
         Cost:
           type: number
           format: double
-        MaintenanceStatus:
+        Status:
           type: integer
           format: int32
     MaintenanceFilterOptions:
@@ -4691,7 +4691,7 @@ components:
                       items:
                         type: number
                         format: double
-                MaintenanceStatus:
+                Status:
                   oneOf:
                     - type: integer
                       format: int32
@@ -4739,7 +4739,7 @@ components:
                       items:
                         type: number
                         format: double
-                MaintenanceStatus:
+                Status:
                   oneOf:
                     - type: integer
                       format: int32
@@ -4758,7 +4758,7 @@ components:
                   minLength: 0
                   maxLength: 256
                 Cost:
-                MaintenanceStatus:
+                Status:
             greaterThan:
               type: object
               properties:
@@ -4776,7 +4776,7 @@ components:
                 Cost:
                   type: number
                   format: double
-                MaintenanceStatus:
+                Status:
                   type: integer
                   format: int32
             greaterThanOrEqual:
@@ -4796,7 +4796,7 @@ components:
                 Cost:
                   type: number
                   format: double
-                MaintenanceStatus:
+                Status:
                   type: integer
                   format: int32
             lessThan:
@@ -4816,7 +4816,7 @@ components:
                 Cost:
                   type: number
                   format: double
-                MaintenanceStatus:
+                Status:
                   type: integer
                   format: int32
             lessThanOrEqual:
@@ -4836,17 +4836,17 @@ components:
                 Cost:
                   type: number
                   format: double
-                MaintenanceStatus:
+                Status:
                   type: integer
                   format: int32
         $select:
           type: array
-          example: ["Id", "Asset", "MaintenanceDate", "Description", "Cost", "MaintenanceStatus"]
+          example: ["Id", "Asset", "MaintenanceDate", "Description", "Cost", "Status"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Asset,MaintenanceDate,Description,Cost,MaintenanceStatus"
+            example: "Id,Asset,MaintenanceDate,Description,Cost,Status"
         $order:
           type: string
           enum: ["asc", "desc"]

@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/ValuationMethod/view.js",
+    "extensionPoint": "codbex-assets-view",
+    "description": "codbex-assets - Application View",
+    "role": "codbex-assets.ValuationMethod.ValuationMethodReadOnly,codbex-assets.ValuationMethod.ValuationMethodFullAccess"
+}

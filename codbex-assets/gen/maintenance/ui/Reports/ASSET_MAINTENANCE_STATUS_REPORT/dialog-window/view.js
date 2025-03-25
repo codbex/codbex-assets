@@ -7,7 +7,7 @@ const viewData = {
     id: "ASSET_MAINTENANCE_STATUS_REPORT-Report-details",
     label: "ASSET_MAINTENANCE_STATUS_REPORT Report",
     link: "/services/web/codbex-assets/gen/maintenance/ui/Reports/ASSET_MAINTENANCE_STATUS_REPORT/dialog-window/index.html",
-    perspectiveName: "Reports",
+    perspectiveName: "Reports"
 };
 
 if (typeof exports !== 'undefined') {

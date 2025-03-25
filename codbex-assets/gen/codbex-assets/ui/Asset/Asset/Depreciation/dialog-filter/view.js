@@ -7,7 +7,7 @@ const viewData = {
     id: "Depreciation-filter",
     label: "Depreciation Filter",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/Depreciation/dialog-filter/index.html",
-    perspectiveName: "Asset",
+    perspectiveName: "Asset"
 };
 
 if (typeof exports !== 'undefined') {

@@ -36,9 +36,9 @@
         <script type="text/javascript">
             angular.module('app', ['ngResource', 'ideLayout', 'ideUI'])
                 .constant('branding', {
-                    name: 'Codbex Assets',
-                    brand: 'Codbex',
-                    brandUrl: 'codbex.com',
+                    name: 'Assets Management Module',
+                    brand: 'codbex',
+                    brandUrl: 'https://www.codbex.com',
                     icons: {
                         faviconIco: '/services/web/ide-branding/images/favicon.ico',
                         favicon32: '/services/web/ide-branding/images/favicon-32x32.png',
@@ -49,7 +49,7 @@
                 .constant('extensionPoint', {
                     perspectives: "codbex-assets",
                     views: "codbex-assets-view",
-                    dialogWindows: "codbex-assets-dialog-window"
+                    dialogWindows: "dialog-window"
                 })
                 .config(["messageHubProvider", function (messageHubProvider) {
                     messageHubProvider.eventIdPrefix = 'codbex-assets.launchpad.Home';

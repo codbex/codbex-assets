@@ -133,7 +133,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				action: "select",
 				entity: entity,
 				optionsAsset: $scope.optionsAsset,
-				optionsMaintenanceStatus: $scope.optionsMaintenanceStatus,
+				optionsStatus: $scope.optionsStatus,
 			});
 		};
 
@@ -141,7 +141,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("Maintenance-filter", {
 				entity: $scope.filterEntity,
 				optionsAsset: $scope.optionsAsset,
-				optionsMaintenanceStatus: $scope.optionsMaintenanceStatus,
+				optionsStatus: $scope.optionsStatus,
 			});
 		};
 
@@ -153,7 +153,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
-				optionsMaintenanceStatus: $scope.optionsMaintenanceStatus,
+				optionsStatus: $scope.optionsStatus,
 			}, null, false);
 		};
 
@@ -164,7 +164,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				selectedMainEntityKey: "Asset",
 				selectedMainEntityId: $scope.selectedMainEntityId,
 				optionsAsset: $scope.optionsAsset,
-				optionsMaintenanceStatus: $scope.optionsMaintenanceStatus,
+				optionsStatus: $scope.optionsStatus,
 			}, null, false);
 		};
 
@@ -199,7 +199,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 		$scope.optionsAsset = [];
-		$scope.optionsMaintenanceStatus = [];
+		$scope.optionsStatus = [];
 
 
 		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts").then(function (response) {
@@ -211,8 +211,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/MaintenanceStatus/MaintenanceStatusService.ts").then(function (response) {
-			$scope.optionsMaintenanceStatus = response.data.map(e => {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Settings/MaintenanceStatusService.ts").then(function (response) {
+			$scope.optionsStatus = response.data.map(e => {
 				return {
 					value: e.Id,
 					text: e.Name
@@ -228,10 +228,10 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			}
 			return null;
 		};
-		$scope.optionsMaintenanceStatusValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsMaintenanceStatus.length; i++) {
-				if ($scope.optionsMaintenanceStatus[i].value === optionKey) {
-					return $scope.optionsMaintenanceStatus[i].text;
+		$scope.optionsStatusValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsStatus.length; i++) {
+				if ($scope.optionsStatus[i].value === optionKey) {
+					return $scope.optionsStatus[i].text;
 				}
 			}
 			return null;

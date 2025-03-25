@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/DisposalMethod/dialog-filter/view.js",
+    "extensionPoint": "dialog-window",
+    "description": "codbex-assets - Application Dialog Window",
+    "role": "codbex-assets.DisposalMethod.DisposalMethodReadOnly,codbex-assets.DisposalMethod.DisposalMethodFullAccess"
+}

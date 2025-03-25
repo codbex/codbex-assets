@@ -8,7 +8,7 @@ const navigationData = {
 	label: 'Valuation Deprecation Report',
 	group: 'reports',
 	link: '/services/web/codbex-assets/gen/valuation-deprecation/ui/Reports/ASSET_VALUATION_DEPRECIATION_REPORT/index.html',
-	order: 999,
+	order: $navigationOrder
 };
 
 function getNavigation() {

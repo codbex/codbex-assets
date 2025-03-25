@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/DeprecationSchedule/tile.js",
+    "extensionPoint": "codbex-assets-tile",
+    "description": "codbex-assets - Application Tile",
+    "role": "codbex-assets.DeprecationSchedule.DeprecationScheduleReadOnly,codbex-assets.DeprecationSchedule.DeprecationScheduleFullAccess"
+}

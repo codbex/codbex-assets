@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/codbex-assets/ui/Asset/Asset/Depreciation/view.js",
     "extensionPoint": "codbex-assets-view",
-    "description": "codbex-assets - Application View - Details"
+    "description": "codbex-assets - Application View - Details",
+    "role": "codbex-assets.Asset.DepreciationReadOnly,codbex-assets.Asset.DepreciationFullAccess"
 }

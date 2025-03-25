@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/maintenance/ui/Reports/ASSET_MAINTENANCE_STATUS_REPORT/view.js",
     "extensionPoint": "codbex-assets-view",
-    "description": "codbex-assets - Application View"
+    "description": "codbex-assets - Application View",
+    "role": "codbex-assets.Report.ASSET_MAINTENANCE_STATUS_REPORTReadOnly"
 }

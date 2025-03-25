@@ -63,7 +63,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		};
 
 		$scope.serviceAsset = "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts";
-		$scope.serviceValuationMethod = "/services/ts/codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts";
+		$scope.serviceValuationMethod = "/services/ts/codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts";
 		$scope.serviceSupplier = "/services/ts/codbex-partners/gen/codbex-partners/api/Suppliers/SupplierService.ts";
 
 		$scope.cancel = function () {

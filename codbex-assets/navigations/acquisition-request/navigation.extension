@@ -1,5 +1,6 @@
 {
     "extensionPoint": "dashboard-navigations",
     "module": "codbex-assets/navigations/acquisition-request/service.js",
-    "description": "Assets Navigation"
+    "description": "Assets Navigation",
+    "role": "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly,codbex-assets.AcquisitionRequest.AcquisitionRequestFullAccess"
 }

@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/MaintenanceStatus/tile.js",
+    "extensionPoint": "portal-tile",
+    "description": "codbex-assets - Application Tile",
+    "role": "codbex-assets.MaintenanceStatus.MaintenanceStatusReadOnly,codbex-assets.MaintenanceStatus.MaintenanceStatusFullAccess"
+}

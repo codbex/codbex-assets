@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/valuation-deprecation/ui/Reports/ASSET_VALUATION_DEPRECIATION_REPORT/dialog-filter/view.js",
-    "extensionPoint": "codbex-assets-dialog-window",
-    "description": "codbex-assets - Application Dialog Window"
+    "extensionPoint": "dialog-window",
+    "description": "codbex-assets - Application Dialog Window",
+    "role": "codbex-assets.Report.ASSET_VALUATION_DEPRECIATION_REPORTReadOnly"
 }

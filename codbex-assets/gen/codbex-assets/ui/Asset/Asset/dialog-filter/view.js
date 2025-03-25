@@ -7,7 +7,7 @@ const viewData = {
     id: "Asset-filter",
     label: "Asset Filter",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/dialog-filter/index.html",
-    perspectiveName: "Asset",
+    perspectiveName: "Asset"
 };
 
 if (typeof exports !== 'undefined') {

@@ -7,7 +7,7 @@ const viewData = {
     id: "AcquisitionRequest-filter",
     label: "AcquisitionRequest Filter",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/dialog-filter/index.html",
-    perspectiveName: "AcquisitionRequest",
+    perspectiveName: "AcquisitionRequest"
 };
 
 if (typeof exports !== 'undefined') {

@@ -1,5 +1,0 @@
-{
-    "module": "codbex-assets/ext/Waste/waste.js",
-    "extensionPoint": "codbex-assets-custom-action",
-    "description": "Waste Assets Custom Action"
-}

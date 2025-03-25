@@ -217,7 +217,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts").then(function (response) {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts").then(function (response) {
 			$scope.optionsDeprecationSchedule = response.data.map(e => {
 				return {
 					value: e.Id,

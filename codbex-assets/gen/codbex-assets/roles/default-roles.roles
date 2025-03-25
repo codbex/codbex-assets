@@ -1,0 +1,82 @@
+[
+    {
+        "name": "codbex-assets.Asset.AssetReadOnly",
+        "description": "A role that grants read only permission for Asset."
+    },
+    {
+        "name": "codbex-assets.Asset.AssetFullAccess",
+        "description": "A role that grants full access for Asset."
+    },
+    {
+        "name": "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly",
+        "description": "A role that grants read only permission for AcquisitionRequest."
+    },
+    {
+        "name": "codbex-assets.AcquisitionRequest.AcquisitionRequestFullAccess",
+        "description": "A role that grants full access for AcquisitionRequest."
+    },
+    {
+        "name": "codbex-assets.Asset.MaintenanceReadOnly",
+        "description": "A role that grants read only permission for Maintenance."
+    },
+    {
+        "name": "codbex-assets.Asset.MaintenanceFullAccess",
+        "description": "A role that grants full access for Maintenance."
+    },
+    {
+        "name": "codbex-assets.Asset.DepreciationReadOnly",
+        "description": "A role that grants read only permission for Depreciation."
+    },
+    {
+        "name": "codbex-assets.Asset.DepreciationFullAccess",
+        "description": "A role that grants full access for Depreciation."
+    },
+    {
+        "name": "codbex-assets.Disposal.DisposalReadOnly",
+        "description": "A role that grants read only permission for Disposal."
+    },
+    {
+        "name": "codbex-assets.Disposal.DisposalFullAccess",
+        "description": "A role that grants full access for Disposal."
+    },
+    {
+        "name": "codbex-assets.Asset.ValuationReadOnly",
+        "description": "A role that grants read only permission for Valuation."
+    },
+    {
+        "name": "codbex-assets.Asset.ValuationFullAccess",
+        "description": "A role that grants full access for Valuation."
+    },
+    {
+        "name": "codbex-assets.MaintenanceStatus.MaintenanceStatusReadOnly",
+        "description": "A role that grants read only permission for MaintenanceStatus."
+    },
+    {
+        "name": "codbex-assets.MaintenanceStatus.MaintenanceStatusFullAccess",
+        "description": "A role that grants full access for MaintenanceStatus."
+    },
+    {
+        "name": "codbex-assets.ValuationMethod.ValuationMethodReadOnly",
+        "description": "A role that grants read only permission for ValuationMethod."
+    },
+    {
+        "name": "codbex-assets.ValuationMethod.ValuationMethodFullAccess",
+        "description": "A role that grants full access for ValuationMethod."
+    },
+    {
+        "name": "codbex-assets.DisposalMethod.DisposalMethodReadOnly",
+        "description": "A role that grants read only permission for DisposalMethod."
+    },
+    {
+        "name": "codbex-assets.DisposalMethod.DisposalMethodFullAccess",
+        "description": "A role that grants full access for DisposalMethod."
+    },
+    {
+        "name": "codbex-assets.DeprecationSchedule.DeprecationScheduleReadOnly",
+        "description": "A role that grants read only permission for DeprecationSchedule."
+    },
+    {
+        "name": "codbex-assets.DeprecationSchedule.DeprecationScheduleFullAccess",
+        "description": "A role that grants full access for DeprecationSchedule."
+    }
+]

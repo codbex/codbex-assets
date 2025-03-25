@@ -7,9 +7,9 @@ const viewData = {
     id: "AcquisitionRequest",
     label: "AcquisitionRequest",
     factory: "frame",
-    region: "center",
+    region: "left",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/index.html",
-    perspectiveName: "AcquisitionRequest",
+    perspectiveName: "AcquisitionRequest"
 };
 
 if (typeof exports !== 'undefined') {
