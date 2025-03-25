@@ -3,7 +3,8 @@
 The Asset Management module in an ERP system typically encompasses several key areas to ensure effective management of an organization's assets throughout their lifecycle. Here’s a detailed breakdown of the main areas:
 
 # EDM
-![image](https://github.com/user-attachments/assets/0a8c31da-223b-42cb-bdb5-2eea8f1ad120)
+<img width="796" alt="image" src="https://github.com/user-attachments/assets/0bc59623-4fa6-457b-b8f7-abd723341d3f" />
+
 
 ### 1. Asset Tracking - monitor and manage the physical and financial aspects of assets.  
 - **Asset Register:** Comprehensive list of all assets including their details such as asset ID, description, location, and status.
