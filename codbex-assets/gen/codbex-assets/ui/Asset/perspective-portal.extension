@@ -1,1 +1,5 @@
-{"module":"codbex-assets/gen/codbex-assets/ui/Asset/perspective.js","extensionPoint":"portal","description":"codbex-assets - Perspective - Asset"}
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Asset/perspective.js",
+    "extensionPoint": "portal",
+    "description": "codbex-assets - Perspective - Asset"
+}

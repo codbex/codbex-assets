@@ -1,5 +1,0 @@
-{
-    "module": "codbex-assets/ext/SalesOrder/salesorder.js",
-    "extensionPoint": "codbex-assets-custom-action",
-    "description": "Sales Order Assets Custom Action"
-}

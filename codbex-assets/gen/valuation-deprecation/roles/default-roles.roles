@@ -1,0 +1,6 @@
+[
+    {
+        "name": "codbex-assets.Report.ASSET_VALUATION_DEPRECIATION_REPORTReadOnly",
+        "description": "A role that grants read only permission for ASSET_VALUATION_DEPRECIATION_REPORT."
+    }
+]

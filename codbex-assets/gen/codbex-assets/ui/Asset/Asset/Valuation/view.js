@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "bottom",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/Valuation/index.html",
-    perspectiveName: "Asset",
+    perspectiveName: "Asset"
 };
 
 if (typeof exports !== 'undefined') {

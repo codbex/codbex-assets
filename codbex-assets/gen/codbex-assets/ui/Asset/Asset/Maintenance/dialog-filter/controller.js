@@ -21,7 +21,7 @@ angular.module('page', ["ideUI", "ideView"])
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
 			$scope.optionsAsset = params.optionsAsset;
-			$scope.optionsMaintenanceStatus = params.optionsMaintenanceStatus;
+			$scope.optionsStatus = params.optionsStatus;
 		}
 
 		$scope.filter = function () {
@@ -62,8 +62,8 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Cost !== undefined) {
 				filter.$filter.equals.Cost = entity.Cost;
 			}
-			if (entity.MaintenanceStatus !== undefined) {
-				filter.$filter.equals.MaintenanceStatus = entity.MaintenanceStatus;
+			if (entity.Status !== undefined) {
+				filter.$filter.equals.Status = entity.Status;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

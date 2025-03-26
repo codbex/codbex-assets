@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/dialog-filter/view.js",
-    "extensionPoint": "codbex-assets-dialog-window",
-    "description": "codbex-assets - Application Dialog Window"
+    "extensionPoint": "dialog-window",
+    "description": "codbex-assets - Application Dialog Window",
+    "role": "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly,codbex-assets.AcquisitionRequest.AcquisitionRequestFullAccess"
 }

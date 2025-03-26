@@ -1,0 +1,6 @@
+[
+    {
+        "name": "codbex-assets.Report.ASSET_MAINTENANCE_STATUS_REPORTReadOnly",
+        "description": "A role that grants read only permission for ASSET_MAINTENANCE_STATUS_REPORT."
+    }
+]

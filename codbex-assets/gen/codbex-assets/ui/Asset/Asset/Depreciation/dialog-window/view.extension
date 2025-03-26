@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/codbex-assets/ui/Asset/Asset/Depreciation/dialog-window/view.js",
-    "extensionPoint": "codbex-assets-dialog-window",
-    "description": "codbex-assets - Application Dialog Window"
+    "extensionPoint": "dialog-window",
+    "description": "codbex-assets - Application Dialog Window",
+    "role": "codbex-assets.Asset.DepreciationReadOnly,codbex-assets.Asset.DepreciationFullAccess"
 }

@@ -1,1 +1,6 @@
-{"module":"codbex-assets/gen/codbex-assets/ui/AcquisitionRequest/AcquisitionRequest/dialog-window/view.js","extensionPoint":"codbex-assets-dialog-window","description":"codbex-assets - Application Dialog Window"}
+{
+    "module": "{{projectName}}/gen/{{genFolderName}}/ui/{{perspectiveName}}/{{name}}/dialog-window/view.js",
+    "extensionPoint": "dialog-window",
+    "description": "{{projectName}} - Application Dialog Window",
+    "role": "codbex-assets.AcquisitionRequest.AcquisitionRequestReadOnly,codbex-assets.AcquisitionRequest.AcquisitionRequestFullAccess"
+}

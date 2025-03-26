@@ -7,7 +7,7 @@ const viewData = {
     id: "Maintenance-details",
     label: "Maintenance",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Asset/Asset/Maintenance/dialog-window/index.html",
-    perspectiveName: "Asset",
+    perspectiveName: "Asset"
 };
 
 if (typeof exports !== 'undefined') {

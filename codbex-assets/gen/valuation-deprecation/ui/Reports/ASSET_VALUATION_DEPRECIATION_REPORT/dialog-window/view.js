@@ -7,7 +7,7 @@ const viewData = {
     id: "ASSET_VALUATION_DEPRECIATION_REPORT-Report-details",
     label: "ASSET_VALUATION_DEPRECIATION_REPORT Report",
     link: "/services/web/codbex-assets/gen/valuation-deprecation/ui/Reports/ASSET_VALUATION_DEPRECIATION_REPORT/dialog-window/index.html",
-    perspectiveName: "Reports",
+    perspectiveName: "Reports"
 };
 
 if (typeof exports !== 'undefined') {

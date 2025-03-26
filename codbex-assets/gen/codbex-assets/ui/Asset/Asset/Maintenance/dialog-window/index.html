@@ -80,17 +80,17 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idMaintenanceStatus" dg-required="false" dg-colon="true">MaintenanceStatus</fd-form-label>
+                        	<fd-form-label for="idStatus" dg-required="false" dg-colon="true">Status</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
-	                        <fd-combobox-input id="idMaintenanceStatus"
-	                            name="MaintenanceStatus"
-	                            state="{{ forms.details['MaintenanceStatus'].$valid ? '' : 'error' }}"
+	                        <fd-combobox-input id="idStatus"
+	                            name="Status"
+	                            state="{{ forms.details['Status'].$valid ? '' : 'error' }}"
 	                            ng-required="false"
-	                            ng-model="entity.MaintenanceStatus"
+	                            ng-model="entity.Status"
 	                            dg-disabled="action === 'select'"
-	                            dropdown-items="optionsMaintenanceStatus"
-	                            dg-placeholder="Search MaintenanceStatus ...">
+	                            dropdown-items="optionsStatus"
+	                            dg-placeholder="Search Status ...">
 	                        </fd-combobox-input>
 	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 	                    </div>

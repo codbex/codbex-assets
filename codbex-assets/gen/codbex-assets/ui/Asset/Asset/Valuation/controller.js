@@ -216,7 +216,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		});
 
-		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/ValuationMethod/ValuationMethodService.ts").then(function (response) {
+		$http.get("/services/ts/codbex-assets/gen/codbex-assets/api/Settings/ValuationMethodService.ts").then(function (response) {
 			$scope.optionsValuationMethod = response.data.map(e => {
 				return {
 					value: e.Id,

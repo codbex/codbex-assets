@@ -1,0 +1,6 @@
+{
+    "module": "codbex-assets/gen/codbex-assets/ui/Settings/DisposalMethod/tile.js",
+    "extensionPoint": "portal-tile",
+    "description": "codbex-assets - Application Tile",
+    "role": "codbex-assets.DisposalMethod.DisposalMethodReadOnly,codbex-assets.DisposalMethod.DisposalMethodFullAccess"
+}

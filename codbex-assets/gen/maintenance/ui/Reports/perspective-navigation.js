@@ -8,7 +8,7 @@ const navigationData = {
 	label: 'Maintenance Report',
 	group: 'reports',
 	link: '/services/web/codbex-assets/gen/maintenance/ui/Reports/ASSET_MAINTENANCE_STATUS_REPORT/index.html',
-	order: 999,
+	order: $navigationOrder
 };
 
 function getNavigation() {

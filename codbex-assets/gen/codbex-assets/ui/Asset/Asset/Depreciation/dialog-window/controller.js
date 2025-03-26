@@ -68,7 +68,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		};
 
 		$scope.serviceAsset = "/services/ts/codbex-assets/gen/codbex-assets/api/Asset/AssetService.ts";
-		$scope.serviceDeprecationSchedule = "/services/ts/codbex-assets/gen/codbex-assets/api/DeprecationSchedule/DeprecationScheduleService.ts";
+		$scope.serviceDeprecationSchedule = "/services/ts/codbex-assets/gen/codbex-assets/api/Settings/DeprecationScheduleService.ts";
 
 		$scope.cancel = function () {
 			$scope.entity = {};

@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "left",
     link: "/services/web/codbex-assets/gen/codbex-assets/ui/Disposal/Disposal/index.html",
-    perspectiveName: "Disposal",
+    perspectiveName: "Disposal"
 };
 
 if (typeof exports !== 'undefined') {
