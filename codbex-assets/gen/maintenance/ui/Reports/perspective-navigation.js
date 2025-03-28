@@ -5,10 +5,10 @@
  */
 const navigationData = {
 	id: 'codbex-assets-maintenance',
-	label: 'Maintenance Report',
+	label: 'Maintenance',
 	group: 'reports',
 	link: '/services/web/codbex-assets/gen/maintenance/ui/Reports/ASSET_MAINTENANCE_STATUS_REPORT/index.html',
-	order: $navigationOrder
+	order: 2200
 };
 
 function getNavigation() {

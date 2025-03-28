@@ -1,0 +1,6 @@
+[
+    {
+        "name": "codbex-assets.Report.AssetAcquisitionDisposalReadOnly",
+        "description": "A role that grants read only permission for AssetAcquisitionDisposal."
+    }
+]

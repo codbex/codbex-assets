@@ -7,7 +7,7 @@ const viewData = {
     id: "AssetAcquisitionDisposal-Report-filter",
     label: "AssetAcquisitionDisposal Rerport Filter",
     link: "/services/web/codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/dialog-filter/index.html",
-    perspectiveName: "Reports",
+    perspectiveName: "Reports"
 };
 
 if (typeof exports !== 'undefined') {

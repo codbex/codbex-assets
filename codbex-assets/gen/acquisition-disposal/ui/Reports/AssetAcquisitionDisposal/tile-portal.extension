@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/tile.js",
     "extensionPoint": "portal-tile",
-    "description": "codbex-assets - Application Tile"
+    "description": "codbex-assets - Application Tile",
+    "role": "codbex-assets.Report.AssetAcquisitionDisposalReadOnly"
 }

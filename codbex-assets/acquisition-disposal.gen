@@ -1,0 +1,21 @@
+{
+  "brand": "codbex",
+  "brandUrl": "https://www.codbex.com",
+  "title": "Acquisition Disposal",
+  "navigationOrder": "2300",
+  "projectName": "codbex-assets",
+  "workspaceName": "workspace",
+  "filePath": "acquisition-disposal.report",
+  "templateId": "template-application-ui-angular/template/template-report-file.js",
+  "fileName": "acquisition-disposal",
+  "genFolderName": "acquisition-disposal",
+  "extensionPoint": "codbex-assets",
+  "name": "AssetAcquisitionDisposal",
+  "perspectiveName": "AssetAcquisitionDisposal",
+  "roles": [
+    {
+      "entityName": "AssetAcquisitionDisposal",
+      "roleRead": "codbex-assets.Report.AssetAcquisitionDisposalReadOnly"
+    }
+  ]
+}

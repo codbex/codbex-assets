@@ -5,10 +5,10 @@
  */
 const navigationData = {
 	id: 'codbex-assets-valuation-deprecation',
-	label: 'Valuation Deprecation Report',
+	label: 'Valuation Deprecation',
 	group: 'reports',
 	link: '/services/web/codbex-assets/gen/valuation-deprecation/ui/Reports/ASSET_VALUATION_DEPRECIATION_REPORT/index.html',
-	order: $navigationOrder
+	order: 2100
 };
 
 function getNavigation() {

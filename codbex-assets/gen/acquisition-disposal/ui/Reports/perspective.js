@@ -8,7 +8,7 @@ const perspectiveData = {
 	name: 'Reports',
 	link: '/services/web/codbex-assets/gen/acquisition-disposal/ui/Reports/index.html',
 	order: 999,
-	icon: '/services/web/resources/unicons/dashboard.svg',
+	icon: '/services/web/resources/unicons/dashboard.svg'
 };
 
 if (typeof exports !== 'undefined') {

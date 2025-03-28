@@ -1,5 +1,7 @@
 import { Controller, Get, Post } from "sdk/http"
 import { AssetAcquisitionDisposalRepository, AssetAcquisitionDisposalFilter, AssetAcquisitionDisposalPaginatedFilter } from "../../dao/AssetAcquisitionDisposal/AssetAcquisitionDisposalRepository";
+import { user } from "sdk/security"
+import { ForbiddenError } from "../utils/ForbiddenError";
 import { HttpUtils } from "../utils/HttpUtils";
 
 @Controller
@@ -10,12 +12,14 @@ class AssetAcquisitionDisposalService {
     @Get("/")
     public filter(_: any, ctx: any) {
         try {
+            this.checkPermissions("read");
+
             const filter: AssetAcquisitionDisposalPaginatedFilter = {
                 "$limit": ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : undefined,
                 "$offset": ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : undefined
             };
 
-            return this.repository.findAll(filter);
+            return this.repository.findAll(filter).map(e => this.transformEntity("read", e));
         } catch (error: any) {
             this.handleError(error);
         }
@@ -24,6 +28,8 @@ class AssetAcquisitionDisposalService {
     @Get("/count")
     public count(_: any, ctx: any) {
         try {
+            this.checkPermissions("read");
+
             const filter: AssetAcquisitionDisposalFilter = {
             };
             return this.repository.count(filter);
@@ -35,6 +41,8 @@ class AssetAcquisitionDisposalService {
     @Post("/count")
     public countWithFilter(filter: any) {
         try {
+            this.checkPermissions("read");
+
             return this.repository.count(filter);
         } catch (error: any) {
             this.handleError(error);
@@ -44,7 +52,9 @@ class AssetAcquisitionDisposalService {
     @Post("/search")
     public search(filter: any) {
         try {
-            return this.repository.findAll(filter);
+            this.checkPermissions("read");
+
+            return this.repository.findAll(filter).map(e => this.transformEntity("read", e));
         } catch (error: any) {
             this.handleError(error);
         }
@@ -58,6 +68,17 @@ class AssetAcquisitionDisposalService {
         } else {
             HttpUtils.sendInternalServerError(error.message);
         }
+    }
+
+    private checkPermissions(operationType: string) {
+        if (operationType === "read" && !(user.isInRole("codbex-assets.Report.AssetAcquisitionDisposalReadOnly"))) {
+            throw new ForbiddenError();
+        }
+    }
+
+    private transformEntity(operationType: string, originalEntity: any) {
+        const entity = { ...originalEntity };
+        return entity;
     }
 
 }

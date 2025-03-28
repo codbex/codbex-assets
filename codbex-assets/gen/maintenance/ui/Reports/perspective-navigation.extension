@@ -1,6 +1,6 @@
 {
     "module": "codbex-assets/gen/maintenance/ui/Reports/perspective-navigation.js",
     "extensionPoint": "dashboard-navigations",
-    "description": "Maintenance Report - Navigation",
+    "description": "Maintenance - Navigation",
     "role": "codbex-assets.Report.ASSET_MAINTENANCE_STATUS_REPORTReadOnly"
 }

@@ -1,5 +1,6 @@
 {
     "module": "codbex-assets/gen/acquisition-disposal/ui/Reports/perspective-navigation.js",
     "extensionPoint": "dashboard-navigations",
-    "description": "Acquisition Disposal Report - Navigation"
+    "description": "Acquisition Disposal - Navigation",
+    "role": "codbex-assets.Report.AssetAcquisitionDisposalReadOnly"
 }
