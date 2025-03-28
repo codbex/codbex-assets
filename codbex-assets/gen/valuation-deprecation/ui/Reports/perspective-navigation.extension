@@ -1,6 +1,6 @@
 {
     "module": "codbex-assets/gen/valuation-deprecation/ui/Reports/perspective-navigation.js",
     "extensionPoint": "dashboard-navigations",
-    "description": "Valuation Deprecation Report - Navigation",
+    "description": "Valuation Deprecation - Navigation",
     "role": "codbex-assets.Report.ASSET_VALUATION_DEPRECIATION_REPORTReadOnly"
 }

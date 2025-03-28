@@ -5,10 +5,10 @@
  */
 const navigationData = {
 	id: 'codbex-assets-acquisition-disposal',
-	label: 'Acquisition Disposal Report',
+	label: 'Acquisition Disposal',
 	group: 'reports',
 	link: '/services/web/codbex-assets/gen/acquisition-disposal/ui/Reports/AssetAcquisitionDisposal/index.html',
-	order: 999,
+	order: 2300
 };
 
 function getNavigation() {
