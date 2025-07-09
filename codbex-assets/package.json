@@ -12,6 +12,6 @@
         "@codbex/codbex-products": "0.6.0",
         "@codbex/codbex-invoices": "0.6.0",
         "@codbex/codbex-orders": "0.6.0",
-        "@codbex/codbex-inventory": "0.6.0"
+        "@codbex/codbex-inventory": "0.10.0"
     }
 }
