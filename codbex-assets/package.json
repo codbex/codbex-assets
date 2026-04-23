@@ -11,7 +11,7 @@
     "dependencies": {
         "@codbex/codbex-products": "0.6.0",
         "@codbex/codbex-invoices": "0.6.0",
-        "@codbex/codbex-orders": "0.6.0",
+        "@codbex/codbex-orders": "0.9.2",
         "@codbex/codbex-inventory": "0.6.0"
     }
 }
